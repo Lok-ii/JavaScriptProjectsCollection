@@ -1,35 +1,73 @@
-let bookmarks = document.querySelector(".bookmarks");
+import { tab } from "../getTabs.js";
 
+let heading = document.querySelector(".title");
+let tabUrl = "";
+tab()
+  .then((res) => {
+    tabUrl = res.url;
+    if(tabUrl.includes("www.youtube.com/")){
+      heading.innerText = "YouTube TimeStamps"
+    }else{
+      console.log(tabUrl);
+      heading.innerText = "This is not a Youtube Page";
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-// adding timestamp to the extension popup
-
-let addBookmarkElement = (time, url)=>{
+let splitTime = (time)=>{
   let timeArray = time.split(":");
-  let timeInSeconds;
-  if(timeArray.length > 2){
-    timeInSeconds = parseInt(timeArray[0])*60*60 + parseInt(timeArray[1] * 60) + parseInt(timeArray[2]);
-  }else{
-    timeInSeconds = parseInt(timeArray[0])*60 + parseInt(timeArray[1]);
-  }
-  let bookmarkElement = document.createElement("div");
-  bookmarkElement.className = 'bookmark-item';
-  bookmarkElement.innerHTML = `<span>Bookmark at <span class="time">${time}</span></span>
-  <div>
-      <button><a href="${url}&t=${timeInSeconds}s">
-          Play
-      </a></button>
-      <button>Delete</button>
-  </div>`
-
-  bookmarks.appendChild(bookmarkElement);
+  let timeInSeconds = timeArray.length > 2
+      ? parseInt(timeArray[0]) * 60 * 60 +
+        parseInt(timeArray[1]) * 60 +
+        parseInt(timeArray[2])
+      : parseInt(timeArray[0]) * 60 + parseInt(timeArray[1]);
+      return timeInSeconds;
 }
 
-// receiving timestamp and video-url from background.js
-chrome.runtime.onMessage.addListener((data)=>{
-  if(data.type === "bookmarkAdded"){
-    chrome.runtime.sendMessage({type: "time-data"}, (response) =>{
-      console.log(response.time, response.video);
-      addBookmarkElement(response.time, response.video);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let bookmarks = document.querySelector(".bookmarks");
+
+  // Function to add a timestamp to the extension popup
+  let addBookmarkElement = (time, url) => {
+    let timeInSeconds = splitTime(time);
+
+    let bookmarkElement = document.createElement("div");
+    bookmarkElement.className = "bookmark-item";
+    bookmarkElement.innerHTML = `<span contentEditable>Bookmark at </span><span class="time">${time}</span>
+      <div>
+          <button><a href="${url}&t=${timeInSeconds}">
+              Play
+          </a></button>
+          <button>Delete</button>
+      </div>`;
+
+    bookmarks.appendChild(bookmarkElement);
+  };
+
+  // Retrieve data from storage
+  chrome.storage.local.get({ bookmarks: {} }, function (result) {
+    console.log("Stored data in storage:", result);
+
+    // Extract the array of timestamps for the current videoId
+    const videoId = tabUrl.split("?")[1].substring(2);
+    const timeStampArray = result.bookmarks[videoId] || [];
+
+    console.log("Retrieved timestamps for videoId:", videoId, timeStampArray);
+
+    timeStampArray.sort((a, b)=>{
+      return splitTime(a)-splitTime(b);
     });
-  }
-})
+
+    // Clear existing bookmarks
+    bookmarks.innerHTML = "";
+    
+    // Display the data in the extension popup
+    timeStampArray.forEach((timestamp) => {
+      addBookmarkElement(timestamp, tabUrl);
+    });
+  });
+});

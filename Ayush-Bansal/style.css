@@ -193,9 +193,7 @@ padding:20px;
     border: none;
     margin-bottom: 2%;
 }
-.employdetails,.projectdetails,.educationaldetails{
-    display: none;
-}
+
 .colorpick-eyedropper-input-trigger{
     display: none;
 }
@@ -215,7 +213,9 @@ padding:20px;
     height: 14.8%;
     background-color: #007500;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+   justify-content: center;
+   padding-top: 1.2%;
     padding-left: 17px;
 }
 .resume{
@@ -275,9 +275,9 @@ hr{
 .contactphone,.contactemail,.contactaddr{
     margin-bottom: 20px;
     display: flex;
-    gap: 5%;
+    gap: 3%;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 .resumerightcont{
     height: 500px;
@@ -286,4 +286,114 @@ hr{
 }
 .summarycont,.experiencecont,.projectcont,.educationcont{
     margin-block:10px;
+}
+
+#nameheader{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+#nameniche{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* ..................third page....................  */
+
+.thirdpage{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    /* border: 2px solid violet
+   */
+  }nav{ 
+    background-color: white;
+    display: flex;
+    height: 10%;
+    border: 2px solid red;
+    justify-content: space-between;
+    padding-inline: 10px ;
+    align-items: center;
+}
+nav img{
+    height: 80%;
+    
+}
+nav button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    background-color: #007500;
+    border: none;
+    color: white;
+    margin-right: 7px;
+}
+.thirdcont{
+    display: flex;
+    
+    height:90% ;
+}
+.thirdpage aside{
+    width: 42%;
+    height: 100%;
+    /* border: 2px solid green; */
+}
+.thirdcont aside p{
+font-weight:300;
+font-size:20px;
+padding:20px;
+}
+.thirdcont aside select{
+    margin-left: 20px;
+    font-family: sans-serif;
+    outline: none;
+    border: none;
+    padding: 12px;
+    width: 75%;
+}
+
+#name,#email,#number,#jobtitle,.Professional,#skills,.Description,.Descriptionpro,.Descriptionedu,.address{
+    padding: 12px;
+    width: 75%;
+    margin-left: 20px;
+    font-family: sans-serif;
+    /* outline: none; */
+    border: none;
+    margin-bottom: 4%;
+}
+#employment,#project,#education{
+    padding: 12px;
+    width: 75%;
+    margin-left: 20px;
+    margin-bottom: 3%;
+    color: white;
+    background-color: #007500;
+    border: none;
+}
+#month,#monthend,#employer,#jobpre,#monthpro,#monthendpro,#projecttitle,#school,#monthendedu,#monthedu,#qualification{
+    padding: 12px;
+    width: 75%;
+    margin-left: 20px;
+    font-family: sans-serif;
+    /* outline: none; */
+    border: none;
+    margin-bottom: 2%;
+}
+
+.colorpick-eyedropper-input-trigger{
+    display: none;
+}
+#colorheader,#colortext{
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+    height: 25px;    
+}
+.thirdmain{
+    height: 155vh;
+    width: 50%;
+    border: 2px solid red;
+    margin-top: 10px;
 }

@@ -4,8 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <form action="">
+        <div class="Main-container">
+            <div class="section1">
+                <div class="Date-Section">
+                    <div class="subSection1_innerSection1">
+                        <div class="currentDate">
+                            <span class="current-date-text text-bold">Current Date: </span>
+                            <span class="current-date"></span>
+                        </div>
+                        <div class="DueDate">
+                            <span class="Due-date-text text-bold">Due Date: </span>
+                            <input name="dateOfIssue" required="" type="date" class="form-control" value="" style="max-width: 150px;" required>
+                        </div>
+                    </div>
+                    <div class="invoiceNumber-Section">
+                        <span class="invoice-number-text text-bold">
+                            Invoice Number
+                        </span>
+                        <span class="invoice-number">
+                            1
+                        </span>
+                    </div>
+                </div>
+                
+                <hr class="margin-hr">
+
+                <!-- Billing Address -->
+                <div class="Bill-address-section">
+                    <div class="bill-to">
+                        <label for="" class="form-label text-bold">
+                            Bill To:
+                        </label>
+                        <input placeholder="Who is this invoice to?" rows="3" name="billTo" autocomplete="name" required="" type="text" class="my-2 form-control" value="" required >
+
+                        <input placeholder="Email address" name="billToEmail" autocomplete="email" required="" type="email" class="my-2 form-control" value="" required>
+
+                        <input placeholder="Billing address" name="billToAddress" autocomplete="address" required="" type="text" class="my-2 form-control" value="" required>
+                    </div>
+                    <div class="bill-from">
+                        <label for="" class="form-label text-bold">
+                            Bill from:
+                        </label>
+                        <input placeholder="Who is this invoice from?" rows="3" name="billFrom" autocomplete="name" required="" type="text" class="my-2 form-control" value="" required>
+                        
+                        <input placeholder="Email address" name="billFromEmail" autocomplete="email" required="" type="email" class="my-2 form-control" value="" required>
+
+                        <input placeholder="Billing address" name="billFromAddress" autocomplete="address" required="" type="text" class="my-2 form-control" value="" required>
+                    </div>
+                </div>
+
+                <hr class="margin-hr">
+                
+                <!-- Items Table -->
+                <div class="item-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ITEM</th>
+                                <th>QTY</th>
+                                <th>PRICE/RATE</th>
+                                <th class="text-center">ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tbody">
+                            <tr id="table-row" class="d-none">
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input placeholder="Item name" name="name" aria-label="name" required="" type="text" class="form-control" value="" required>
+                                    </div>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input placeholder="Item description" name="description" aria-label="description" required="" type="text" class="form-control" value="" required>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input min="1" name="quantity" step="1" aria-label="quantity" required="" type="number" class="form-control" value="1">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <span class="text-bold px-2 dollar">
+                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;"><span class="currency_change">$</span></span>
+                                        </span>
+                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control price" value="1.00">
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    <svg onclick="BtnDelete(this)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1 delete" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="height: 33px; width: 33px; padding: 7.5px;">
+                                        <path fill="none" d="M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z"></path><path d="M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z"></path>
+                                        <path d="M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+
+                            <tr id="table-row">
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input placeholder="Item name" name="name" aria-label="name" required="" type="text" class="form-control" value="" required>
+                                    </div>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input placeholder="Item description" name="description" aria-label="description" required="" type="text" class="form-control" value="" required>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input min="1" name="quantity" step="1" aria-label="quantity" required="" type="number" class="form-control quantity" value="1">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <span class="text-bold px-2 dollar">
+                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;"><span class="currency_change">$</span></span>
+                                        </span>
+                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control price" value="1.00">
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    <svg onclick="BtnDelete(this)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1 delete" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="height: 33px; width: 33px; padding: 7.5px;">
+                                        <path fill="none" d="M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z"></path><path d="M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z"></path>
+                                        <path d="M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="my-2">
+                    <button type="button" class="text-bold btn btn-primary" onclick="BtnAdd()">
+                        Add Item
+                    </button>
+                </div>
+                <!-- Cart Section -->
+                <div class="cart_Section mt-4">
+                    <div class="col-cart">
+                        <div class="cart-content">
+                            <span class="text-bold">Subtotal:</span>
+                            <span class="total" id="total_amount"><span class="currency_change">$</span>1.00</span>
+                        </div>
+                        <div class="cart-content mt-2">
+                            <span class="text-bold">Discount:</span>
+                            <span class="discount-given">(0%) <span class="currency_change">$</span>0.00</span>
+                        </div>
+                        <div class="cart-content mt-2">
+                            <span class="text-bold">Tax:</span>
+                            <span class="tax-applied">(0%)<span class="currency_change">$</span>0.00</span>
+                        </div>
+                        <hr class="margin-hr">
+                        <div class="cart-content" style="font-size: 1.125rem;">
+                            <span class="text-bold">Total:</span>
+                            <span class="text-bold"><span class="currency_change">$</span>1</span>
+                        </div>
+                        <hr class="my-4">
+                        <div class="notes">
+                            <label class="text-bold form-label">Notes:</label>
+                            <textarea placeholder="Thanks for your business!" name="notes" rows="1" class="my-2 form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+                <div class="button">
+                    <button type="button" class="text-bold btn btn-primary review-btn">Review Invoice</button>
+                </div>
+                <div>
+                    <hr class="mt-4 mb-3">
+                </div>
+                <div class="mb-3">
+                    <label class="text-bold form-label">Currency:</label>
+                    <select aria-label="Change Currency" class="btn btn-light my-1 form-select currency">
+                        <option value="$">USD (United States Dollar)</option>
+                        <option value="£">GBP (British Pound Sterling)</option>
+                        <option value="¥">JPY (Japanese Yen)</option>
+                        <option value="$">CAD (Canadian Dollar)</option>
+                        <option value="$">AUD (Australian Dollar)</option>
+                        <option value="$">SGD (Signapore Dollar)</option>
+                        <option value="¥">CNY (Chinese Renminbi)</option>
+                        <option value="₿">BTC (Bitcoin)</option>
+                    </select>
+                </div>
+
+                <div class="my-3">
+                    <label class="text-bold form-label">Tax rate:</label>
+                    <div class="my-1 flex-nowrap input-group">
+                        <input name="taxRate" id="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
+                        <span class="text-bold input-group-text">%</span>
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <label class="text-bold form-label">Discount rate:</label>
+                    <div class="my-1 flex-nowrap input-group">
+                        <input name="discountRate" id="discountRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="discount-rate form-control" value="">
+                        <span class="text-bold input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="./script.js"></script>
 </body>
 </html>

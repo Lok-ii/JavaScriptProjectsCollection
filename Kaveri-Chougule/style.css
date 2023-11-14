@@ -187,3 +187,10 @@ thead{
 .d-none{
     display: none;
 }
+.input-group-item{
+    position: relative;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: stretch;
+    width: 100%;
+}

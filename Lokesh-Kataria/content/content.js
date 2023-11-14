@@ -22,12 +22,9 @@ bookmarkIcon.addEventListener("click", () => {
     let timeStampArray = result.bookmarks[videoId] || [];
 
     // Add the current timestamp to the array and sort the array
-    timeStampArray.push(timeStamp.innerText);
-    console.log(timeStampArray);
-    timeStampArray.sort((a, b) => {
-      return a - b;
-    });
-    console.log(timeStampArray);
+    if(timeStampArray.indexOf(timeStamp.innerText) === -1){
+      timeStampArray.push(timeStamp.innerText);
+    }
 
     // Save the updated array back to storage
     chrome.storage.local.set(

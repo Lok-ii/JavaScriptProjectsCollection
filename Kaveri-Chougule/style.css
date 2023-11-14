@@ -198,3 +198,63 @@ thead{
     width: 100%;
     text-align: center;
 }
+.lightbox{
+    position: fixed;
+    z-index: 5;
+    background: rgba(0,0,0,0.65);
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+  }
+  .lightbox .wrapper{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,30%);
+    background: rgba(255,255,255,1);
+    padding: 20px;
+    border-radius: 5px;
+    height: 518px;
+    width: 800px;
+    border: 1px solid rgba(0,0,0,.2);
+  }
+  .popup_head{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttons{
+    display: flex;
+    gap: 1rem
+  }
+  #sendInvoice, #Download{
+    width: 50%;
+  }
+  #Download{
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    background-color: white;
+  }
+  
+  
+  .address{
+    display: flex;
+    justify-content: space-between;
+  }
+  .lightBox-table{
+    width: 100%;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+  }
+  .lightBox-table th {
+    border-top: 1px solid rgba(0,0,0,.10196078431372549);
+    border-bottom: 1px solid rgba(0,0,0,.10196078431372549);
+    border-bottom-color: rgba(0,0,0,.10196078431372549)!important;
+}
+.text-end{
+    text-align: right;
+}

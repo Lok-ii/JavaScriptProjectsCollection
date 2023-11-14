@@ -150,7 +150,7 @@
                     <div class="col-cart">
                         <div class="cart-content">
                             <span class="text-bold">Subtotal:</span>
-                            <span class="total" id="total_amount"><span class="currency_change">$</span>1.00</span>
+                            <span class="total" id="total_amount"><span class="currency_change">$</span><span id="amount">1.00</span></span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Discount:</span>
@@ -197,7 +197,7 @@
                 <div class="my-3">
                     <label class="text-bold form-label">Tax rate:</label>
                     <div class="my-1 flex-nowrap input-group">
-                        <input name="taxRate" id="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
+                        <input name="taxRate" id="taxRate" class="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
                         <span class="text-bold input-group-text">%</span>
                     </div>
                 </div>

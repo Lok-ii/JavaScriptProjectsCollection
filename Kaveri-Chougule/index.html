@@ -92,9 +92,9 @@
                                 <td>
                                     <div class="my-1 flex-nowrap input-group-item">
                                         <span class="text-bold px-2 dollar">
-                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;">$</span>
+                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;"><span class="currency_change">$</span></span>
                                         </span>
-                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control" value="1.00">
+                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control price" value="1.00">
                                     </div>
                                 </td>
 
@@ -125,7 +125,7 @@
                                 <td>
                                     <div class="my-1 flex-nowrap input-group-item">
                                         <span class="text-bold px-2 dollar">
-                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;">$</span>
+                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small currency-change" style="width: 20px; height: 20px;">$</span>
                                         </span>
                                         <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control price" value="1.00">
                                     </div>
@@ -150,20 +150,20 @@
                     <div class="col-cart">
                         <div class="cart-content">
                             <span class="text-bold">Subtotal:</span>
-                            <span class="total" id="total_amount">$1.00</span>
+                            <span class="total" id="total_amount"><span class="currency_change">$</span>1.00</span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Discount:</span>
-                            <span class="discount-given">(0%)$0.00</span>
+                            <span class="discount-given">(0%) <span class="currency_change">$</span>0.00</span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Tax:</span>
-                            <span class="tax-applied">(0%)$0.00</span>
+                            <span class="tax-applied">(0%)<span class="currency_change">$</span>0.00</span>
                         </div>
                         <hr class="margin-hr">
                         <div class="cart-content" style="font-size: 1.125rem;">
                             <span class="text-bold">Total:</span>
-                            <span class="text-bold">$1</span>
+                            <span class="text-bold"><span class="currency_change">$</span>1</span>
                         </div>
                         <hr class="my-4">
                         <div class="notes">
@@ -182,7 +182,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="text-bold form-label">Currency:</label>
-                    <select aria-label="Change Currency" class="btn btn-light my-1 form-select">
+                    <select aria-label="Change Currency" class="btn btn-light my-1 form-select currency">
                         <option value="$">USD (United States Dollar)</option>
                         <option value="£">GBP (British Pound Sterling)</option>
                         <option value="¥">JPY (Japanese Yen)</option>

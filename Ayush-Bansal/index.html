@@ -70,7 +70,7 @@
             <br>
         <p>Template Type</p>
         <select name="templateType" id="templateType">
-            <option value="basic" selected>Basic</option>
+            <option value="basic">Basic</option>
             <option value="advance">Advance</option>
             </select>
         <p>Header Color</p>
@@ -91,36 +91,19 @@
 
         <button id="employment">Add Employment</button>
         <div class="employdetails">
-            <p>Start</p>
-            <input type="month" name="" id="month">
-            <p>End</p>
-            <input type="month" name="" id="monthend">
-            <input type="text" id="jobpre" placeholder="Job Title">
-            <input type="text" name="" id="employer" placeholder="Employer">
-            <textarea name="" id="" cols="50" rows="5"  class="Description" placeholder="Description"></textarea>
+            
         </div>
 
         <button id="project">Add Project</button>
         <div class="projectdetails">
-            <p>Start</p>
-            <input type="month" name="" id="monthpro">
-            <p>End</p>
-            <input type="month" name="" id="monthendpro">
-            <input type="text" id="projecttitle" placeholder="Project Title">
-            <textarea name="" id="" cols="50" rows="5"  class="Descriptionpro" placeholder="Description"></textarea>
+           
         </div>
 
 
         <p>Educational Background</p>
         <button id="education">Add Education</button>
         <div class="educationaldetails">
-            <p>Start</p>
-            <input type="month" name="" id="monthedu">
-            <p>End</p>
-            <input type="month" name="" id="monthendedu">
-            <input type="text" id="qualification" placeholder="Qualification">
-            <input type="text" name="" id="school" placeholder="School/College">
-            <textarea name="" id="" cols="50" rows="5"  class="Descriptionedu" placeholder="Description"></textarea>
+            
         </div>
 
         </aside>
@@ -129,7 +112,9 @@
         <div class="secondmain">
             <br>
             <div class="resheader">
-                <h1>ayush</h1>
+                <p id="nameheader"></p>
+                <p id="nameniche"></p>
+
              </div>
 
              <div class="resume">
@@ -138,11 +123,7 @@
                         <p>SKILLS</p>
                         <hr>
                         <div class="skillsadd">
-                        <!-- <p class="skill1">gggggg</p>
-                        <p class="skill1">gggggg</p>
-                        <p class="skill1">a</p>
-                        <p class="skill1">a</p>
-                        <p class="skill1">ssss</p> -->  
+                       
                         </div>
                         <br>
                         <p>CONTACT</p>
@@ -150,18 +131,18 @@
                         <br>
                        <div class="contactphone">
                         <span class="material-symbols-outlined">call</span>
-                        <p class="contactnumb">ee7</p>
+                        <p class="contactnumb"></p>
                        </div>
 
                        <div class="contactemail">
                         <span class="material-symbols-outlined"> mail </span>
 
-                        <p class="contactemailadd">bansal</p>
+                        <p class="contactemailadd"></p>
                        </div>
 
                        <div class="contactaddr">
                         <span class="material-symbols-outlined">location_on</span>
-                        <p>mahav</p>
+                        <p class="addresssss"></p>
                        </div>
                     </div>
 
@@ -202,7 +183,61 @@
    </div>
    
    <div class="thirdpage">
-    <h1>huuuuuhduhehduj</h1>
+    <nav>
+        <img src="./resume logo.png" alt="">
+
+        <button><span class="material-symbols-outlined">
+          download
+            </span>Download PDF</button>
+    </nav>
+
+    <div class="thirdcont">
+        <aside>
+            <br>
+        <p>Template Type</p>
+        <select name="templateType" id="templateType">
+            <option value="basic">Basic</option>
+            <option value="advance">Advance</option>
+            </select>
+        <p>Header Color</p>
+        <input type="color" name="" id="colorheader">
+        <p>Header-Text Color</p>
+        <input type="color" name="" id="colortext">
+
+        <p>Personal Details</p>
+        <input type="text" placeholder="Name" id="name" autocomplete="">
+        <input type="email" name="" id="email" placeholder="Email-Id" autocomplete="">
+        <input type="number" name="" id="number" autocomplete="" placeholder="Phone">
+        <input type="text" class="address" placeholder="City,Country">
+
+        <p>Professional Details</p>
+        <input type="text" placeholder="Wanted job title" id="jobtitle">
+        <textarea name="" id="" cols="50" rows="5"  class="Professional" placeholder="Professional Summary"></textarea>
+        <input type="text" name="" id="skills" placeholder="Skills">
+
+        <button id="employment">Add Employment</button>
+        <div class="employdetails">
+            
+        </div>
+
+        <button id="project">Add Project</button>
+        <div class="projectdetails">
+           
+        </div>
+
+
+        <p>Educational Background</p>
+        <button id="education">Add Education</button>
+        <div class="educationaldetails">
+            
+        </div>
+
+        </aside>
+
+
+        <div class="thirdmain">
+            <br>
+        </div>
    </div>
 
    <script src="./script.js"></script>

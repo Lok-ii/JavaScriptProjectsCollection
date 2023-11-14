@@ -58,9 +58,8 @@ let currency=document.querySelector(".currency")
 let currency_change=document.querySelectorAll(".currency_change")
 console.log(currency_change);
 currency.addEventListener("input",()=>{
-    currency_change[0].innerText=currency.value
-    currency_change[1].innerText=currency.value
-    currency_change[2].innerText=currency.value
-    currency_change[3].innerText=currency.value
-    currency_change[4].innerText=currency.value
+    for(let i=0;i<currency_change.length;i++){
+        currency_change[i].innerHTML=`${currency.value}`
+    }
+    
 })

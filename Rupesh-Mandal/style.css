@@ -1,0 +1,43 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color:#EE4E34;
+    /* background-image: url("https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg"); */
+    /* background-repeat: no-repeat; */
+  }
+  .container{
+    width: 800px;
+    /* height: 100px; */
+    /* max-width: 90%; */
+    padding: 1.5rem;
+    border-radius: .5rem;
+    border: 2px solid black;
+    background-color: #FCEDDA;
+  }
+  
+  .textarea{
+    width: 100%;
+  }
+  .calculations{
+    display: flex;
+    justify-content: space-around;
+  }
+  .correct{
+    color:green;
+  }
+  
+  .incorrect{
+    color:red;
+    text-decoration: underline;
+  }

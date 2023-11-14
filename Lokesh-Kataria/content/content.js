@@ -21,7 +21,7 @@ bookmarkIcon.addEventListener("click", () => {
   chrome.storage.local.get({ bookmarks: {} }, function (result) {
     let timeStampArray = result.bookmarks[videoId] || [];
 
-    // Add the current timestamp to the array and sort the array
+    // Add the current timestamp to the array
     if(timeStampArray.indexOf(timeStamp.innerText) === -1){
       timeStampArray.push(timeStamp.innerText);
     }
@@ -41,11 +41,29 @@ bookmarkIcon.addEventListener("click", () => {
     console.log("Video ID:", videoId);
 
     // Send a message to the background script
-    chrome.runtime.sendMessage({
-      type: "bookmarkAdded",
-      time: timeStamp.innerText,
-      url: window.location.href,
-      video: videoId,
-    });
+    // chrome.runtime.sendMessage({
+    //   type: "bookmarkAdded",
+    //   time: timeStamp.innerText,
+    //   url: window.location.href,
+    //   video: videoId,
+    // });
   });
+});
+
+chrome.runtime.onMessage.addListener((data, sender, response)=>{
+  if(data.type === 'PLAY'){
+    // Extract the timestamp URL from the message
+    const timestampUrl = data.url;
+
+    chrome.tabs.executeScript({
+      code: `
+        const player = document.querySelector('.html5-main-video');
+        if (player) {
+          player.currentTime = ${data.timeStampValue};
+        }
+      `
+    });
+    
+  }
+
 });

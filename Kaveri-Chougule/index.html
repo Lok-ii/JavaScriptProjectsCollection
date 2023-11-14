@@ -75,22 +75,22 @@
                         <tbody id="tbody">
                             <tr id="table-row" class="d-none">
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <input placeholder="Item name" name="name" aria-label="name" required="" type="text" class="form-control" value="" required>
                                     </div>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <input placeholder="Item description" name="description" aria-label="description" required="" type="text" class="form-control" value="" required>
                                     </div>
                                 </td>
 
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <input min="1" name="quantity" step="1" aria-label="quantity" required="" type="number" class="form-control" value="1">
                                     </div>
                                 </td>
 
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <span class="text-bold px-2 dollar">
                                             <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;">$</span>
                                         </span>
@@ -108,26 +108,26 @@
 
                             <tr id="table-row">
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <input placeholder="Item name" name="name" aria-label="name" required="" type="text" class="form-control" value="" required>
                                     </div>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <input placeholder="Item description" name="description" aria-label="description" required="" type="text" class="form-control" value="" required>
                                     </div>
                                 </td>
 
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
-                                        <input min="1" name="quantity" step="1" aria-label="quantity" required="" type="number" class="form-control" value="1">
+                                    <div class="my-1 flex-nowrap input-group-item">
+                                        <input min="1" name="quantity" step="1" aria-label="quantity" required="" type="number" class="form-control quantity" value="1">
                                     </div>
                                 </td>
 
                                 <td>
-                                    <div class="my-1 flex-nowrap input-group">
+                                    <div class="my-1 flex-nowrap input-group-item">
                                         <span class="text-bold px-2 dollar">
                                             <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;">$</span>
                                         </span>
-                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control" value="1.00">
+                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" required="" type="number" class="text-end form-control price" value="1.00">
                                     </div>
                                 </td>
 
@@ -150,15 +150,15 @@
                     <div class="col-cart">
                         <div class="cart-content">
                             <span class="text-bold">Subtotal:</span>
-                            <span>$1.00</span>
+                            <span class="total" id="total_amount">$1.00</span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Discount:</span>
-                            <span>(0%)$0.00</span>
+                            <span class="discount-given">(0%)$0.00</span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Tax:</span>
-                            <span>(0%)$0.00</span>
+                            <span class="tax-applied">(0%)$0.00</span>
                         </div>
                         <hr class="margin-hr">
                         <div class="cart-content" style="font-size: 1.125rem;">
@@ -197,16 +197,16 @@
                 <div class="my-3">
                     <label class="text-bold form-label">Tax rate:</label>
                     <div class="my-1 flex-nowrap input-group">
-                        <input name="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
-                        <span class="bg-light text-bold text-secondary small input-group-text">%</span>
+                        <input name="taxRate" id="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
+                        <span class="text-bold input-group-text">%</span>
                     </div>
                 </div>
 
                 <div class="my-3">
                     <label class="text-bold form-label">Discount rate:</label>
                     <div class="my-1 flex-nowrap input-group">
-                        <input name="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="discount-rate form-control" value="">
-                        <span class="bg-light text-bold text-secondary small input-group-text">%</span>
+                        <input name="discountRate" id="discountRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="discount-rate form-control" value="">
+                        <span class="text-bold input-group-text">%</span>
                     </div>
                 </div>
             </div>

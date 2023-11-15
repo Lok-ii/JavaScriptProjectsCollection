@@ -287,3 +287,41 @@ function CalculationStuff(){
 CalculateBtn.addEventListener("click",()=>{
     CalculationStuff()
 })
+
+// Dark and Light Mode
+let light = document.querySelector(".light");
+let dark = document.querySelector(".dark");
+let body = document.querySelector("body");
+
+
+let section1=document.querySelector(".section1")
+light.addEventListener("click", () => {
+  dark.style.display = "block";
+  light.style.display = "none";
+
+  body.style.backgroundColor = "#f2f3f7"
+  section1.style.backgroundColor="white"
+
+
+
+//   header.style.backgroundColor = "var(--background-color)";
+});
+
+dark.addEventListener("click", () => {
+  dark.style.display = "none";
+  light.style.display = "block";
+
+  body.style.backgroundColor = "black"
+  section1.style.backgroundColor="darkslateblue"
+});
+
+let back=document.getElementById("back")
+back.addEventListener("click",()=>{
+    let lightbox=document.getElementsByClassName("lightbox")
+    console.log(lightbox[0]);
+    lightbox[0].style.display="none"
+})
+let cross=document.getElementById("cross")
+cross.addEventListener("click",()=>{
+    location.reload()
+})

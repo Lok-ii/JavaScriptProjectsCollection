@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #e6e6e9;
+    background-color: #f2f3f7;
     font-size: .8rem;
     font-family: 'Robot',sans-serif;
 }
@@ -23,11 +23,12 @@ body{
 .section1{
     flex: 0 0 auto;
     width: 80%;
-    border: 1px solid gray;
+    border: 1px solid rgb(198, 197, 197);
     padding: 1.5rem;
     border-radius: 0.756rem;
-    background-color: white;
-    margin-left: 5%;
+    margin-left: 9%;
+    background: white;
+    box-shadow: 1px 2px 8px #6c757d;
 }
 .Date-Section{
     display: flex;
@@ -123,7 +124,7 @@ body{
     width: 20%;
     position: fixed;
     height: 100vh;
-    right: 7%;
+    right: 9%;
 }
 .review-btn{
     width: 100%;
@@ -207,7 +208,7 @@ body{
     background: rgba(255,255,255,1);
     padding: 20px;
     border-radius: 5px;
-    min-height: 518px;
+    min-height: 500px;
     max-height: auto;
     width: 800px;
     border: 1px solid rgba(0,0,0,.2);
@@ -219,7 +220,8 @@ body{
 
   .buttons{
     display: flex;
-    gap: 1rem
+    gap: 1rem;
+    margin-top:2rem;
   }
   #sendInvoice, #Download{
     width: 50%;
@@ -318,8 +320,8 @@ body{
 .symbol{
     height: 33px;
     width: 33px;
-    border: 2px solid #6c757d;
-    color: #6c757d;
+    border: 2px solid #2b3136;
+    color: #2b3136;
     border-radius: 50%;
     /* text-align: center; */
     display: flex;
@@ -456,4 +458,72 @@ input:focus {
 
 .item-table button{
     margin-top: 1rem;
+}
+
+/* Light and Dark Mode */
+.section3{
+    right: 2%;
+    position: fixed;
+}
+.sign{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.light, .dark{
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transform: rotate(-30deg);
+    transition: all 0.5s ease-in-out;
+    border: 2px solid;
+}
+
+.light:hover, .dark:hover{
+    transform: rotate(0deg);
+}
+
+.light{
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.light:hover{
+    color: white;
+    background-color:black;
+    border: 0.5px solid;
+}
+
+.dark{
+    padding: 0.55rem 0.9rem;
+    background-color: white;
+}
+
+.dark:hover{
+    background-color: black;
+    color: white;
+}
+.cross{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.cross i:hover{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+.DueDate{
+    margin-top: 10px;
+}
+#issueDate{
+    border-radius: 5px;
 }

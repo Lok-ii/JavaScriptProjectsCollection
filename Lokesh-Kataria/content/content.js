@@ -52,18 +52,7 @@ bookmarkIcon.addEventListener("click", () => {
 
 chrome.runtime.onMessage.addListener((data, sender, response)=>{
   if(data.type === 'PLAY'){
-    // Extract the timestamp URL from the message
-    const timestampUrl = data.url;
-
-    chrome.tabs.executeScript({
-      code: `
-        const player = document.querySelector('.html5-main-video');
-        if (player) {
-          player.currentTime = ${data.timeStampValue};
-        }
-      `
-    });
-    
+    timeStamp.innerText = data.timeStampValue;
+    console.log("changed");
   }
-
 });

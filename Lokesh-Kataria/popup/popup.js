@@ -1,4 +1,4 @@
-import {getCurrentTab} from "../getTabs.js";
+import { getCurrentTab } from "../getTabs.js";
 
 console.log(getCurrentTab());
 
@@ -20,15 +20,14 @@ getCurrentTab()
     console.log(err);
   });
 
-
 // to convert timestamp in seconds
 let splitTime = (time) => {
   let timeArray = time.split(":");
   let timeInSeconds =
     timeArray.length > 2
       ? parseInt(timeArray[0]) * 60 * 60 +
-      parseInt(timeArray[1]) * 60 +
-      parseInt(timeArray[2])
+        parseInt(timeArray[1]) * 60 +
+        parseInt(timeArray[2])
       : parseInt(timeArray[0]) * 60 + parseInt(timeArray[1]);
   return timeInSeconds;
 };
@@ -41,9 +40,7 @@ let addBookmarkElement = (time, url) => {
   bookmarkElement.className = "bookmark-item";
   bookmarkElement.innerHTML = `<span contentEditable>Bookmark at </span><span class="time">${time}</span>
     <div>
-        <a href="${url}&t=${timeInSeconds}" class="play">
-          <button>Play</button>
-        </a>
+        <button class="play" name="${url}&t=${timeInSeconds}">Play</button>
         <button class="delete">Delete</button>
     </div>`;
 
@@ -77,42 +74,59 @@ document.addEventListener("DOMContentLoaded", () => {
       addBookmarkElement(timestamp, tabUrl);
     });
   });
+
+  // Event listener for playing and deleting the bookmarked stamps
+  bookmarks.addEventListener("click", (e) => {
+    if (e.target.className === "delete") {
+      let timeValue =
+        e.target.parentElement.parentElement.firstElementChild
+          .nextElementSibling.innerText;
+
+      let videoId = tabUrl.split("?")[1].substring(2);
+
+      // Retrieve existing timestamps from storage
+      chrome.storage.local.get({ bookmarks: {} }, function (result) {
+        let timeStampArray = result.bookmarks[videoId] || [];
+
+        // delete the current timestamp from the array
+        timeStampArray = result.bookmarks[videoId].filter(
+          (item) => item !== timeValue
+        );
+
+        // Save the updated array back to storage
+        chrome.storage.local.set(
+          { bookmarks: { ...result.bookmarks, [videoId]: timeStampArray } },
+          () => {
+            console.log("Data added to storage:", {
+              bookmarks: { ...result.bookmarks, [videoId]: timeStampArray },
+            });
+          }
+        );
+      });
+      // Remove the timestamp from the extension popup
+      e.target.parentElement.parentElement.remove();
+    } else if (e.target.className === "play") {
+      // Event listener for playing the video at the bookmarked timestamp
+      let timeValue = e.target.parentElement.previousElementSibling.innerText;
+      // chrome.runtime.sendMessage({
+      //   type: "PLAY",
+      //   url: e.target.name,
+      //   timeStampValue: timeValue,
+      // });
+
+      setTimeout(() => {
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          function (tabs) {
+            const activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, {
+              type: "PLAY",
+              url: e.target.name,
+              timeStampValue: timeValue,
+            });
+          }
+        );
+      }, 1000);
+    }
+  });
 });
-
-
-// Event listener for playing and deleting the bookmarked stamps
-bookmarks.addEventListener("click", (e)=>{
-  if(e.target.className === "delete"){
-    let timeValue = e.target.parentElement.parentElement.firstElementChild.nextElementSibling.innerText;
-
-    let videoId = tabUrl.split("?")[1].substring(2);
-
-    // Retrieve existing timestamps from storage
-    chrome.storage.local.get({ bookmarks: {} }, function (result) {
-      let timeStampArray = result.bookmarks[videoId] || [];
-
-      // delete the current timestamp from the array
-      timeStampArray = result.bookmarks[videoId].filter(item => item !== timeValue);
-
-      // Save the updated array back to storage
-      chrome.storage.local.set(
-        { bookmarks: { ...result.bookmarks, [videoId]: timeStampArray } },
-        () => {
-          console.log("Data added to storage:", {
-            bookmarks: { ...result.bookmarks, [videoId]: timeStampArray },
-          });
-        }
-      );
-    });
-    // Remove the timestamp from the extension popup
-    e.target.parentElement.parentElement.remove();
-  }else if(e.target.className === "play"){
-    // Event listener for playing the video at the bookmarked timestamp
-    let timeValue = e.target.parentElement.parentElement.firstElementChild.nextElementSibling.innerText;
-    chrome.runtime.sendMessage({type: "PLAY", url: e.target.href, timeStampValue: timeValue});
-  }
-});
-
-
-
-

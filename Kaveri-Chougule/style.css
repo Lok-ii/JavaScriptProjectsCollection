@@ -88,7 +88,6 @@ table{
 }
 .table tr td:first-child, .table tr th:first-child {
     padding-left: 0;
-    width: 100%;
 }
 thead{
     border-bottom: 1px solid gray;

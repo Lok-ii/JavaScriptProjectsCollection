@@ -17,7 +17,8 @@ function BtnAdd(){
     let textInside=$("#table-row").clone().appendTo("#tbody")
     $(textInside).find("input").val('')
 
-    $(textInside).removeClass("d-none")
+    $(textInside).removeClass("d-none");
+    $(textInside).addClass("item-container")
 }
 // Delete item
 function BtnDelete(current){
@@ -30,51 +31,39 @@ let quantity=1;
 let price=1.00;
 let amountDue=0;
 
-let product_Name=""
-let product_Desc=""
 tbody.addEventListener("input",(event)=>{
     let finalAmount=0;
 
     if(event.target.classList.contains("quantity")){
         quantity=event.target.value
-        // console.log(quantity);
     }
     if(event.target.classList.contains("price")){
         price=event.target.value
-        // console.log(price);
     }
-    // console.log(quantity);
     let taxRate=document.getElementById("taxRate")
     let discountRate=document.getElementById("discountRate")
     // let totalPrice=(parseFloat(quantity)*parseFloat(price))*((1+parseFloat(taxRate.value)/100+parseFloat(discountRate.value)/100));
-    finalAmount+=quantity*price
+
+    finalAmount+=(quantity*price)
     // console.log(finalAmount);
-    if(event.target.classList.contains('itemName')){
-        product_Name=event.target.value
-    }
-    if(event.target.classList.contains('itemDesc')){
-        product_Desc=event.target.value
-    }
-    let amount=quantity*price;
-    lightBox_item_func(quantity,product_Name,product_Desc,price,amount)
+
     
-    // // console.log(finalAmount);
     amount.innerText=finalAmount;
     amountDue=finalAmount
 })
 
 let lightBox_TableBody=document.querySelector(".lightBox_TableBody")
-// console.log(lightBox_TableBody);
-function lightBox_item_func(quantity,name,desc,price,amount){
-    lightBox_TableBody.innerHTML=`
-    <tr>
+
+function lightBox_item_func(quantity, name, desc, price, amount) {
+    let newTr = document.createElement("tr");
+    newTr.innerHTML = `
         <td>${quantity}</td>
         <td>${name}-${desc}</td>
         <td>$${price}</td>
         <td>${amount}</td>
-    </tr>
-    `
-}
+    `;
+    lightBox_TableBody.appendChild(newTr);
+  }
 
 // changing currency sign
 let currency=document.querySelector(".currency")
@@ -86,10 +75,8 @@ currency.addEventListener("input",()=>{
     }
 })
 
-
-
-
 // console.log(lightBox);
+let reviewBtn=document.getElementById("reviewBtn")
 reviewBtn.addEventListener("click",(event)=>{
     event.preventDefault()
 
@@ -134,7 +121,24 @@ function lightBoxFunction(){
         // lightBoxData(item.value)
     })
     if(check){
+        let itemContainers = document.querySelectorAll(".item-container");
+        itemContainers.forEach(element=>{
+            let itemN =
+                element.firstElementChild.firstElementChild.firstElementChild
+                .value;
+            console.log(itemN);
+            let itemD = element.firstElementChild.lastElementChild.firstElementChild.value;
+            console.log(itemD);
+            let itemQ = element.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.value;
+            console.log(itemQ);
+            let itemP = element.lastElementChild.previousElementSibling.firstElementChild.lastElementChild.value;
+            console.log(itemP);
+            let itemA = itemQ * itemP;
+            console.log(itemA);
+            lightBox_item_func(itemQ, itemN, itemD, itemP, itemA);
+        });
         lightBox[0].style.display="flex"
+
     }
 }
 
@@ -205,7 +209,15 @@ let download=document.getElementById("Download")
 download.addEventListener("click",()=>{
     const invoice=this.document.getElementById("lightBoxInvoice")
 
+    let opt={
+        margin:1,
+        filename:'SaleInvoice.pdf',
+        image:{type:'jpeg',quality:0.98},
+        html2canvas:{scale:2},
+        jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
+    };
+
     // console.log(invoice);
-    html2pdf().from(invoice).save()
+    html2pdf().from(invoice).set(opt).save()
 
 })

@@ -2,11 +2,10 @@ import {products} from "./data.js";
 
 console.log(products);
 
-
-
-window.onload = ()=>{
+let addProducts = (list = products)=>{
     const productList = document.querySelector(".product-list");
-    products.forEach((item)=>{
+    productList.innerHTML = "";
+    list.forEach((item)=>{
         let freeDelivery = "";
         let fAssured = "";
         if(item.deliveryIn1Day === true){
@@ -43,7 +42,6 @@ window.onload = ()=>{
     });
 }
 
-
 let rangeMin = 100;
 const range = document.querySelector(".range-selected");
 const rangeInput = document.querySelectorAll(".range-input input");
@@ -67,3 +65,46 @@ rangeInput.forEach((input) => {
       }
     });
   });
+
+  let sortItemsList = document.querySelectorAll(".sort-item");
+ let sortItems = ()=>{
+    sortItemsList.forEach(element=>{
+    element.id = "";
+  });
+}
+
+//Sorting
+let sortOptions = document.querySelector(".sortOptions");
+sortOptions.addEventListener("click", (e)=>{
+let sortedList = "";
+    if(e.target.classList.contains("popularity")){
+        sortItems();
+        e.target.id = "selected";
+        console.log("clicked popularity");
+        sortedList = products.sort((a, b) => b.popularity - a.popularity);
+        addProducts(sortedList);
+    }else if(e.target.classList.contains("low-to-high")){
+        sortItems();
+        e.target.id = "selected";
+        sortedList = products.sort((a, b)=> a.specialPrice - b.specialPrice);
+        addProducts(sortedList);
+
+    }else if(e.target.classList.contains("high-to-low")){
+        sortItems();
+        e.target.id = "selected";
+        sortedList = products.sort((a, b)=> b.specialPrice - a.specialPrice);
+        addProducts(sortedList);
+
+    }
+});
+
+let filterList = document.querySelector(".filters-list")
+    filterList.addEventListener("click", (e)=>{
+        if(e.target.classList.contains("discountsHeading") || e.target.classList.contains("typeHeading")|| e.target.classList.contains("offerHeading") || e.target.classList.contains("brandHeading")|| e.target.classList.contains("cRatingHeading")){
+            e.target.parentElement.classList.toggle("toggleHeight");
+            console.log(e.target);
+        }
+    })
+  
+
+window.onload = addProducts();

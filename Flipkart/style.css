@@ -338,6 +338,11 @@ hr{
     margin-right: 15px;
   }
 
+  .toggleHeight{
+    height: 1rem;
+    overflow: hidden;
+  }
+
   .discountsList, .typeList, .offerList, .brandList, .ratingList{
     width: 100%;
     display: flex;
@@ -400,6 +405,11 @@ hr{
     gap: 1rem;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+#selected{
+    color: #3C71E9;
+    border-bottom: 5px solid #3C71E9;
 }
 
 .top-details{
@@ -471,6 +481,13 @@ hr{
 
 .sortTitle{
     font-weight: 500;
+    padding-bottom: 0.3rem;
+    cursor: default;
+}
+
+.sort-item{
+    padding-bottom: 0.3rem;
+    cursor: pointer;
 }
 
 .product-list{

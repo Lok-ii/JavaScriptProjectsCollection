@@ -5,21 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trello Clone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="main">
         <h1>Trello Board</h1>
 
         <div class="notes">
-            
-                <div class="board">
+            <div class="board">
                     <div class="innerBoard">
-                        <div class="header"></div>
+                        <div class="header">
+                            <p>Doing</p>
+                            <p><i class="fa-solid fa-ellipsis"></i></p>
+                        </div>
 
-                        <div class="details"></div>
+                        <div class="details">
+                            <div class="card">
+                                <div class="top-line">
+                                    <div class="label-field">Priority</div>
+                                    <div class="dots"><i class="fa-solid fa-ellipsis"></i></div>
+                                </div>
+                                <div class="title">Task 1</div>
+                                <div class="bars"> <i class="fa-solid fa-bars-staggered"></i> </div>
+                                <div class="date-field">
+                                    <div class="date1"><span><i class="fa-regular fa-clock"></i></span>
+                                        <span>Date</span>
+                                    </div>
+                                    <span class="task"><i class="fa-regular fa-square-check"></i> 1/2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="addbtn">+ Add Card</button>
+                    </div>
+            </div>
+
+            <div class="board">
+                <div class="innerBoard">
+                    <div class="header">
+                        <p>In- Review</p>
+                        <p><i class="fa-solid fa-ellipsis"></i></p>
+                    </div>
+                    <div class="details">
+                        <div class="card">
+                            <div class="top-line">
+                                <div class="label-field">Important</div>
+                                <div class="dots"><i class="fa-solid fa-ellipsis"></i></div>
+                            </div>
+                            <div class="title">Task 1</div>
+                            <div class="bars"> <i class="fa-solid fa-bars-staggered"></i> </div>
+                            <div class="date-field">
+                                <div class="date1"><span><i class="fa-regular fa-clock"></i></span>
+                                    <span>Date</span>
+                                </div>
+                                <span class="task"><i class="fa-regular fa-square-check"></i> 1/2</span>
+                            </div>
+                            
+                        </div>
+                        <button class="addbtn">+ Add Card</button>
                     </div>
                 </div>
-            
+        </div>
         </div>
     </div>
     

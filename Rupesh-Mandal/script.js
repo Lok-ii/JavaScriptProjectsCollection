@@ -3,7 +3,7 @@ let display = document.querySelector(".display-paragraphs");
 let inputarea = document.querySelector("textarea");
 let timer = document.querySelector(".timer");
 let details = document.querySelectorAll("span");
-const paragraph = ["Jai mata di", "jai shree ram", "om sai ram"];
+const paragraph = ["Scolding is something common in student life. Being a naughty boy, I am always scolded by my parents. But one day I was severely scolded by my English teacher. She infect teaches well. But that day, I could not resist the temptation that an adventure of Nancy Drew offered. While she was teaching, I was completely engrossed in reading that book. Nancy Drew was caught in the trap laid by some smugglers and it was then when I felt a light tap on my bent head. The teacher had caught me red handed. She scolded me then and there and insulted me in front of the whole class. I was embarrassed. My cheeks burned being guilty conscious. When the class was over, I went to the teacher to apologize. When she saw that I had realized my mistake, she cooled down and then told me in a very kind manner how disheartening it was when she found any student not paying attention. I was genuinely sorry and promised to myself never to commit such a mistake again.", "jai shree ram", "om sai ram"];
 
 let timelimit = 60;
 
@@ -15,16 +15,24 @@ let Totalcharacters = 0;
 let accuracy = 0;
 let charperminute = 0;
 let wordsperminute = 0;
+let lastcharacter="";
 
 inputarea.addEventListener("input", () => {
   inputarea.disabled = false;
   let arrdisplay = display.querySelectorAll("span");
+  // console.log(arrdisplay.length);
   let inputval = inputarea.value.split("");
+  // console.log(inputval.length);
 
   Totalcharacters++;
   // console.log(Totalcharacters);
 
   let error = 0;
+
+  if(arrdisplay.length===inputval.length) {
+    clearInterval(time);
+    inputarea.disabled=true;
+  }
 
   arrdisplay.forEach((characterspan, index) => {
     let character = inputval[index];
@@ -67,6 +75,8 @@ button[0].addEventListener("click", () => {
   //   // console.log(display);
   // });
 
+  inputarea.disabled=false;
+
   countdown();
 });
 
@@ -92,6 +102,8 @@ function countdown() {
 
 function displayquotes() {
   let para = randomparagraph();
+  // lastcharacter=para[para.length-1];
+  console.log(lastcharacter);
 
   display.innerHTML = "";
   para.split("").forEach((character) => {

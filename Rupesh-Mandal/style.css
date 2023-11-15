@@ -4,14 +4,20 @@
     margin: 0;
     padding: 0;
   }
-  
+
   body{
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  .main{
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    font-family: 'Trebuchet MS', sans-serif;
+    /* min-height: 100vh; */
+    
     background-color:#EE4E34;
     background-image: url("https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg");
     background-repeat: no-repeat;
@@ -22,8 +28,8 @@
     /* object-fit: cover; */
   }
   .container{
-    width: 800px;
-    /* height: 100px; */
+    width: 50%;
+    /* height: 50%; */
     /* max-width: 90%; */
     padding: 1.5rem;
     border-radius: .5rem;
@@ -33,7 +39,17 @@
   
   .textarea{
     width: 100%;
+    /* height: 40%; */
+    height: 10rem;
+    background-color: transparent;
+    border: 4px solid #A1922E;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', sans-serif;
     
+  }
+  .textarea:focus{
+    border-color: black;
   }
   .calculations{
     display: flex;
@@ -46,4 +62,20 @@
   .incorrect{
     color:red;
     text-decoration: underline;
+  }
+
+  .buttons{
+    width:50%;
+    height: 5%;
+    border: 2px solid black;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin-left: 20%; */
+  }
+  button{
+    margin-left: 12rem;
+    border: none;
+    width: 5rem;
+    height: 2rem;
   }

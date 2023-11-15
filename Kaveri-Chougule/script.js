@@ -22,15 +22,31 @@ function BtnAdd(){
 }
 // Delete item
 function BtnDelete(current){
-    $(current).parent().parent().remove()
+    setTimeout(()=>{        
+        $(current).parent().parent().remove()
+    },1000)
+    current.parentElement.parentElement.style.width="0"
 }
 
 let tbody=document.getElementById("tbody")
 let amount=document.getElementById("amount")
 let quantity=1;
 let price=1.00;
-let amountDue=0;
+let amountDue=1;
+let taxRate=document.getElementById("taxRate")
 
+taxRate.addEventListener("input",()=>{
+    // console.log(taxRate.value);
+    let taxInpercent=document.getElementsByClassName("taxInPercent")
+    taxInpercent[0].innerText="("+taxRate.value+"%)" 
+})
+let discountRate=document.getElementById("discountRate")
+
+discountRate.addEventListener("input",()=>{
+    let discountInpercent=document.getElementsByClassName("DiscountInPercent")
+    discountInpercent[0].innerText="("+discountRate.value+"%)"
+})
+let finalValue=0
 tbody.addEventListener("input",(event)=>{
     let finalAmount=0;
 
@@ -45,30 +61,11 @@ tbody.addEventListener("input",(event)=>{
 
     finalAmount+=(quantity*price)
     // console.log(finalAmount);
-
-    
+    finalValue+=finalAmount
+    console.log(finalValue);
     amount.innerText=finalAmount;
-    amountDue=finalAmount
 })
-let taxRate=document.getElementById("taxRate")
 
-taxRate.addEventListener("input",()=>{
-    console.log(taxRate.value);
-    let taxInpercent=document.getElementsByClassName("taxInPercent")
-    taxInpercent[0].innerText="("+taxRate.value+"%)"
-    let tax_percent=document.getElementsByClassName("taxPercent")
-    console.log(tax_percent);
-    tax_percent[0].innerText=taxRate.value+"%"
-})
-let discountRate=document.getElementById("discountRate")
-
-discountRate.addEventListener("input",()=>{
-    let discountInpercent=document.getElementsByClassName("DiscountInPercent")
-    discountInpercent[0].innerText="("+discountRate.value+"%)"
-
-    let discountpercent=document.getElementsByClassName("discountpercent")
-    discountpercent[0].innerText=discountRate.value+"%"
-})
 let lightBox_TableBody=document.querySelector(".lightBox_TableBody")
 
 function lightBox_item_func(quantity, name, desc, price, amount) {
@@ -97,9 +94,11 @@ currency.addEventListener("input",()=>{
 let reviewBtn=document.getElementById("reviewBtn")
 reviewBtn.addEventListener("click",(event)=>{
     event.preventDefault()
-
+    CalculationStuff()
     // lightBox[0].style.display="flex"
-    lightBoxFunction()
+    setTimeout(()=>{
+        lightBoxFunction()
+    },1000)
 })
 function lightBoxFunction(){
     let BillTo=document.querySelectorAll(".billTo")
@@ -169,6 +168,7 @@ billFrom1.addEventListener("input",()=>{
     popUpHeadFunc(billFrom1.value)
 })
 let invoice_number=document.querySelector(".invoice_number");
+
 let invoice=1;
 invoice_number.addEventListener("input",()=>{
     invoice=invoice_number.value
@@ -183,12 +183,12 @@ function popUpHeadFunc(Custname){
             <p class="popupInvoiceColor">Invoice #: ${invoice}</p>
         `
 
-        subtPopUp2.innerHTML=`
-            <h3>Amount Due: <h3>
-            <h4 class="amountDue">
+        // subtPopUp2.innerHTML=`
+        //     <h3>Amount Due: <h3>
+        //     <h4 class="amountDue">
                 
-            </h4>
-        `
+        //     </h4>
+        // `
 }
 
 
@@ -242,4 +242,48 @@ download.addEventListener("click",()=>{
     // console.log(invoice);
     html2pdf().from(invoice).set(opt).save()
 
+})
+
+let CalculateBtn=document.querySelector("#calcBtn")
+function CalculationStuff(){
+    let subtotal=0;
+    let itemContainers = document.querySelectorAll(".item-container");
+    itemContainers.forEach((event)=>{
+        let itemQ = event.lastElementChild.firstElementChild.value;
+            // console.log(itemQ);
+        let itemP = event.lastElementChild.firstElementChild.nextElementSibling.lastElementChild.value;
+        subtotal+=itemQ*itemP;
+    })
+    amount.innerText=subtotal
+    let taxvalue=taxRate.value/100
+    let taxInRs=subtotal*taxvalue
+    let tax_percent=document.getElementsByClassName("taxPercent")
+    tax_percent[0].innerText=taxInRs
+    
+    let discountValue=discountRate.value/100
+    let discInRs=subtotal*discountValue
+    console.log(discInRs);
+    let discountpercent=document.getElementsByClassName("discountpercent")
+    discountpercent[0].innerText=discInRs
+
+    let totalCalc=document.getElementsByClassName("totalValue")
+    console.log(totalCalc);
+    totalCalc[0].innerText=(subtotal+taxInRs)-discInRs
+    // console.log(totalCalc);
+    let lightBox_subtotal=document.querySelector(".lightBox_subtotal")
+    lightBox_subtotal.innerText=subtotal
+    
+    let lightBox_total=document.querySelector(".lightBox_total")
+    lightBox_total.innerText=(subtotal+taxInRs)-discInRs 
+    let notesInput=document.querySelector(".notesInput")
+
+    let inputNotes=document.querySelector(".inputNotes")
+    console.log(notesInput.value);
+    inputNotes.innerText=notesInput.value
+
+    let amountDue=document.querySelector(".amountDue")
+    amountDue.innerText=(subtotal+taxInRs)-discInRs+"$"
+}
+CalculateBtn.addEventListener("click",()=>{
+    CalculationStuff()
 })

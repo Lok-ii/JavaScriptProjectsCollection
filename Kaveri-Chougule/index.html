@@ -6,6 +6,10 @@
     <title>Invoice Generator</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
@@ -27,7 +31,7 @@
                     </div>
                     <div class="invoiceNumber-Section">
                         <span class="invoice-number-text text-bold">
-                            Invoice Number
+                            Invoice Number: 
                         </span>
                         <input name="invoiceNumber" class="invoice_number" value="1" min="1" type="number" class="form-control" style="max-width: 70px;">
                     </div>
@@ -41,21 +45,21 @@
                         <label for="" class="form-label text-bold">
                             Bill To:
                         </label>
-                        <input placeholder="Who is this invoice to?" rows="3" name="billTo" autocomplete="name" type="text" class="my-2 form-control billTo" value="" id="billTo1" required >
+                        <input placeholder="Who is this invoice to?" rows="3" name="billTo" autocomplete="name" type="text" class="bill-to-my form-control billTo" value="" id="billTo1" required >
 
-                        <input placeholder="Email address" name="billToEmail" autocomplete="email" type="email" class="my-2 form-control billTo" value="" id="billTo2" required>
+                        <input placeholder="Email address" name="billToEmail" autocomplete="email" type="email" class="bill-to-my form-control billTo" value="" id="billTo2" required>
 
-                        <input placeholder="Billing address" name="billToAddress" autocomplete="address" type="text" class="my-2 form-control billTo" value="" id="billTo3" required>
+                        <input placeholder="Billing address" name="billToAddress" autocomplete="address" type="text" class="bill-to-my form-control billTo" value="" id="billTo3" required>
                     </div>
                     <div class="bill-from">
                         <label for="" class="form-label text-bold">
                             Bill from:
                         </label>
-                        <input placeholder="Who is this invoice from?" rows="3" name="billFrom" autocomplete="name" type="text" class="my-2 form-control billFrom" value="" id="billFrom1" required>
+                        <input placeholder="Who is this invoice from?" rows="3" name="billFrom" autocomplete="name" type="text" class="bill-from-my form-control billFrom" value="" id="billFrom1" required>
                         
-                        <input placeholder="Email address" name="billFromEmail" autocomplete="email" type="email" class="my-2 form-control billFrom" value="" id="billFrom2" required>
+                        <input placeholder="Email address" name="billFromEmail" autocomplete="email" type="email" class="bill-from-my form-control billFrom" value="" id="billFrom2" required>
 
-                        <input placeholder="Billing address" name="billFromAddress" autocomplete="address" type="text" class="my-2 form-control billFrom" value="" id="billFrom3" required>
+                        <input placeholder="Billing address" name="billFromAddress" autocomplete="address" type="text" class="bill-from-my form-control billFrom" value="" id="billFrom3" required>
                     </div>
                 </div>
 
@@ -63,85 +67,6 @@
                 
                 <!-- Items Table -->
                 <div class="item-table">
-                    <!-- <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ITEM</th>
-                                <th>QTY</th>
-                                <th>PRICE/RATE</th>
-                                <th class="text-center">ACTION</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="tbody">
-                            <tr id="table-row" class="d-none">
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input placeholder="Item name" name="product-name" type="text" class="form-control itemName" value="Item Name" >
-                                    </div>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input placeholder="Item description" name="description" type="text" class="form-control itemDesc" value="Item Desc" >
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input min="1" name="quantity" step="1" aria-label="quantity" type="number" class="form-control quantity" value="1">
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <span class="text-bold px-2 dollar">
-                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;"><span class="currency_change">$</span></span>
-                                        </span>
-                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" type="number" class="text-end form-control price" value="1.00">
-                                    </div>
-                                </td>
-
-                                <td class="text-center">
-                                    <svg onclick="BtnDelete(this)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1 delete" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="height: 33px; width: 33px; padding: 7.5px;">
-                                        <path fill="none" d="M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z"></path><path d="M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z"></path>
-                                        <path d="M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"></path>
-                                    </svg>
-                                </td>
-                            </tr>
-
-                            <tr id="table-row" class="item-container">
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input placeholder="Item name" name="name" aria-label="name" type="text" class="form-control itemName" value="" required>
-                                    </div>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input placeholder="Item description" name="description" type="text" class="form-control itemDesc" value="" required>
-                                    </div> 
-                                </td>
-
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <input min="1" name="quantity" step="1" aria-label="quantity" type="number" class="form-control quantity" value="1">
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="my-1 flex-nowrap input-group-item">
-                                        <span class="text-bold px-2 dollar">
-                                            <span class="border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center small" style="width: 20px; height: 20px;"><span class="currency_change">$</span></span>
-                                        </span>
-                                        <input min="1" name="price" step="0.01" presicion="2" aria-label="price" type="number" class="text-end form-control price" value="1.00">
-                                    </div>
-                                </td>
-
-                                <td class="text-center">
-                                    <svg onclick="BtnDelete(this)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1 delete" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="height: 33px; width: 33px; padding: 7.5px;">
-                                        <path fill="none" d="M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z"></path><path d="M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z"></path>
-                                        <path d="M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"></path>
-                                    </svg>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> -->
-
                     <div class="TableItem">
                         <div class="tableHead">
                             <h4>ITEM</h4>
@@ -159,10 +84,10 @@
                                     <input type="text" name="description" id="" placeholder="Item description" class="itemDesc" value="Item Desc">
                                 </p>
                                 <div class="otherContent">
-                                    <input type="number" class="quant quantity" value="1" name="quantity">
+                                    <input type="number" class="quant quantity" value="1" name="quantity" placeholder="1">
                                     <div class="priceInfo">
                                         <span class="symbol currency_change">$</span>
-                                        <input type="number" name="price" class="priceInput price" value="1.00">
+                                        <input type="number" name="price" class="priceInput price" value="1.00" placeholder="1.00">
                                     </div>
                                     <span class="deleteIcon" onclick="BtnDelete(this)">
                                         <i class="fa-solid fa-trash-can"></i>
@@ -185,21 +110,27 @@
                                     </span>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
 
-
-                    <hr class="my-2">
                     <button type="button" class="text-bold btn btn-primary" onclick="BtnAdd()">
                         Add Item
                     </button>
                 </div>
+                <div class="CalculateTotal">
+                    <button type="button" class="text-bold btn btn-primary calculateTotal" id="calcBtn">Calculate Details</button>
+                </div>
                 <!-- Cart Section -->
                 <div class="cart_Section mt-4">
+                    
                     <div class="col-cart">
                         <div class="cart-content">
                             <span class="text-bold">Subtotal:</span>
-                            <span class="total" id="total_amount"><span class="currency_change">$</span><span id="amount">1.00</span></span>
+                            <span class="total" id="total_amount">
+                                <span class="currency_change">$</span>
+                                <span id="amount">1.00</span>
+                            </span>
                         </div>
                         <div class="cart-content mt-2">
                             <span class="text-bold">Discount:</span>
@@ -220,16 +151,21 @@
                         <hr class="margin-hr">
                         <div class="cart-content" style="font-size: 1.125rem;">
                             <span class="text-bold">Total:</span>
-                            <span class="text-bold"><span class="currency_change">$</span>1</span>
+                            <span class="text-bold">
+                                <span class="currency_change">$</span>
+                                <span class="totalValue">1</span>
                         </div>
                         <hr class="my-4">
-                        <div class="notes">
-                            <label class="text-bold form-label">Notes:</label>
-                            <textarea placeholder="Thanks for your business!" name="notes" rows="1" class="my-2 form-control"></textarea>
-                        </div>
+                        
                     </div>
+                    
+                </div>
+                <div class="notes">
+                    <label class="text-bold form-label">Notes:</label>
+                    <textarea placeholder="Thanks for your business!" name="notes" rows="1" class="my-2 form-control notesInput"></textarea>
                 </div>
             </div>
+            
             <div class="section2">
                 <div class="button">
                     <button type="submit" for="form" class="text-bold btn btn-primary review-btn" id="reviewBtn">Review Invoice</button>
@@ -266,11 +202,12 @@
                         <span class="text-bold input-group-text">%</span>
                     </div>
                 </div>
+                
             </div>
         </div>
 
     </form>
-    <div class="lightbox">
+    <div class="lightbox  animate__animated animate__fadeIn">
         <div class="wrapper" id="lightBoxInvoice">
             <!-- <i class="fa-solid fa-xmark fa-xl popup_Close"></i> -->
 
@@ -279,8 +216,8 @@
                     <!-- <h3></h3> -->
                 </div>
                 <div class="subPopup2">
-                    <!-- <h4>Amount Due:</h4> -->
-                    <!-- <h4 class="amountDue"></h4> -->
+                    <h4>Amount Due:</h4>
+                    <h4 class="amountDue"></h4>
                 </div>
             </div>
             <div class="address">
@@ -328,15 +265,22 @@
                 <div class="seperator"></div>
                 <div class="displaytotal">
                     <div class="subtotal">
-                        <h4>SUBTOTAL</h4>
-                        <p>100.00</p>
+                        <h4>SUBTOTAL:</h4>
+                        <p class="lightBox_subtotal">0.00</p>
                     </div>
                     <hr>
                     <div class="lightBoxtotal">
-                        <h4>TOTAL</h4>
-                        <p>100</p>
+                        <h4>TOTAL:</h4>
+                        <p class="lightBox_total">0</p>
                     </div>
                     <hr>
+                </div>
+
+                <div class="notes">
+                    <h5>NOTES/COMMENTS</h5>
+                    <p class="inputNotes">
+
+                    </p>
                 </div>
             </div>
 

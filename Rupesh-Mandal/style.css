@@ -13,8 +13,13 @@
     min-height: 100vh;
     font-family: 'Trebuchet MS', sans-serif;
     background-color:#EE4E34;
-    /* background-image: url("https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg"); */
-    /* background-repeat: no-repeat; */
+    background-image: url("https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* filter:blur(50px); */
+    /* object-fit: cover; */
   }
   .container{
     width: 800px;

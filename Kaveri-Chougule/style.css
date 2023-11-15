@@ -1,11 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*, :after, :before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
     background-color: #e6e6e9;
-    font-size: .9rem
+    font-size: .9rem;
+    font-family: 'Robot',sans-serif;
 }
 .text-bold{
     font-weight: 700;
@@ -61,17 +63,7 @@ body{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
-.table{
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-    vertical-align: top;
-    border-color: #dee2e6;
-}
-table{
-    caption-side: bottom;
-    border-collapse: collapse;
-}
+
 .my-1{
     margin-top: .25rem!important;
     margin-bottom: .25rem!important;
@@ -86,12 +78,7 @@ table{
     align-items: stretch;
     width: 100%;
 }
-.table tr td:first-child, .table tr th:first-child {
-    padding-left: 0;
-}
-thead{
-    border-bottom: 1px solid gray;
-}
+
 .btn{
     font-size: .9rem;
     padding: 0.66rem;
@@ -209,11 +196,12 @@ thead{
   .lightbox .wrapper{
     position: absolute;
     left: 50%;
-    transform: translate(-50%,30%);
+    transform: translate(-50%,20%);
     background: rgba(255,255,255,1);
     padding: 20px;
     border-radius: 5px;
-    height: 518px;
+    min-height: 518px;
+    max-height: auto;
     width: 800px;
     border: 1px solid rgba(0,0,0,.2);
   }
@@ -239,6 +227,9 @@ thead{
   .address{
     display: flex;
     justify-content: space-between;
+    line-height: 1.5;
+    margin-top: 2rem;
+    width: 100%;
   }
   .lightBox-table{
     width: 100%;
@@ -247,13 +238,165 @@ thead{
     border-color: #dee2e6;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    
+    display: flex;
+    flex-direction: column;
   }
-  .lightBox-table th {
-    border-top: 1px solid rgba(0,0,0,.10196078431372549);
-    border-bottom: 1px solid rgba(0,0,0,.10196078431372549);
-    border-bottom-color: rgba(0,0,0,.10196078431372549)!important;
-}
 .text-end{
     text-align: right;
+}
+
+.TableItem{
+    display: flex;
+    flex-direction: column;
+}
+.tableHead{
+    display: flex;
+    justify-content: space-between;
+}
+.other{
+    display: flex;
+    gap: 5rem;
+}
+.tableInfoBody{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 1rem;
+
+}
+
+.table-row{
+    display: flex;
+}
+.itemInfoDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+}
+.itemInfoDiv input{
+    padding: 0.5rem;
+    background-color: #e8f0fe;
+    border: none;
+    border-radius: 5px;
+}
+
+.otherContent{
+    display: flex;
+}
+.quant{
+    width: 25%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #f5f7f9;
+    border: none;
+    text-align: center;
+}
+.priceInput{
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f7f9;
+}
+.priceInfo{
+    display: flex;
+    justify-content: center;
+}
+.symbol{
+    height: 33px;
+    width: 33px;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    border-radius: 50%;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteIcon{
+    height: 33px;
+    width: 33px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+.display-none{
+    display: none;
+}
+
+/* lightBox Table */
+.LightBox_tableHead{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+.hd1{
+    width: 10%;
+}
+.hd2{
+    width: 50%;
+}
+.hd3{
+    width: 15%;
+}
+.hd4{
+    width: 15%;
+}
+.lightBox_TableBody{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+}
+.ligthBox_Tr{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1.5px solid #acaaaa;
+}
+.hdAmount{
+    text-align: center
+}
+.seperator{
+    padding: 10px;
+    border-bottom: 1.5px solid #acaaaa;
+}
+.displaytotal{
+    display: flex;
+    flex-direction: column;
+}
+.subtotal{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    padding: 10px;
+}
+.lightBoxtotal{
+    display: flex;
+    justify-content: end;
+    gap: 4.9rem;
+    padding: 10px;
+}
+
+.billTo-LightBox{
+    width: 40%;
+}
+.billFrom-LightBox{
+    width: 40%;
+}
+.dateOfIssue_print{
+    width: 20%;
+}
+.popupInvoiceColor{
+    color: #6c757D;
+    font-weight: 700;
 }

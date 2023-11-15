@@ -17,7 +17,7 @@ function BtnAdd(){
     let textInside=$("#table-row").clone().appendTo("#tbody")
     $(textInside).find("input").val('')
 
-    $(textInside).removeClass("d-none");
+    $(textInside).removeClass("display-none");
     $(textInside).addClass("item-container")
 }
 // Delete item
@@ -40,8 +40,7 @@ tbody.addEventListener("input",(event)=>{
     if(event.target.classList.contains("price")){
         price=event.target.value
     }
-    let taxRate=document.getElementById("taxRate")
-    let discountRate=document.getElementById("discountRate")
+    // let taxValue=(price*quantity)*((taxRate/100))
     // let totalPrice=(parseFloat(quantity)*parseFloat(price))*((1+parseFloat(taxRate.value)/100+parseFloat(discountRate.value)/100));
 
     finalAmount+=(quantity*price)
@@ -51,16 +50,35 @@ tbody.addEventListener("input",(event)=>{
     amount.innerText=finalAmount;
     amountDue=finalAmount
 })
+let taxRate=document.getElementById("taxRate")
 
+taxRate.addEventListener("input",()=>{
+    console.log(taxRate.value);
+    let taxInpercent=document.getElementsByClassName("taxInPercent")
+    taxInpercent[0].innerText="("+taxRate.value+"%)"
+    let tax_percent=document.getElementsByClassName("taxPercent")
+    console.log(tax_percent);
+    tax_percent[0].innerText=taxRate.value+"%"
+})
+let discountRate=document.getElementById("discountRate")
+
+discountRate.addEventListener("input",()=>{
+    let discountInpercent=document.getElementsByClassName("DiscountInPercent")
+    discountInpercent[0].innerText="("+discountRate.value+"%)"
+
+    let discountpercent=document.getElementsByClassName("discountpercent")
+    discountpercent[0].innerText=discountRate.value+"%"
+})
 let lightBox_TableBody=document.querySelector(".lightBox_TableBody")
 
 function lightBox_item_func(quantity, name, desc, price, amount) {
-    let newTr = document.createElement("tr");
+    let newTr = document.createElement("div");
+    newTr.className="ligthBox_Tr";
     newTr.innerHTML = `
-        <td>${quantity}</td>
-        <td>${name}-${desc}</td>
-        <td>$${price}</td>
-        <td>${amount}</td>
+        <p class="hd1">${quantity}</p>
+        <p class="hd2">${name}-${desc}</p>
+        <p class="hd3">$${price}</p>
+        <p class="hd4 hdAmount">${amount}</p>
     `;
     lightBox_TableBody.appendChild(newTr);
   }
@@ -111,7 +129,7 @@ function lightBoxFunction(){
         if(item.value===""){
             check=false
         }
-        console.log(item.value);
+        // console.log(item.value);
         // lightBoxData(item.value)
     })          
     itemDesc.forEach(item=>{
@@ -124,17 +142,19 @@ function lightBoxFunction(){
         let itemContainers = document.querySelectorAll(".item-container");
         itemContainers.forEach(element=>{
             let itemN =
-                element.firstElementChild.firstElementChild.firstElementChild
+                element.firstElementChild.firstElementChild
                 .value;
-            console.log(itemN);
-            let itemD = element.firstElementChild.lastElementChild.firstElementChild.value;
-            console.log(itemD);
-            let itemQ = element.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.value;
-            console.log(itemQ);
-            let itemP = element.lastElementChild.previousElementSibling.firstElementChild.lastElementChild.value;
-            console.log(itemP);
+            // console.log(itemN);
+            let itemD = element.firstElementChild.lastElementChild.value;
+            // console.log(itemD);
+            let itemQ = element.lastElementChild.firstElementChild.value;
+            // console.log(itemQ);
+
+            let itemP = element.lastElementChild.firstElementChild.nextElementSibling.lastElementChild.value;
+            // console.log(itemP);
+
             let itemA = itemQ * itemP;
-            console.log(itemA);
+            // console.log(itemA);
             lightBox_item_func(itemQ, itemN, itemD, itemP, itemA);
         });
         lightBox[0].style.display="flex"
@@ -156,11 +176,11 @@ invoice_number.addEventListener("input",()=>{
 let subPopUp1=document.querySelector(".subPopup1")
 
 let subtPopUp2=document.querySelector(".subPopup2")
-console.log(amountDue);
+// console.log(amountDue);
 function popUpHeadFunc(Custname){
         subPopUp1.innerHTML=`
-            <h3>${Custname}</h3>
-            <p>Invoice #: ${invoice}</p>
+            <h2>${Custname}</h2>
+            <p class="popupInvoiceColor">Invoice #: ${invoice}</p>
         `
 
         subtPopUp2.innerHTML=`
@@ -206,9 +226,11 @@ issueDate.addEventListener("input",()=>{
 })
 
 let download=document.getElementById("Download")
+let sendInvoice=document.getElementById("sendInvoice")
 download.addEventListener("click",()=>{
     const invoice=this.document.getElementById("lightBoxInvoice")
-
+    download.style.display="none";
+    sendInvoice.style.display="none"
     let opt={
         margin:1,
         filename:'SaleInvoice.pdf',

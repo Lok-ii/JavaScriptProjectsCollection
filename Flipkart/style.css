@@ -301,8 +301,6 @@ hr{
     top: -7px;
     background: none;
     pointer-events: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
   }
   .range-input input::-webkit-slider-thumb {
     height: 20px;

@@ -201,3 +201,11 @@ issueDate.addEventListener("input",()=>{
     issueDateFunc(issueDate.value)
 })
 
+let download=document.getElementById("Download")
+download.addEventListener("click",()=>{
+    const invoice=this.document.getElementById("lightBoxInvoice")
+
+    // console.log(invoice);
+    html2pdf().from(invoice).save()
+
+})

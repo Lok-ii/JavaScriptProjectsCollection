@@ -15,6 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
 </head>
 <body>
+    <div class="section3">
+        <div class="sign">
+            <button class="light">☀</button>
+            <button class="dark">☾</button>
+          </div>
+    </div>
     <form action="" id="form" name="form">
         <div class="Main-container">
             <div class="section1">
@@ -204,11 +210,17 @@
                 </div>
                 
             </div>
+
+            
         </div>
 
     </form>
     <div class="lightbox  animate__animated animate__fadeIn">
         <div class="wrapper" id="lightBoxInvoice">
+            <div class="cross">
+                <i class="fa-solid fa-arrow-left" id="back"></i>
+                <i class="fa-solid fa-xmark" id="cross"></i>
+            </div>
             <!-- <i class="fa-solid fa-xmark fa-xl popup_Close"></i> -->
 
             <div class="popup_head">
@@ -287,8 +299,8 @@
 
 
             <div class="buttons">
-                <button id="sendInvoice" class="btn btn-primary">Send Invoice</button>
-                <button id="Download" class="btn">Download Copy</button>
+                <button id="sendInvoice" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Send Invoice</button>
+                <button id="Download" class="btn"><i class="fa-solid fa-cloud-arrow-down"></i> Download Copy</button>
             </div>
         </div>
     </div>

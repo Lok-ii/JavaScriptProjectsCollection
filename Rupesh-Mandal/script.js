@@ -17,6 +17,8 @@ let charperminute = 0;
 let wordsperminute = 0;
 let lastcharacter="";
 
+inputarea.disabled=true;
+
 inputarea.addEventListener("input", () => {
   inputarea.disabled = false;
   let arrdisplay = display.querySelectorAll("span");
@@ -135,6 +137,7 @@ function reset() {
   wordsperminute = 0;
 
   inputarea.value="";
+  inputarea.disabled=true;
   details[0].textContent=0;
   details[1].textContent=0;
   details[2].textContent=0;

@@ -38,11 +38,11 @@
     border-radius: .5rem;
     /* border: 2px solid black; */
     background-color: #FADB4F;
-    margin-top: 10rem;
+    margin-top: 7rem;
   }
   .timer{
     position: absolute;
-    top:5rem;
+    top:2rem;
     font-size: 4rem;
     color: #FADB4F;
     font-weight: bold;

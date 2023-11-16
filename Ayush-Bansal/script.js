@@ -3,18 +3,38 @@ let choose=document.querySelectorAll(".one img");
 let firstpage=document.querySelector(".firstpage")
 let secondpage=document.querySelector(".secondpage")
 let thirdpage=document.querySelector(".thirdpage")
+let thirdmain=document.querySelector(".thirdmain")
+let secondmain=document.querySelector(".secondmain");
+let colorheader=document.querySelector("#colorheader");
+let colorheader31=document.querySelector("#colorheader31");
+let colorheader32=document.querySelector("#colorheader32");
+let colortext=document.querySelector("#colortext")
+let colortext31=document.querySelector("#colortext31")
+let colortext32=document.querySelector("#colortext32")
+let templateoption=document.querySelector("#templateType")
+let project6cont=document.querySelector(".project6cont")
 
 choose.forEach((item)=>{
     item.addEventListener("click",function(){
       if(item.getAttribute("class")=="oneone"){
         firstpage.style.display="none";
         secondpage.style.display="block"
-        thirdpage.style.display="none"
+        // thirdpage.style.display="none"
+
       }
       else if (item.getAttribute("class")=="onetwo") {
         firstpage.style.display="none"
-        secondpage.style.display="none";
-        thirdpage.style.display="block"
+        secondpage.style.display="block";
+        // thirdpage.style.display="block"
+        templateoption.value="advance"
+        thirdmain.classList.toggle("hidden");
+        secondmain.classList.toggle("hidden");
+        colorheader.classList.toggle("hidden");
+        colorheader31.classList.toggle("hidden");
+        colorheader32.classList.toggle("hidden");
+        colortext.classList.toggle("hidden");
+        colortext31.classList.toggle("hidden");
+        colortext32.classList.toggle("hidden");
       
       }
 
@@ -28,19 +48,18 @@ back.addEventListener('click',()=>{
 })
 
 
-let templateoption=document.querySelector("#templateType")
+
 // console.log(templateoption);
 
 templateoption.addEventListener("input",(e)=>{
-    if(templateoption.value==="basic"){
-       thirdpage.style.display="none"
-       secondpage.style.display="block";
-    }
-    else if(templateoption.value==="advance"){
-        console.log(("advance"));
-        thirdpage.style.display="block"
-        secondpage.style.display="none"
-    }
+    thirdmain.classList.toggle("hidden");
+    secondmain.classList.toggle("hidden");
+    colorheader.classList.toggle("hidden");
+    colorheader31.classList.toggle("hidden");
+    colorheader32.classList.toggle("hidden");
+    colortext.classList.toggle("hidden");
+    colortext31.classList.toggle("hidden");
+    colortext32.classList.toggle("hidden");
 })
 
 let resheader=document.querySelector(".resheader")
@@ -89,11 +108,14 @@ let project6p=document.querySelector(".project6 p")
 let education6=document.querySelector(".education6")
 let education6p=document.querySelector(".education6 p")
 let newappend=document.querySelector("#newappend");
-skilladd.addEventListener("change",()=>{
+skilladd.addEventListener("input",()=>{
+    if(skilladd.value[skilladd.value.length-1]===","){
     let p=document.createElement("p");
-    p.innerHTML=`${skilladd.value}`;
+    p.innerHTML=`${skilladd.value.substring(0,skilladd.value.length-1)}`;
     p.className="skill1"
     skillsadd.appendChild(p)
+    skilladd.value="";
+    }
 })
 
 inputtags.forEach((items)=>{
@@ -223,55 +245,78 @@ function createprojec(){
     let projectdetali=document.createElement("div");
     
 
-    projectdetali.className="projectdetail";
+    projectdetali.className="projectdetaill";
     projectdetali.innerHTML=`
-    <p>Start</p>
-    <input type="month" name="" id="monthpro">
-    <p>End</p>
-    <input type="month" name="" id="monthendpro">
+    <div><p>Start</p>
+    <input type="month" name="" id="monthpro"></div>
+   
+    <div> <p>End</p>
+    <input type="month" name="" id="monthendpro"></div>
     <input type="text" id="projecttitle" placeholder="Project Title">
     <textarea name="" id="" cols="50" rows="5"  class="Descriptionpro" placeholder="Description"></textarea>`
 
     let projectcont1=document.createElement("div");
     projectcont1.className="projectcont11"
-    projectcont1.innerHTML=`<p class="start">1</p>
-    <p class="end">1</p>
-    <p class="titlepro">1</p>
+    projectcont1.innerHTML=`<div class="flex"> <li class="titlepro">1</li><div  class="flex2"><p class="start">1</p> - 
+    <p class="end">1</p></div></div>
     <p class="descriptionpro">1</p>
     
     `
+    let newprojectcont=document.createElement("div");
+    newprojectcont.className="projectcont11"
+
+    newprojectcont.innerHTML=`<div  class="flex"><li class="titlepro">1</li><div  class="flex2"><p class="start">1</p> - 
+    <p class="end">1</p></div></div>
+    <p class="descriptionpro">1</p>
+    `
 
 
+    project6cont.appendChild(newprojectcont);
     projectcont.appendChild(projectcont1);
+   
+    
 
     
     projectdetails.insertBefore(projectdetali,newappend);
+    
 }
 
-// let appendright=document.querySelectorAll("")
+newappend.addEventListener("click",()=>{
+    let projectdetaill=document.querySelectorAll(".projectdetaill");
+    let projectcont11=document.querySelectorAll(".projectcont11");
+ let k=0;
+    for(let j=0;j<4;j++){
+        for(let i=0;i<projectdetaill.length;i++){
+            
+               projectcont11[k].firstElementChild.lastElementChild.firstElementChild.innerText=projectdetaill[i].firstElementChild.lastElementChild.value;
+    
+                projectcont11[k].firstElementChild.lastElementChild.lastElementChild.innerText=projectdetaill[i].firstElementChild.nextElementSibling.lastElementChild.value;
+    
+                projectcont11[k].firstElementChild.firstElementChild.innerText=projectdetaill[i].lastElementChild.previousElementSibling.value;
+    
+                projectcont11[k].lastElementChild.innerText=projectdetaill[i].lastElementChild.value;
 
-projectdetails.addEventListener("input",(e)=>{
-  if(e.target.id==="monthpro"){
-    console.log(e.target.value);
-
-  }
+                k++;
+                // console.log( projectcont11[i].firstElementChild.firstElementChild.nextElementSibling.innerText);
+        }
+    }
 })
 
 let Descriptionpro=document.querySelector(".Descriptionpro");
 
 // console.log(Descriptionpro);
-function createprojec3(){
-    let projectdetali=document.createElement("div");
-    projectdetali.className="projectdetail";
-    projectdetali.innerHTML=`
-    <p>Start</p>
-    <input type="month" name="" id="monthpro">
-    <p>End</p>
-    <input type="month" name="" id="monthendpro">
-    <input type="text" id="projecttitle" placeholder="Project Title">
-    <textarea name="" id="" cols="50" rows="5"  class="Descriptionpro" placeholder="Description"></textarea>`
-    projectdetails3.appendChild(projectdetali);
-}
+// function createprojec3(){
+//     let projectdetali=document.createElement("div");
+//     projectdetali.className="projectdetail3";
+//     projectdetali.innerHTML=`
+//     <p>Start</p>
+//     <input type="month" name="" id="monthpro">
+//     <p>End</p>
+//     <input type="month" name="" id="monthendpro">
+//     <input type="text" id="projecttitle" placeholder="Project Title">
+//     <textarea name="" id="" cols="50" rows="5"  class="Descriptionpro" placeholder="Description"></textarea>`
+//     projectdetails3.appendChild(projectdetali);
+// }
 
 function createeducation(){
     let educationdetailssss=document.createElement("div");
@@ -309,20 +354,11 @@ function createeducation3(){
 
 // .........................third page .............
 let back3=document.querySelector(".back3")
-back3.addEventListener("click",()=>{
-    alert("you can't go back")
-})
+// back3.addEventListener("click",()=>{
+//     alert("you can't go back")
+// })
 let select3=document.querySelector("#templateType3");
 // console.log(select3);
-select3.addEventListener("input",()=>{
-    if(select3.value==="basic"){
-       thirdpage.style.display="none"
-       secondpage.style.display="block"
-    }
-    else if(select3.value==="advance"){
-        console.log(("advance"));
-        thirdpage.style.display="block"
-       secondpage.style.display="none"
-    }
-})
+
+
 

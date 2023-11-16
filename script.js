@@ -44,6 +44,9 @@ let obj={
 let signInBtn=document.querySelector(".signInBtn")
 let loginSection=document.querySelector(".loginSection")
 let container=document.querySelector(".container")
+let registration=document.querySelector(".registration")
+let login=document.querySelector(".login")
+
 
 signInBtn.addEventListener("click",()=>{
     container.style.display="none"
@@ -56,17 +59,91 @@ cancel.addEventListener("click",()=>{
     loginSection.style.display="flex"
 })
 
-let regForm=document.querySelector(".regForm")
+let registerBtn=document.querySelector(".registerBtn")
+let loginBtn=document.querySelector(".loginBtn")
+
+registerBtn.addEventListener("click",()=>{
+    loginBtn.classList.remove('active')
+    registerBtn.classList.add('active')
+    registration.style.display="flex"
+    login.style.display="none"
+    formContainer.style.height="280px"
+
+})
+let formContainer=document.querySelector(".formContainer")
+loginBtn.addEventListener("click",()=>{
+    registration.style.display="none"
+    login.style.display="flex"
+    formContainer.style.height="230px"
+    loginBtn.classList.add('active')
+    registerBtn.classList.remove('active')
+})
+
+// Form Validation
+let regForm=document.querySelector("#regForm")
+let formRegister=document.querySelector(".formRegister")
+
+formRegister.addEventListener("click",(e)=>{
+    e.preventDefault()
+    validateForm();
+})
+function validateForm(){
+    let name=document.forms["SIGNUP"]["name"]
+    let email=document.forms["SIGNUP"]["email"]
+    let password=document.forms["SIGNUP"]["password"]
+
+    if(name.value==""){
+        window.alert("Please enter your name")
+        return false;
+    }
+    
+    if(password.value==""){
+        window.alert("Please enter your password")
+        return false;
+    }
+
+    if(email.value==""){
+        window.alert("Please enter your email")
+        return false; 
+    }
+    else{
+        const registrationStatus=register();
+        if(registrationStatus==='registered'){
+            window.alert("This email is already registered");
+            return false;
+        }
+        else if(registrationStatus==='success'){
+            window.alert("Successfully Registered");
+            return true;
+        }
+    }
+}
+
+// User Registration and adding user info in localstorage
+let arr=JSON.parse(localStorage.getItem("users")) || []
+function register(){
+    let name=document.forms["SIGNUP"]["name"].value
+    let email=document.forms["SIGNUP"]["email"].value
+    let password=document.forms["SIGNUP"]["password"].value
+
+    var NewUser={
+        id:Number(new Date),
+        "Name":name,
+        "Email":email,
+        "Password":password
+    }
+    let UserExists=arr.find(users=> users.Email===NewUser.Email)
+    if(UserExists){
+        return 'registered'
+    }
+    else{
+        arr.push(NewUser)
+        let userString=JSON.stringify(arr)
+        localStorage.setItem('users',userString)
+        return "success" 
+    }
+}
+
+// User Login
 let loginForm=document.querySelector(".loginForm")
-let registration=document.querySelector(".registration")
-let login=document.querySelector(".login")
-registration.addEventListener("click",()=>{
-    console.log("hii");
-    // registration.style.display="flex"
-    // login.style.display="none"
-})
-login.addEventListener("click",()=>{
-    // registration.style.display="none"
-    // login.style.display="flex"
-    console.log("Hello");
-})
+let formLogin=document.querySelector(".formLogin")

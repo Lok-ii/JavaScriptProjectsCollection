@@ -341,6 +341,7 @@ hr{
   .toggleHeight{
     height: 1rem;
     overflow: hidden;
+    transition: all 0.4s ease-in-out;
   }
 
   .discountsList, .typeList, .offerList, .brandList, .ratingList{
@@ -349,6 +350,7 @@ hr{
     flex-direction: column;
     gap: 1rem;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
   }
 
   .discounts, .types, .fAssuredCheckbox, .offers, .brands, .cRatings{
@@ -365,7 +367,7 @@ hr{
     justify-content: space-between;
   }
 
-  .discountsHeading i{
+  .toggleArrow{
     transform: rotate(180deg);
   }
 

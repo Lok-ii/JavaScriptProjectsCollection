@@ -11,7 +11,7 @@
 
 ### Resume Template : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Ayush-Bansal/index.html"> Click Here </a>
 
-### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/index.html"> Click Here </a>
+### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
 
 ### Payment Integeration: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Pranshul-Pradhan/index.html"> Click Here </a>
 

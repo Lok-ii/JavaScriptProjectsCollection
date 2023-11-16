@@ -38,10 +38,10 @@ let addBookmarkElement = (time, url) => {
 
   let bookmarkElement = document.createElement("div");
   bookmarkElement.className = "bookmark-item";
-  bookmarkElement.innerHTML = `<span contentEditable>Bookmark at </span><span class="time">${time}</span>
+  bookmarkElement.innerHTML = `<span>Bookmark at </span><span class="time">${time}</span>
     <div>
-        <button class="play" name="${url}&t=${timeInSeconds}">Play</button>
-        <button class="delete">Delete</button>
+        <img src="../icons/button-icon-png-21060.png" class="play" alt="${url}&t=${timeInSeconds}">
+        <img src="../icons/vecteezy_trash-can-icon-sign-symbol-design_9972702_576.png" class="delete">
     </div>`;
 
   bookmarks.appendChild(bookmarkElement);
@@ -108,25 +108,16 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (e.target.className === "play") {
       // Event listener for playing the video at the bookmarked timestamp
       let timeValue = e.target.parentElement.previousElementSibling.innerText;
-      // chrome.runtime.sendMessage({
-      //   type: "PLAY",
-      //   url: e.target.name,
-      //   timeStampValue: timeValue,
-      // });
-
-      setTimeout(() => {
         chrome.tabs.query(
           { active: true, currentWindow: true },
           function (tabs) {
             const activeTab = tabs[0];
             chrome.tabs.sendMessage(activeTab.id, {
-              type: "PLAY",
-              url: e.target.name,
-              timeStampValue: timeValue,
-            });
-          }
-        );
-      }, 1000);
+            type: "PLAY",
+            url: e.target.name,
+            timeStampValue: splitTime(timeValue),
+          });
+          });
     }
   });
 });

@@ -1,43 +1,43 @@
 let obj={
     project1:{
         name:"Team",
-        image:"./team.jpg"
+        image:"../Assets-FrontPage/team.jpg"
     },
     project2:{
         name:"Chrome Extension",
-        image:"./chromeExtension.jpg"
+        image:"../Assets-FrontPage/chromeExtension.jpg"
     },
     project3:{
         name:"Resume Template",
-        image:"./resumeTemplate.jpg"
+        image:"../Assets-FrontPage/resumeTemplate.jpg"
     },
     project4:{
         name:"Invoice Generator",
-        image:"./invoiceGenerator.jpg"
+        image:"../Assets-FrontPage/invoiceGenerator.jpg"
     },
     project5:{
         name:"Payment Integration",
-        image:"./paymentIntegration.jpg"
+        image:"../Assets-FrontPage/paymentIntegration.jpg"
     },
     project6:{
         name:"Trello Clone",
-        image:"./trelloClone.jpg"
+        image:"../Assets-FrontPage/trelloClone.jpg"
     },
     project7:{
         name:"Typing Speed Test Gamer",
-        image:"./typingSpeedTest.jpg"
+        image:"../Assets-FrontPage/typingSpeedTest.jpg"
     },
     project8:{
         name:"Mine Game",
-        image:"./mineGame.jpg"
+        image:"../Assets-FrontPage/mineGame.jpg"
     },
     project9:{
         name:"Code Editor",
-        image:"./codeEditor.jpg"
+        image:"../Assets-FrontPage/codeEditor.jpg"
     },
     project10:{
         name:"Flipkart Page sort and filter",
-        image:"./flipkart.jpg"
+        image:"../Assets-FrontPage/flipkart.jpg"
     }
 }
 

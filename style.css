@@ -28,47 +28,47 @@ body, html {
 
 }
 .bgimg-1 {
-  background-image: url("team.jpg");
+  background-image: url("../Assets-FrontPage/team.jpg");
   min-height: 100vh;
 }
 
 .bgimg-2 {
-  background-image: url("chromeExtension.jpg");
+  background-image: url("../Assets-FrontPage/chromeExtension.jpg");
   min-height: 400px;
 }
 
 .bgimg-3 {
-  background-image: url("resumeTemplate.jpg");
+  background-image: url("../Assets-FrontPage/resumeTemplate.jpg");
   min-height: 400px;
 }
 
 .bgimg-4 {
-    background-image: url("invoiceGenerator.jpg");
+    background-image: url("../Assets-FrontPage/invoiceGenerator.jpg");
     min-height: 400px;
 }
 
 .bgimg-5 {
-    background-image: url("paymentIntegration.jpg");
+    background-image: url("../Assets-FrontPage/paymentIntegration.jpg");
     min-height: 400px;
 }
 .bgimg-6 {
-    background-image: url("trelloClone.jpg");
+    background-image: url("../Assets-FrontPage/trelloClone.jpg");
     min-height: 400px;
 }
 .bgimg-7 {
-    background-image: url("typingSpeedTest.jpg");
+    background-image: url("../Assets-FrontPage/typingSpeedTest.jpg");
     min-height: 400px;
 }
 .bgimg-8 {
-    background-image: url("mineGame.jpg");
+    background-image: url("../Assets-FrontPage/mineGame.jpg");
     min-height: 400px;
 }
 .bgimg-9{
-    background-image: url("codeEditor.jpg");
+    background-image: url("../Assets-FrontPage/codeEditor.jpg");
     min-height: 400px;
 }
 .bgimg-10 {
-    background-image: url("flipkart.jpg");
+    background-image: url("../Assets-FrontPage/flipkart.jpg");
     min-height: 400px;
 }
 
@@ -217,4 +217,5 @@ form input{
     padding: 10px;
     box-shadow: 2px 2px 5px #111;
     cursor: pointer;
-}
+
+  }

@@ -117,6 +117,20 @@ h3 {
     box-shadow: 2px 5px 5px black;
     cursor: pointer;
 }
+.logOut{
+    display: none;
+    justify-content: end;
+}
+.LogoutBtn{
+    background-color: black;
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    margin-right: 1rem;
+    box-shadow: 2px 5px 5px black;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 
 .formContainer{
     display: flex;

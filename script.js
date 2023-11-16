@@ -190,7 +190,11 @@ function signIn(){
         if(UserLogin.Email==users[i].Email && UserLogin.Password==users[i].Password){
            let signIn_indexDiv=document.querySelector(".signIn") 
            signIn_indexDiv.innerHTML=`
-            <span class="signInBtn">${users[i].Name}</span>
+            <span class="signInBtn" onclick="logOut_dropdown()">
+                <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                ${users[i].Name}
+                <i class="fa-solid fa-caret-down icon"></i> 
+            </span>
            `
 
            localStorage.setItem('user',JSON.stringify({'Name':users[i].Name,'Email':users[i].Email}))
@@ -198,9 +202,12 @@ function signIn(){
            loginSection.style.display="none"
            return 'success'
         }
-        else{
-            return 'notRegistered'
-        }
     }
 
+}
+
+// LogOut function
+let logOut=document.querySelector(".logOut")
+function logOut_dropdown(){
+    logOut.style.display="flex"
 }

@@ -14,16 +14,18 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="registration">
-                <form action="" class="regForm">
-                    <input type="text" placeholder="Enter your name">
-                    <input type="email" placeholder="Enter your email">
-                    <input type="password" placeholder="Password">
+                <form action="" class="regForm" id="regForm" name="SIGNUP">
+                    <input type="text" placeholder="Enter your name" name="name">
+                    <input type="email" placeholder="Enter your email" name="email">
+                    <input type="password" placeholder="Password" name="password">
+                    <button class="formRegister">Register</button>
                 </form>
             </div>
             <div class="login">
-                <form action="" class="loginForm">
-                    <input type="email" placeholder="Enter your email">
-                    <input type="password" placeholder="Password">
+                <form action="" class="loginForm" name="signInForms">
+                    <input type="email" placeholder="Enter your email" name="email">
+                    <input type="password" placeholder="Password" name="password">
+                    <button class="formLogin">Login</button>
                 </form>
             </div>
             <div class="buttons">
@@ -37,7 +39,12 @@
         <div class="signIn">
             <span class="signInBtn">Sign In</span>
         </div>
-    
+        <div class="logOut" onclick="">
+            <span class="LogoutBtn">
+                Logout
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </div>
         <div class="caption">
             <span class="border">Team 4</span>
         </div>

@@ -5,7 +5,8 @@
 }
 html{
     border-radius: 1rem;
-    background-color: #CCCCFF;
+    /* background-color: #CCCCFF; */
+    background-color: #292B2C;
     border: white;
 }
 body{
@@ -26,7 +27,7 @@ body{
 
 h1{
     font-size: 1.2rem;
-    color: #0b211b;
+    color: #FCFDFD;
     letter-spacing: 0.1rem;
 }
 
@@ -40,24 +41,29 @@ h1{
 }
 
 .bookmark-item{
-    background-color: rgb(169, 153, 242);
-    color: #0b211b;
-    font-weight: bold;
-    font-size: 1rem;
+    /* background-color: rgb(169, 153, 242); */
+    background-color: #292B2C;
+    color: #FCFDFD;
+    font-weight: 600;
+    font-size: 0.8rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 0.4rem;
+    border: 1px solid rgb(151, 150, 152);
     padding: 0.5rem 0.3rem;
     box-shadow: 1px 3px 2px 2px rgb(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+.bookmark-item:hover{
+    background-color: #FAFAFA;
+    color: #292B2C;
 }
-
+.bookmark-time{
+    cursor: pointer;
+}
 
 .Btns{
     display: flex;

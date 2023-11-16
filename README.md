@@ -17,4 +17,4 @@
 
 ### Trello Clone: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Akash-Shukla/index.html"> Click Here </a>
 
-### Code Editor: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Shiva-Mallik/index.html"> Click Here </a>
+### Code Editor: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Shiva-Malik/index.html"> Click Here </a>

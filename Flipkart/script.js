@@ -1,17 +1,6 @@
 import { products } from "./data.js";
 
-// let fList = [];
-// let price = [document.querySelector(".min"), document.querySelector(".max")];
-
-// let priceRange = document.querySelector(".range-price");
-
-// priceRange.addEventListener("input", (e)=>{
-//     if(e.target.className === "min" || e.target.className === "max"){
-//         console.log(price[0].value, price[1].value);
-//         console.log(price[0].innerText);
-//     }
-// })
-
+// Function to render products
 let addProducts = (list = products) => {
   const productList = document.querySelector(".product-list");
   productList.innerHTML = "";
@@ -57,6 +46,7 @@ const range = document.querySelector(".range-selected");
 const rangeInput = document.querySelectorAll(".range-input input");
 const rangePrice = document.querySelectorAll(".range-price input");
 
+// Function for changing price on sliding the price bar
 rangeInput.forEach((input) => {
   input.addEventListener("input", (e) => {
     let minRange = parseInt(rangeInput[0].value);
@@ -90,7 +80,6 @@ sortOptions.addEventListener("click", (e) => {
   if (e.target.classList.contains("popularity")) {
     sortItems();
     e.target.id = "selected";
-    console.log("clicked popularity");
     sortedList = products.sort((a, b) => b.popularity - a.popularity);
     addProducts(sortedList);
   } else if (e.target.classList.contains("low-to-high")) {
@@ -120,5 +109,52 @@ filterList.addEventListener("click", (e) => {
   }
 });
 
-
 window.onload = addProducts();
+
+
+// Function to filter products
+function filterProducts() {
+  let filteredProducts = [...products]; // Start with all products
+
+  // Apply filters based on the state of checkboxes
+  if (document.getElementById('fassured').checked) {
+      filteredProducts = filteredProducts.filter(product => product.flipkartAssured);
+  }
+
+  document.querySelectorAll(".offers input").forEach(element =>{
+    if(element.checked && element.nextElementSibling.innerText === "No Cost EMI"){
+      filteredProducts = filteredProducts.filter(product=> product.noCostEMI);
+    } 
+    if(element.checked && element.nextElementSibling.innerText === "specialPrice"){
+      filteredProducts = filteredProducts.sort((a, b)=> a.specialPrice > b.specialPrice);
+    }
+  });
+
+  document.querySelectorAll(".brands input").forEach(element=>{
+    let brandName = element.name;
+    if(element.checked){
+      filteredProducts = filteredProducts.filter(product=> product.title.includes(brandName));
+    }
+  });
+
+  document.querySelectorAll(".cRatings input").forEach(element =>{
+    let ratingElementValue = element.value;
+    if (element.checked) {
+      filteredProducts = filteredProducts.filter(product => product.rating > ratingElementValue);      
+    }
+  });
+
+      filteredProducts = filteredProducts.filter(product=> product.specialPrice >= rangeInput[0].value && product.specialPrice <= rangeInput[1].value);
+
+
+
+
+  //render the filteredProducts on the page
+  addProducts(filteredProducts);
+}
+
+
+// Attach the filterProducts function to the change event of all checkboxes
+document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+  checkbox.addEventListener('change', filterProducts);
+});

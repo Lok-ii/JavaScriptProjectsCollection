@@ -147,3 +147,60 @@ function register(){
 // User Login
 let loginForm=document.querySelector(".loginForm")
 let formLogin=document.querySelector(".formLogin")
+
+formLogin.addEventListener("click",(event)=>{
+    event.preventDefault()
+    console.log("Hiii");
+    validateSignIn();
+})
+
+function validateSignIn(){
+    let email=document.forms["signInForms"]["email"]
+    let password=document.forms["signInForms"]["password"]
+
+    if(password.value=="" || email.value==""){
+        window.alert("Please enter your details");
+        return false;
+    }    
+    else{
+        const LoginStatus=signIn()
+        if(LoginStatus==='notRegistered'){
+            window.alert("Wrong Details entered")
+            return false
+        }
+        else if(LoginStatus==='success'){
+            window.alert("Successfully Registered")
+            return true
+        }
+    }
+}
+
+function signIn(){
+    let email=document.forms["signInForms"]["email"].value;
+    let password=document.forms["signInForms"]["password"].value;
+    let UserLogin={
+        "Email":email,
+        "Password":password
+    }
+    let users=[];
+    users=JSON.parse(localStorage.getItem("users")) || []
+
+    console.log(users);
+    for(let i in users){
+        if(UserLogin.Email==users[i].Email && UserLogin.Password==users[i].Password){
+           let signIn_indexDiv=document.querySelector(".signIn") 
+           signIn_indexDiv.innerHTML=`
+            <span class="signInBtn">${users[i].Name}</span>
+           `
+
+           localStorage.setItem('user',JSON.stringify({'Name':users[i].Name,'Email':users[i].Email}))
+           container.style.display="flex"
+           loginSection.style.display="none"
+           return 'success'
+        }
+        else{
+            return 'notRegistered'
+        }
+    }
+
+}

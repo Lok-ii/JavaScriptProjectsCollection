@@ -1,31 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trello Clone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
-    <div class="main">
+    <div id="main">
         <h1>Trello Board</h1>
 
-        <div class="notes">
-            
+        <div class="board-case">
+            <div class="boards">
+                <!-- first board created here -->
                 <div class="board">
-                    <div class="innerBoard">
-                        <div class="header"></div>
-
-                        <div class="details"></div>
+                    <div class="inner-board">
+                        <div class="header">
+                            <p class="title">Doing<span>1</span></p>
+                            <div class="options"><i class="fa-solid fa-ellipsis"></i></div>
+                        </div>
+                        <div class="appCards custom-scroll">
+                            <div class="card" draggable="true">
+                                <div class="card-head">
+                                    <div class="cardlabels"><label
+                                            style="background-color:violet; color: white;">Database</label>
+                                    </div>
+                                    <div class="card-options"><i class="fa-solid fa-ellipsis"></i></div>
+                                </div>
+                                <div class="card-title">Task1</div>
+                                <div>
+                                    <p><i class="fa-solid fa-bars-staggered"></i></p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-footer-item"><i class="fa-regular fa-square-check"></i> 0/1</p>
+                                </div>
+                            </div>
+                            <div class="custom-input">
+                                <p class="display board-add-card">+ Add Card</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
+
+                <div class="board">
+                    <div class="inner-board">
+                        <div class="header">
+                            <p class="title">Upcoming<span>1</span></p>
+                            <div class="options"><i class="fa-solid fa-ellipsis"></i></div>
+                        </div>
+                        <div class="appCards custom-scroll">
+                            <div class="card" draggable="true">
+                                <div class="card-head">
+                                    <div class="cardlabels"><label
+                                            style="background-color:violet; color: white;">Database</label>
+                                    </div>
+                                    <div class="card-options"><i class="fa-solid fa-ellipsis"></i></div>
+                                </div>
+                                <div class="card-title">Task2</div>
+                                <div>
+                                    <p><i class="fa-solid fa-bars-staggered"></i></p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-footer-item"><i class="fa-regular fa-square-check"></i> 0/1</p>
+                                </div>
+                            </div>
+                            <div class="custom-input">
+                                <p class="display board-add-card">+ Add Card</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- .....add board option here -->
+                <div class="new-board">
+                    <div class="new-input">
+                        <p class="display add-board">Add Board</p>
+                    </div>
+                </div>
+
+
+                <!-- pop-up options box created here -->
+                <div class="modal">
+                <div class="modal-content custom-scroll">
+                    <div class="cardinfo">
+                        <div class="cardinfo-box">
+                            <div class="cardinfo-box-title"><i class="fa-solid fa-t"></i>
+                                <p>Title</p>
+                            </div>
+                            <div class="new-input">
+                                <p class="display ">Upcoming</p>
+                            </div>
+                        </div>
+                        <div class="cardinfo-box">
+                            <div class="cardinfo-box-title"><i class="fa-solid fa-bars"></i>
+                                <p>Description</p>
+                            </div>
+                            <div class="new-input">
+                                <p class="display ">mct exam</p>
+                            </div>
+                        </div>
+                        <div class="cardinfo-box">
+                            <div class="cardinfo-box-title"><i class="fa-regular fa-calendar-days"></i>
+                                <p>Date</p>
+                            </div><input type="date" min="2023-11-16" value="2022-05-04">
+                        </div>
+                        <div class="cardinfo-box">
+                            <div class="cardinfo-box-title"><i class="fa-solid fa-tag"></i>
+                                <p>Labels</p>
+                            </div>
+                            <div class="cardinfo-box-labels"><label
+                                    style="background-color: green; color: white;">Payment
+                                    API <span class="cross"><i class="fa-solid fa-xmark"></i></span></label>
+                                </div>
+                            <ul>
+                                <li class="" style="background-color: brown;"></li>
+                                <li class="" style="background-color: green;"></li>
+                                <li class="" style="background-color: blue;"></li>
+                                <li class="" style="background-color: olive;"></li>
+                                <li class="" style="background-color: purple;"></li>
+                                <li class="" style="background-color: pink;"></li>
+                                <li class="" style="background-color: cyan;"></li>
+                            </ul>
+                            <div class="new-input">
+                                <p class="display ">Add Label</p>
+                            </div>
+                        </div>
+                        <div class="cardinfo-box">
+                            <div class="cardinfo-box-title"><i class="fa-regular fa-square-check"></i>
+                                <p>Tasks</p>
+                            </div>
+                            <div class="cardinfo-box-progress-bar">
+                                <div class="cardinfo-box-progress" style="width: 100%; background-color: limegreen;">
+                                </div>
+                            </div>
+                            <div class="cardinfo-box-task-list">
+                                <div class="cardinfo-box-task-checkbox"><input type="checkbox" checked="">
+                                    <p class="completed">GraphQl</p><i class="fa-regular fa-trash-can"></i>
+                                </div>
+                                <div class="cardinfo-box-task-checkbox"><input type="checkbox" checked="">
+                                    <p class="completed">Restful API</p><i class="fa-regular fa-trash-can"></i>
+                                </div>
+                            </div>
+                            <div class="new-input">
+                                <p class="display ">Add a Task</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
-    
+
 
 
 
     <script src="./script.js"></script>
 </body>
+
 </html>

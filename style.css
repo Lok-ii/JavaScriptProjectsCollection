@@ -1,0 +1,182 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.loginSection{
+    background: linear-gradient(90deg,#2e2d2d 0%,#111 100%);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6, .bgimg-7, .bgimg-8, .bgimg-9,.bgimg-10 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../Assets-FrontPage/team.jpg");
+  min-height: 100vh;
+}
+
+.bgimg-2 {
+  background-image: url("../Assets-FrontPage/chromeExtension.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("../Assets-FrontPage/resumeTemplate.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+    background-image: url("../Assets-FrontPage/invoiceGenerator.jpg");
+    min-height: 400px;
+}
+
+.bgimg-5 {
+    background-image: url("../Assets-FrontPage/paymentIntegration.jpg");
+    min-height: 400px;
+}
+.bgimg-6 {
+    background-image: url("../Assets-FrontPage/trelloClone.jpg");
+    min-height: 400px;
+}
+.bgimg-7 {
+    background-image: url("../Assets-FrontPage/typingSpeedTest.jpg");
+    min-height: 400px;
+}
+.bgimg-8 {
+    background-image: url("../Assets-FrontPage/mineGame.jpg");
+    min-height: 400px;
+}
+.bgimg-9{
+    background-image: url("../Assets-FrontPage/codeEditor.jpg");
+    min-height: 400px;
+}
+.bgimg-10 {
+    background-image: url("../Assets-FrontPage/flipkart.jpg");
+    min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+.signIn{
+    display: flex;
+    justify-content: end;
+}
+.signInBtn{
+    background-color: black;
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    box-shadow: 2px 5px 5px black;
+    cursor: pointer;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    width: 500px;
+    padding: 20px;
+    margin: 190px auto;
+    text-transform: uppercase;
+    color: #f3f3f3;
+    background: #f6f6f6;
+    border: 2px solid #111;
+    border-radius: 18px;
+    gap: 1rem;
+}
+.cancel{
+    color: black;
+    display: flex;
+    justify-content: end;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+.registration form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input{
+    height: 20px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+}
+.registerBtn.active{
+    background-color: #111;
+    color: white;
+    width: 49%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #111;
+    cursor: pointer;
+
+}
+.loginBtn{
+    width: 49%;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #111;
+    cursor: pointer;
+
+  }

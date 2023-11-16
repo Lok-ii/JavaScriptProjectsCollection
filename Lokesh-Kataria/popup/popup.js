@@ -9,11 +9,11 @@ let tabUrl = "";
 getCurrentTab()
   .then((res) => {
     tabUrl = res.url;
-    if (tabUrl.includes("www.youtube.com/")) {
+    if (tabUrl.includes("www.youtube.com/watch")) {
       heading.innerText = "YouTube TimeStamps";
     } else {
       console.log(tabUrl);
-      heading.innerText = "This is not a Youtube Page";
+      heading.innerText = "This is not a Youtube Video Page";
     }
   })
   .catch((err) => {
@@ -38,7 +38,10 @@ let addBookmarkElement = (time, url) => {
 
   let bookmarkElement = document.createElement("div");
   bookmarkElement.className = "bookmark-item";
-  bookmarkElement.innerHTML = `<span>Bookmark at </span><span class="time">${time}</span>
+  bookmarkElement.classList.add("animate__animated");
+  bookmarkElement.innerHTML = `<div class="bookmark-time">
+  <span>Bookmark at </span><span class="time">${time}</span>
+</div>
     <div>
         <img src="../icons/button-icon-png-21060.png" class="play" alt="${url}&t=${timeInSeconds}">
         <img src="../icons/vecteezy_trash-can-icon-sign-symbol-design_9972702_576.png" class="delete">
@@ -75,12 +78,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  bookmarks.addEventListener("mouseenter", (e)=>{
+    if(e.target.classList.contains("bookmark-item")){
+      e.target.classList.toggle("animate__bounce");
+    }
+  });
+
+  bookmarks.addEventListener("mouseleave", (e)=>{
+    if(e.target.classList.contains("bookmark-item")){
+      e.target.classList.toggle("animate__bounce");
+    }
+  });
+
   // Event listener for playing and deleting the bookmarked stamps
   bookmarks.addEventListener("click", (e) => {
     if (e.target.className === "delete") {
       let timeValue =
-        e.target.parentElement.parentElement.firstElementChild
-          .nextElementSibling.innerText;
+        e.target.parentElement.previousElementSibling.lastElementChild.innerText;
 
       let videoId = tabUrl.split("?")[1].substring(2);
 
@@ -107,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.parentElement.parentElement.remove();
     } else if (e.target.className === "play") {
       // Event listener for playing the video at the bookmarked timestamp
-      let timeValue = e.target.parentElement.previousElementSibling.innerText;
+      let timeValue = e.target.parentElement.previousElementSibling.lastElementChild.innerText;
         chrome.tabs.query(
           { active: true, currentWindow: true },
           function (tabs) {

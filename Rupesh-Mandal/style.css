@@ -7,22 +7,25 @@
 
   body{
     font-family: 'Trebuchet MS', sans-serif;
+    position: relative;
+    /* margin: 0;
+    padding: 0; */
   }
   
   .main{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    /* min-height: 100vh; */
-    
-    background-color:#EE4E34;
-    background-image: url("https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg");
+    /* background-color:#EE4E34; */
+    background-image: url("https://plus.unsplash.com/premium_photo-1676422355165-d809008b8342?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
 
     /* filter:blur(50px); */
     /* object-fit: cover; */
@@ -33,16 +36,30 @@
     /* max-width: 90%; */
     padding: 1.5rem;
     border-radius: .5rem;
-    border: 2px solid black;
-    background-color: #FCEDDA;
+    /* border: 2px solid black; */
+    background-color: #FADB4F;
+    margin-top: 10rem;
   }
-  
+  .timer{
+    position: absolute;
+    top:5rem;
+    font-size: 4rem;
+    color: #FADB4F;
+    font-weight: bold;
+  }
+  .display-paragraphs{
+    /* height: 50%;
+    border: 2px solid;
+    overflow: scroll; */
+    margin-bottom: 1rem;
+  }
   .textarea{
     width: 100%;
     /* height: 40%; */
     height: 10rem;
     background-color: transparent;
-    border: 4px solid #A1922E;
+    border: 3px solid #A1922E;
+    border-radius: .5rem;
     outline: none;
     font-size: 1rem;
     font-family: 'Trebuchet MS', sans-serif;
@@ -66,16 +83,50 @@
 
   .buttons{
     width:50%;
-    height: 5%;
-    border: 2px solid black;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    height: 5rem;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+
     /* margin-left: 20%; */
   }
-  button{
-    margin-left: 12rem;
+  /* button{
+    
     border: none;
     width: 5rem;
     height: 2rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+  } */
+  /* #sart{
+    color:green;
+    background-color: #A1922E;
+  } */
+  /* button .start{
+    color: #EE4E34;
+  } */
+
+  .start{
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    border-radius: .5rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: green;
+    box-shadow: .2rem .2rem;
+  }
+  .reset{
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    border-radius: .5rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: red;
+    box-shadow: .2rem .2rem;
   }

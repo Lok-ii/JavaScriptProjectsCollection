@@ -39,20 +39,12 @@ bookmarkIcon.addEventListener("click", () => {
     console.log("Timestamp added:", timeStamp.innerText);
     console.log("Video URL:", window.location.href);
     console.log("Video ID:", videoId);
-
-    // Send a message to the background script
-    // chrome.runtime.sendMessage({
-    //   type: "bookmarkAdded",
-    //   time: timeStamp.innerText,
-    //   url: window.location.href,
-    //   video: videoId,
-    // });
   });
 });
 
 chrome.runtime.onMessage.addListener((data, sender, response)=>{
   if(data.type === 'PLAY'){
-    timeStamp.innerText = data.timeStampValue;
-    console.log("changed");
+    let youtubePlayer = document.querySelector("video");
+    youtubePlayer.currentTime = data.timeStampValue;
   }
 });

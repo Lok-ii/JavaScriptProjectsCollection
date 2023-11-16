@@ -8,7 +8,7 @@ function initialise(){
      
     document.body.onkeyup=function(){
         code.open();
-        var content=html.value+"<stle>"+css.value+"</style><script>"+js.value+"<\/script>";
+        var content=html.value+"<style>"+css.value+"</style><script>"+js.value+"<\/script>";
         code.write(content);
         code.close();
     }

@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "color": "#3399cc"
         }
     };
-    var rzp1 = new Razorpay(options);
+    var rzp1 =   new Razorpay(options);
     rzp1.open();
   }
 

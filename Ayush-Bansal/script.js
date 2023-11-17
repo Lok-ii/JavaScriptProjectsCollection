@@ -86,9 +86,9 @@ let mailgmailcont=document.querySelector(".mailgmailcont")
 let numphone=document.querySelector(".numphone")
 let loactioncontadd=document.querySelector(".loactioncontadd")
 let prfilecont2=document.querySelector(".prfilecont2")
+let skillsnamecont=document.querySelector(".skillsnamecont");
 
-
-
+// console.log(skillsadd);
 let thirdleft=document.querySelector(".thirdleft");
 
 let thirdlefth1=document.querySelector(".thirdleft h1");
@@ -113,12 +113,30 @@ let education6p=document.querySelector(".education6 p")
 skilladd.addEventListener("input",()=>{
     if(skilladd.value[skilladd.value.length-1]===","){
     let p=document.createElement("p");
+    let p2=document.createElement("li");
     p.innerHTML=`${skilladd.value.substring(0,skilladd.value.length-1)}`;
+    p2.innerHTML=`${skilladd.value.substring(0,skilladd.value.length-1)}`;
     p.className="skill1"
+    p.style.backgroundColor=`${colorheader.value}`
+    p2.className="skilladvance"
+    
     skillsadd.appendChild(p)
+    skillsnamecont.appendChild(p2);
     skilladd.value="";
+  
     }
+  
 })
+
+skillsadd.addEventListener("dblclick",(e)=>{
+//    e.target.delete;
+e.target.style.display="none"
+})
+
+skillsnamecont.addEventListener("dblclick",(e)=>{
+    //    e.target.delete;
+    e.target.style.display="none"
+    })
 
 inputtags.forEach((items)=>{
     items.addEventListener("input",()=>{
@@ -222,17 +240,17 @@ function createemploy(){
 `
 let employcont1=document.createElement("div");
 employcont1.className="employcont11"
-employcont1.innerHTML=`<div class="flex"> <li class="employtitle">1</li><div  class="flex2"><p class="startemp">1</p> - 
-<p class="endemp">1</p></div></div>
-<p class="descriptionempl">1</p>
+employcont1.innerHTML=`<div class="flex"> <li class="employtitle"></li><div  class="flex2"><p class="startemp"></p> - 
+<p class="endemp">Present</p></div></div>
+<p class="descriptionempl"></p>
 
 `
 let newemploycont1=document.createElement("div");
 newemploycont1.className="employcont11"
 
-newemploycont1.innerHTML=`<div class="flex"> <li class="employtitle">1</li><div  class="flex2"><p class="startemp">1</p> - 
-<p class="endemp">1</p></div></div>
-<p class="descriptionempl">1</p>
+newemploycont1.innerHTML=`<div class="flex"> <li class="employtitle"></li><div  class="flex2"><p class="startemp"></p> - 
+<p class="endemp">Present</p></div></div>
+<p class="descriptionempl"></p>
 `
 
 
@@ -282,17 +300,17 @@ function createprojec(){
 
     let projectcont1=document.createElement("div");
     projectcont1.className="projectcont11"
-    projectcont1.innerHTML=`<div class="flex"> <li class="titlepro">1</li><div  class="flex2"><p class="start">1</p> - 
-    <p class="end">1</p></div></div>
-    <p class="descriptionpro">1</p>
+    projectcont1.innerHTML=`<div class="flex"> <li class="titlepro"></li><div  class="flex2"><p class="start"></p> - 
+    <p class="end">Present</p></div></div>
+    <p class="descriptionpro"></p>
     
     `
     let newprojectcont=document.createElement("div");
     newprojectcont.className="projectcont11"
 
-    newprojectcont.innerHTML=`<div  class="flex"><li class="titlepro">1</li><div  class="flex2"><p class="start">1</p> - 
-    <p class="end">1</p></div></div>
-    <p class="descriptionpro">1</p>
+    newprojectcont.innerHTML=`<div  class="flex"><li class="titlepro"></li><div  class="flex2"><p class="start"></p> - 
+    <p class="end">Present</p></div></div>
+    <p class="descriptionpro"></p>
     `
     project6cont.appendChild(newprojectcont);
     projectcont.appendChild(projectcont1);
@@ -334,19 +352,18 @@ function createeducation(){
             <input type="text" name="" id="school" placeholder="School/College">
             <textarea name="" id="" cols="50" rows="5"  class="Descriptionedu" placeholder="Description"></textarea>`
 
-let educationcont11=document.querySelector("div");
+let educationcont11=document.createElement("div");
 educationcont11.classList="educationcont112"
-educationcont11.innerHTML=`<div class="flex"> <li class="eduationtitle">1</li><div  class="flex2"><p class="startedu">1</p> - 
-<p class="endedu">1</p></div></div>
-<p class="descriptionedu1">1</p>
+educationcont11.innerHTML=`<div class="flex"> <li class="eduationtitle"></li><div  class="flex2"><p class="startedu"></p> - 
+<p class="endedu">Present</p></div></div>
+<p class="descriptionedu1"></p>
 `
 let neweducationcount1=document.createElement("div");
-neweducationcount1.className="neweducationcount1";
+neweducationcount1.className="educationcont112";
 neweducationcount1.innerHTML=`
-<div class="flex"> <li class="eduationtitle">1</li><div  class="flex2"><p class="startedu">1</p> - 
-<p class="endedu">1</p></div></div>
-<p class="descriptionedu1">1</p>
-<br>
+<div class="flex"> <li class="eduationtitle"></li><div  class="flex2"><p class="startedu"></p> - 
+<p class="endedu">Present</p></div></div>
+<p class="descriptionedu1"></p>
 `
 education6cont.appendChild(neweducationcount1)
 educationcont.appendChild(educationcont11);
@@ -357,6 +374,8 @@ educationaldetails.insertBefore(educationdetaili,newappendeducat);
 newappendeducat.addEventListener("click",()=>{
     let educationdetaili=document.querySelectorAll(".educationdetaili")
     let educationcont112=document.querySelectorAll(".educationcont112");
+
+    console.log(educationdetaili.length,educationcont112.length);
 
     let k=0;
     for(let j=0;j<4;j++){
@@ -375,6 +394,26 @@ newappendeducat.addEventListener("click",()=>{
     }
 })
 
+let secondcont=document.querySelector(".secondcont")
+let downloadbtn=document.querySelector(".downloadbtn");
+
+downloadbtn.addEventListener("click",function(){
+    downloadbtn.disabled=true;
+    if(downloadbtn.disabled==true){
+        let nav=document.querySelector("nav");
+ let aside=document.querySelector(".secondcont aside")
+ aside.style.display="none"
+ nav.style.display="none"
+ secondmain.style.width="100%"
+ thirdmain.style.width="100%"
+
+    window.print();
+    }
+  
+ 
+    
+
+})
 
 
 
@@ -384,17 +423,20 @@ newappendeducat.addEventListener("click",()=>{
 
 
 
+// let downloadbtn = document.querySelector(".download");
 
 
+// function downevent(btn2, val) {
+//     btn2.addEventListener("click", () => {
+//         val.style.width = "100%";
+//         val.style.height = "100%";
+//         html2pdf(val, {
+//             filename: 'resume.pdf',
+//             image: { type: 'jpeg', quality: 0.98 },
+//             html2canvas: { scale: 2 },
+//             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+//         }).from(val);
+//     });
+// }
 
-
-// .........................third page .............
-let back3=document.querySelector(".back3")
-// back3.addEventListener("click",()=>{
-//     alert("you can't go back")
-// })
-let select3=document.querySelector("#templateType3");
-// console.log(select3);
-
-
-
+// downevent(downloadbtn, finalesResume);

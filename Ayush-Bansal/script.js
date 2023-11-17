@@ -1,5 +1,4 @@
 let choose=document.querySelectorAll(".one img");
-// console.log( choose);
 let firstpage=document.querySelector(".firstpage")
 let secondpage=document.querySelector(".secondpage")
 let thirdpage=document.querySelector(".thirdpage")
@@ -13,6 +12,9 @@ let colortext31=document.querySelector("#colortext31")
 let colortext32=document.querySelector("#colortext32")
 let templateoption=document.querySelector("#templateType")
 let project6cont=document.querySelector(".project6cont")
+let newappendemploy=document.querySelector("#newappendemploy");
+let newappendeducat=document.querySelector("#newappendeducat")
+let newappend=document.querySelector("#newappend");
 
 choose.forEach((item)=>{
     item.addEventListener("click",function(){
@@ -107,7 +109,7 @@ let project6=document.querySelector(".project6")
 let project6p=document.querySelector(".project6 p")
 let education6=document.querySelector(".education6")
 let education6p=document.querySelector(".education6 p")
-let newappend=document.querySelector("#newappend");
+
 skilladd.addEventListener("input",()=>{
     if(skilladd.value[skilladd.value.length-1]===","){
     let p=document.createElement("p");
@@ -190,55 +192,78 @@ let educationaldetails3=document.querySelector(".educationaldetails3")
 buttons.forEach((items)=>{
    items.addEventListener("click",()=>{
     if(items.id==="employment"){
+        newappendemploy.style.display="block"
        createemploy()
     }else if(items.id==="project"){
+        newappend.style.display="block"
         createprojec()   
     }else if(items.id=="education"){
+        newappendeducat.style.display="block"
         createeducation()
-    }else if(items.id=="employment33"){
-        createemploy3()
-    }else if(items.id=="project3"){
-        createprojec3() 
-    }else if(items.id=="education3"){
-        createeducation3()
     }
    })
 })
 
+let experiencecont=document.querySelector(".experiencecont")
+let exprence4cont=document.querySelector(".exprence4cont")
+
+
 function createemploy(){
-    let  employdetail=document.createElement("div")
-    employdetail.className=" employdetail";
-    employdetail.innerHTML=`
+    let  employdetaili=document.createElement("div")
+    employdetaili.className="employdetaill";
+    employdetaili.innerHTML=`
        
-    <p>Start</p>
-    <input type="month" name="" id="month">
-    <p>End</p>
-    <input type="month" name="" id="monthend">
-    <input type="text" id="jobpre" placeholder="Job Title">
+    <div><p>Start</p>
+    <input type="month" name="" id="month"></div>
+   <div> <p>End</p>
+   <input type="month" name="" id="monthend"></div>
     <input type="text" name="" id="employer" placeholder="Employer">
     <textarea name="" id="" cols="50" rows="5"  class="Description" placeholder="Description"></textarea>
 `
-employdetails.appendChild( employdetail);
-// console.log("hyyyyyyyyyyyy");
-}
+let employcont1=document.createElement("div");
+employcont1.className="employcont11"
+employcont1.innerHTML=`<div class="flex"> <li class="employtitle">1</li><div  class="flex2"><p class="startemp">1</p> - 
+<p class="endemp">1</p></div></div>
+<p class="descriptionempl">1</p>
 
-
-function createemploy3(){
-    let  employdetail=document.createElement("div")
-    employdetail.className=" employdetail";
-    employdetail.innerHTML=`
-       
-    <p>Start</p>
-    <input type="month" name="" id="month">
-    <p>End</p>
-    <input type="month" name="" id="monthend">
-    <input type="text" id="jobpre" placeholder="Job Title">
-    <input type="text" name="" id="employer" placeholder="Employer">
-    <textarea name="" id="" cols="50" rows="5"  class="Description" placeholder="Description"></textarea>
 `
-employdetails3.appendChild( employdetail);
-// console.log("hyyyyyyyyyyyy");
+let newemploycont1=document.createElement("div");
+newemploycont1.className="employcont11"
+
+newemploycont1.innerHTML=`<div class="flex"> <li class="employtitle">1</li><div  class="flex2"><p class="startemp">1</p> - 
+<p class="endemp">1</p></div></div>
+<p class="descriptionempl">1</p>
+`
+
+
+exprence4cont.appendChild(newemploycont1);
+experiencecont.appendChild(employcont1);
+
+
+employdetails.insertBefore(employdetaili,newappendemploy);
 }
+
+
+newappendemploy.addEventListener("click",()=>{
+let employdetaill=document.querySelectorAll(".employdetaill");
+let employcont11=document.querySelectorAll(".employcont11");
+let k=0;
+    for(let j=0;j<4;j++){
+        for(let i=0;i<employdetaill.length;i++){
+            
+            employcont11[k].firstElementChild.lastElementChild.firstElementChild.innerText=employdetaill[i].firstElementChild.lastElementChild.value;
+    
+            employcont11[k].firstElementChild.lastElementChild.lastElementChild.innerText=employdetaill[i].firstElementChild.nextElementSibling.lastElementChild.value;
+    
+            employcont11[k].firstElementChild.firstElementChild.innerText=employdetaill[i].lastElementChild.previousElementSibling.value;
+    
+            employcont11[k].lastElementChild.innerText=employdetaill[i].lastElementChild.value;
+
+                k++;
+        }
+    }
+
+})
 
 let projectcont=document.querySelector(".projectcont");
 function createprojec(){
@@ -269,16 +294,10 @@ function createprojec(){
     <p class="end">1</p></div></div>
     <p class="descriptionpro">1</p>
     `
-
-
     project6cont.appendChild(newprojectcont);
     projectcont.appendChild(projectcont1);
-   
-    
-
     
     projectdetails.insertBefore(projectdetali,newappend);
-    
 }
 
 newappend.addEventListener("click",()=>{
@@ -297,56 +316,73 @@ newappend.addEventListener("click",()=>{
                 projectcont11[k].lastElementChild.innerText=projectdetaill[i].lastElementChild.value;
 
                 k++;
-                // console.log( projectcont11[i].firstElementChild.firstElementChild.nextElementSibling.innerText);
+        }
+    }
+})
+let educationcont=document.querySelector(".educationcont")
+let education6cont=document.querySelector(".education6cont");
+
+
+function createeducation(){
+    let educationdetaili=document.createElement("div");
+    educationdetaili.className="educationdetaili"
+    educationdetaili.innerHTML=`
+   <div> <p>Start</p>
+   <input type="month" name="" id="monthedu"></div>
+           <div> <p>End</p>
+           <input type="month" name="" id="monthendedu"></div>
+            <input type="text" name="" id="school" placeholder="School/College">
+            <textarea name="" id="" cols="50" rows="5"  class="Descriptionedu" placeholder="Description"></textarea>`
+
+let educationcont11=document.querySelector("div");
+educationcont11.classList="educationcont112"
+educationcont11.innerHTML=`<div class="flex"> <li class="eduationtitle">1</li><div  class="flex2"><p class="startedu">1</p> - 
+<p class="endedu">1</p></div></div>
+<p class="descriptionedu1">1</p>
+`
+let neweducationcount1=document.createElement("div");
+neweducationcount1.className="neweducationcount1";
+neweducationcount1.innerHTML=`
+<div class="flex"> <li class="eduationtitle">1</li><div  class="flex2"><p class="startedu">1</p> - 
+<p class="endedu">1</p></div></div>
+<p class="descriptionedu1">1</p>
+<br>
+`
+education6cont.appendChild(neweducationcount1)
+educationcont.appendChild(educationcont11);
+      
+educationaldetails.insertBefore(educationdetaili,newappendeducat);
+}
+
+newappendeducat.addEventListener("click",()=>{
+    let educationdetaili=document.querySelectorAll(".educationdetaili")
+    let educationcont112=document.querySelectorAll(".educationcont112");
+
+    let k=0;
+    for(let j=0;j<4;j++){
+        for(let i=0;i<educationdetaili.length;i++){
+            
+            educationcont112[k].firstElementChild.lastElementChild.firstElementChild.innerText=educationdetaili[i].firstElementChild.lastElementChild.value;
+    
+            educationcont112[k].firstElementChild.lastElementChild.lastElementChild.innerText=educationdetaili[i].firstElementChild.nextElementSibling.lastElementChild.value;
+    
+            educationcont112[k].firstElementChild.firstElementChild.innerText=educationdetaili[i].lastElementChild.previousElementSibling.value;
+    
+            educationcont112[k].lastElementChild.innerText=educationdetaili[i].lastElementChild.value;
+
+                k++;
         }
     }
 })
 
-let Descriptionpro=document.querySelector(".Descriptionpro");
 
-// console.log(Descriptionpro);
-// function createprojec3(){
-//     let projectdetali=document.createElement("div");
-//     projectdetali.className="projectdetail3";
-//     projectdetali.innerHTML=`
-//     <p>Start</p>
-//     <input type="month" name="" id="monthpro">
-//     <p>End</p>
-//     <input type="month" name="" id="monthendpro">
-//     <input type="text" id="projecttitle" placeholder="Project Title">
-//     <textarea name="" id="" cols="50" rows="5"  class="Descriptionpro" placeholder="Description"></textarea>`
-//     projectdetails3.appendChild(projectdetali);
-// }
 
-function createeducation(){
-    let educationdetailssss=document.createElement("div");
-    educationdetailssss.className="educationdetailssss"
-    educationdetailssss.innerHTML=`
-    <p>Start</p>
-            <input type="month" name="" id="monthedu">
-            <p>End</p>
-            <input type="month" name="" id="monthendedu">
-            <input type="text" id="qualification" placeholder="Qualification">
-            <input type="text" name="" id="school" placeholder="School/College">
-            <textarea name="" id="" cols="50" rows="5"  class="Descriptionedu" placeholder="Description"></textarea>`
 
-            educationaldetails.appendChild(educationdetailssss)
-}
 
-function createeducation3(){
-    let educationdetailssss=document.createElement("div");
-    educationdetailssss.className="educationdetailssss"
-    educationdetailssss.innerHTML=`
-    <p>Start</p>
-            <input type="month" name="" id="monthedu">
-            <p>End</p>
-            <input type="month" name="" id="monthendedu">
-            <input type="text" id="qualification" placeholder="Qualification">
-            <input type="text" name="" id="school" placeholder="School/College">
-            <textarea name="" id="" cols="50" rows="5"  class="Descriptionedu" placeholder="Description"></textarea>`
 
-            educationaldetails3.appendChild(educationdetailssss)
-}
+
+
+
 
 
 

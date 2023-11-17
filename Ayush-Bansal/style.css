@@ -206,7 +206,10 @@ padding:20px;
 .secondmain{
     height: 155vh;
     width: 50%;
-    border: 2px solid red;
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+    /* box-shadow: -3px -3px 6px rgb(86, 88, 89); */
+    border-radius: 7px;
     margin-top: 25px;
 }
 .resheader{
@@ -394,7 +397,11 @@ padding:20px;
 .thirdmain{
     height: 155vh;
     width: 50%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+
+    border-radius: 7px;
     margin-top: 25px;
 }
 .headerthird{
@@ -593,4 +600,39 @@ width: 100%;
     align-items: center;
     gap: 0.5rem;
 
+}
+#newappend,#newappendeducat,#newappendemploy{
+    /* display: none;
+     */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: 13rem;
+     background-color: green;
+     border: none;
+     padding: 8px;
+     margin-bottom: 15px;
+     display: none;
+     color: white;
+}
+.descriptionempl,.descriptionedu1,.descriptionpro{
+    /* color: #007500; */
+    width: 70%;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    margin-bottom: 10px;
+}
+.experiencecont,.projectcont,.educationcont{
+    width: 100%;
+}
+
+.exprence4cont,.project6cont{
+    /* width: 90%; */
+    margin-block:10px ;
+   padding-inline:2rem;
+   
+}
+.education6cont{
+padding-inline: 1rem;
+padding-top: 10px;
 }

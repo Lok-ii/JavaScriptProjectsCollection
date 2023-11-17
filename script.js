@@ -59,7 +59,7 @@ signInBtn.addEventListener("click",()=>{
 let cancel=document.querySelector(".cancel")
 cancel.addEventListener("click",()=>{
     container.style.display="flex"
-    loginSection.style.display="flex"
+    loginSection.style.display="none"
 })
 
 let registerBtn=document.querySelector(".registerBtn")

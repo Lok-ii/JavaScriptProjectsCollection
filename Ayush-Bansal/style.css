@@ -314,7 +314,8 @@ hr{
     background-color: white;
     display: flex;
     height: 10%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    box-shadow: 7px 1px 6px gray;
     justify-content: space-between;
     padding-inline: 10px ;
     align-items: center;

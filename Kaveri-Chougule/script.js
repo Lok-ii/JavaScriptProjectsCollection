@@ -325,3 +325,25 @@ let cross=document.getElementById("cross")
 cross.addEventListener("click",()=>{
     location.reload()
 })
+
+function sendMail(){
+    let params = {
+        name: document.getElementById("billTo1").value,
+        email: document.getElementById("billTo2").value,
+        senderEmail: document.getElementById("billFrom2").value,
+        senderName: document.getElementById("billFrom1").value,
+        dateOfIssue: document.querySelector("#issueDate").value,
+        total: document.querySelector(".lightBox_total").innerText,
+        notes: document.querySelector(".inputNotes").innerText
+    }
+
+    let templateId = "template_seyegfa";
+    let serviceId = "service_thkwh4k";
+    
+    emailjs.send(serviceId, templateId, params);
+}
+
+document.querySelector("#sendInvoice").addEventListener("click", (e)=>{
+    e.preventDefault();
+    sendMail();
+})

@@ -27,14 +27,14 @@ choose.forEach((item)=>{
         secondpage.style.display="block";
         // thirdpage.style.display="block"
         templateoption.value="advance"
-        thirdmain.classList.toggle("hidden");
-        secondmain.classList.toggle("hidden");
-        colorheader.classList.toggle("hidden");
-        colorheader31.classList.toggle("hidden");
-        colorheader32.classList.toggle("hidden");
-        colortext.classList.toggle("hidden");
-        colortext31.classList.toggle("hidden");
-        colortext32.classList.toggle("hidden");
+        thirdmain.classList.toggle("hiddenayush");
+        secondmain.classList.toggle("hiddenayush");
+        colorheader.classList.toggle("hiddenayush");
+        colorheader31.classList.toggle("hiddenayush");
+        colorheader32.classList.toggle("hiddenayush");
+        colortext.classList.toggle("hiddenayush");
+        colortext31.classList.toggle("hiddenayush");
+        colortext32.classList.toggle("hiddenayush");
       
       }
 
@@ -52,14 +52,14 @@ back.addEventListener('click',()=>{
 // console.log(templateoption);
 
 templateoption.addEventListener("input",(e)=>{
-    thirdmain.classList.toggle("hidden");
-    secondmain.classList.toggle("hidden");
-    colorheader.classList.toggle("hidden");
-    colorheader31.classList.toggle("hidden");
-    colorheader32.classList.toggle("hidden");
-    colortext.classList.toggle("hidden");
-    colortext31.classList.toggle("hidden");
-    colortext32.classList.toggle("hidden");
+    thirdmain.classList.toggle("hiddenayush");
+    secondmain.classList.toggle("hiddenayush");
+    colorheader.classList.toggle("hiddenayush");
+    colorheader31.classList.toggle("hiddenayush");
+    colorheader32.classList.toggle("hiddenayush");
+    colortext.classList.toggle("hiddenayush");
+    colortext31.classList.toggle("hiddenayush");
+    colortext32.classList.toggle("hiddenayush");
 })
 
 let resheader=document.querySelector(".resheader")

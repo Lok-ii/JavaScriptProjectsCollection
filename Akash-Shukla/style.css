@@ -151,7 +151,8 @@ p {
     min-height: 100vh;
     width: 100%;
     background-color: rgba(0,0,0,.46);
-    z-index: 20
+    z-index: 20;
+    display: none;
 }
 
 .modal-content {
@@ -446,7 +447,7 @@ p {
 .board-add-card {
     color: #000;
     box-shadow: 1px 1px 0 1px rgba(0,0,0,.12);
-    width: 100%;
+    width: 90%;
     text-align: center
 }
 
@@ -564,4 +565,8 @@ body {
     width: 100%;
     background-color: rgba(0,0,0,.46);
     z-index: 20;
+}
+
+.hidden{
+    display: none;
 }

@@ -266,7 +266,7 @@ newappendemploy.addEventListener("click",()=>{
 let employdetaill=document.querySelectorAll(".employdetaill");
 let employcont11=document.querySelectorAll(".employcont11");
 let k=0;
-    for(let j=0;j<4;j++){
+    for(let j=0;j<2;j++){
         for(let i=0;i<employdetaill.length;i++){
             
             employcont11[k].firstElementChild.lastElementChild.firstElementChild.innerText=employdetaill[i].firstElementChild.lastElementChild.value;
@@ -398,20 +398,18 @@ let secondcont=document.querySelector(".secondcont")
 let downloadbtn=document.querySelector(".downloadbtn");
 
 downloadbtn.addEventListener("click",function(){
-    downloadbtn.disabled=true;
-    if(downloadbtn.disabled==true){
-        let nav=document.querySelector("nav");
- let aside=document.querySelector(".secondcont aside")
- aside.style.display="none"
- nav.style.display="none"
- secondmain.style.width="100%"
- thirdmain.style.width="100%"
 
-    window.print();
-    }
-  
- 
-    
+if(templateoption.value==="basic"){
+    let seconddownload =document.querySelector(".secondmain")
+
+html2pdf().from(seconddownload).save();
+secondmain.style.width="100%"
+}else{
+    let thirddownload =document.querySelector(".thirdmain")
+
+html2pdf().from(thirddownload).save();
+thirdmain.style.width="100%"
+}
 
 })
 

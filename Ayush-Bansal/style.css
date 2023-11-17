@@ -57,9 +57,7 @@ body {
     justify-content: space-evenly;
 }
 .choosecont .one{
-
 margin-top: 10px;
-
 }
 .one img{
     border-radius: 20px ;
@@ -88,7 +86,7 @@ margin-top: 10px;
     text-decoration: none;
     transition: all 0.6s ease-in-out;
   }
-  .choosecont a:hover {
+  #linkedin:hover {
     font-size: 2rem;
   }
 
@@ -145,6 +143,7 @@ nav button{
 }
 .secondcont{
     display: flex;
+    width: 100%;
     height:90% ;
 }
 .secondpage aside{
@@ -336,65 +335,10 @@ nav button{
 }
 .thirdcont{
     display: flex;
-    
+    width: 100%;
     height:90% ;
 }
-.thirdpage aside{
-    width: 42%;
-    height: 100%;
-    /* border: 2px solid green; */
-}
-.thirdcont aside p{
-font-weight:300;
-font-size:20px;
-padding:20px;
-}
-.thirdcont aside select{
-    margin-left: 20px;
-    font-family: sans-serif;
-    outline: none;
-    border: none;
-    padding: 12px;
-    width: 75%;
-}
 
-#name,#email,#number,#jobtitle,.Professional,#skills,.Description,.Descriptionpro,.Descriptionedu,.address{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    font-family: sans-serif;
-    /* outline: none; */
-    border: none;
-    margin-bottom: 4%;
-}
-#employment,#project,#education{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    margin-bottom: 3%;
-    color: white;
-    background-color: #007500;
-    border: none;
-}
-#month,#monthend,#employer,#jobpre,#monthpro,#monthendpro,#projecttitle,#school,#monthendedu,#monthedu,#qualification{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    font-family: sans-serif;
-    /* outline: none; */
-    border: none;
-    margin-bottom: 2%;
-}
-
-.colorpick-eyedropper-input-trigger{
-    display: none;
-}
-#colorheader,#colortext{
-    margin-left: 20px;
-    border: none;
-    cursor: pointer;
-    height: 25px;    
-}
 .thirdmain{
     height: 155vh;
     width: 50%;
@@ -407,7 +351,6 @@ padding:20px;
 }
 .headerthird{
     display: flex;
-   
     height: 17%;
     width: 100%;
 }
@@ -415,7 +358,7 @@ padding:20px;
     display: flex;
     justify-content: center;
     align-items: center;  
-      width: 62%;
+    width: 62%;
       color: #e5e0e0;
     background-color: #333333;
 }
@@ -641,3 +584,99 @@ padding-top: 10px;
     padding-left: 36px;
     padding-top: 10px;
 }
+#sorcecode{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/* media qu for first page /................. */
+
+@media screen and (max-width: 1024px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+    .firstpage main h1{
+    font-size: 2em;
+}
+.firstpage main p{ 
+    font-size: 1em;
+}
+.choosecont{
+    text-align: center;
+    max-width: 70%;  
+    margin: auto;
+}
+.choosecont .buttons{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+.one img{
+    border-radius: 20px ;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+}
+.secondpage aside{
+    width: 36%;
+    height: 100%;
+    /* border: 2px solid green; */
+}
+.secondcont aside select{
+    padding: 9px;
+    width: 70%;
+}
+#name,#email,#number,#jobtitle,.Professional,#skills,.Description,.Descriptionpro,.Descriptionedu,.address{
+    padding: 9px;
+    width: 70%;
+}
+#employment,#project,#education,#employment33,#project3,#education3{
+    padding: 9px;
+    width: 70%;
+}
+#month,#monthend,#employer,#jobpre,#monthpro,#monthendpro,#projecttitle,#school,#monthendedu,#monthedu,#qualification{
+    padding: 9px;
+    width: 70%;
+}
+.secondmain{
+    height: 120vh;
+    width: 60%;
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+    /* box-shadow: -3px -3px 6px rgb(86, 88, 89); */
+    border-radius: 7px;
+    margin-top: 25px;
+}
+.thirdmain{
+    height: 135vh;
+    width: 61%;
+    /* border: 2px solid red; */
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+
+    border-radius: 7px;
+    margin-top: 25px;
+}
+.contact2,.profile2,.exprence4,.skillsname,.project6,.education6{
+    font-size: 1.3em;
+}
+
+
+  }
+
+  @media screen and (max-width: 650px){
+    .firstpage aside{
+        display: none;
+    }
+    
+.firstpage main{
+    /* background-color: #d0c3b6; */
+    height: 100%;
+    width: 100%;
+}
+
+  }

@@ -297,7 +297,7 @@ let light = document.querySelector(".light");
 let dark = document.querySelector(".dark");
 let body = document.querySelector("body");
 
-
+let symbol=document.querySelectorAll(".symbol")
 let section1=document.querySelector(".section1")
 light.addEventListener("click", () => {
   dark.style.display = "block";
@@ -305,9 +305,14 @@ light.addEventListener("click", () => {
 
   body.style.backgroundColor = "#f2f3f7"
   section1.style.backgroundColor="white"
-
-
-
+  section1.style.color='black'
+    btnColor.style.background='#0d6efd'
+    calculateTotal.style.background='#0d6efd'
+    addBtn.style.background='#0d6efd'
+    symbol.forEach((event)=>{
+        event.style.color='#2b3136'
+        event.style.borderColor='#2b3136'
+      })
 //   header.style.backgroundColor = "var(--background-color)";
 });
 
@@ -325,12 +330,18 @@ dark.addEventListener("click", () => {
   btnColor.style.background='#bb86fc'
   calculateTotal.style.background='#bb86fc'
   addBtn.style.background='#bb86fc'
+  symbol.forEach((event)=>{
+    event.style.color='white'
+    event.style.borderColor='white'
+  })
+//   #2b3136
 });
 let back=document.getElementById("back")
 back.addEventListener("click",()=>{
     let lightbox=document.getElementsByClassName("lightbox")
     console.log(lightbox[0]);
     lightbox[0].style.display="none"
+    
 })
 let cross=document.getElementById("cross")
 cross.addEventListener("click",()=>{

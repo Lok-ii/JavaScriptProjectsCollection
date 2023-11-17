@@ -107,6 +107,7 @@ function lightBoxFunction(){
     let lightBox=document.getElementsByClassName("lightbox")
     let itemName=document.querySelectorAll(".itemName")
     let itemDesc=document.querySelectorAll(".itemDesc")
+    let warning=document.querySelector(".warning")
     let check=true
 
     BillTo.forEach(item=>{
@@ -157,7 +158,10 @@ function lightBoxFunction(){
             lightBox_item_func(itemQ, itemN, itemD, itemP, itemA);
         });
         lightBox[0].style.display="flex"
-
+        warning.style.display="none"
+    }
+    else{
+        warning.style.display="flex"
     }
 }
 
@@ -307,14 +311,21 @@ light.addEventListener("click", () => {
 //   header.style.backgroundColor = "var(--background-color)";
 });
 
+let btnColor=document.querySelector(".review-btn")
+let calculateTotal=document.querySelector(".calculateTotal")
+let addBtn=document.querySelector(".addBtn")
+
 dark.addEventListener("click", () => {
   dark.style.display = "none";
   light.style.display = "block";
 
-  body.style.backgroundColor = "black"
-  section1.style.backgroundColor="darkslateblue"
+  body.style.backgroundColor = "#121212"
+  section1.style.backgroundColor="#363636"
+  section1.style.color='white'
+  btnColor.style.background='#bb86fc'
+  calculateTotal.style.background='#bb86fc'
+  addBtn.style.background='#bb86fc'
 });
-
 let back=document.getElementById("back")
 back.addEventListener("click",()=>{
     let lightbox=document.getElementsByClassName("lightbox")
@@ -331,14 +342,14 @@ function sendMail(){
         name: document.getElementById("billTo1").value,
         email: document.getElementById("billTo2").value,
         senderEmail: document.getElementById("billFrom2").value,
-        senderName : document.getElementById("billFrom1").value,
+        senderName: document.getElementById("billFrom1").value,
         dateOfIssue: document.querySelector("#issueDate").value,
         total: document.querySelector(".lightBox_total").innerText,
         notes: document.querySelector(".inputNotes").innerText
     }
 
-    let templateId = "template_hs8nsf9";
-    let serviceId = "service_6cl0nea";
+    let templateId = "template_seyegfa";
+    let serviceId = "service_thkwh4k";
     
     emailjs.send(serviceId, templateId, params);
 }

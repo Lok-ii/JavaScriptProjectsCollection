@@ -57,9 +57,7 @@ body {
     justify-content: space-evenly;
 }
 .choosecont .one{
-
 margin-top: 10px;
-
 }
 .one img{
     border-radius: 20px ;
@@ -88,7 +86,7 @@ margin-top: 10px;
     text-decoration: none;
     transition: all 0.6s ease-in-out;
   }
-  .choosecont a:hover {
+  #linkedin:hover {
     font-size: 2rem;
   }
 
@@ -124,7 +122,7 @@ margin-top: 10px;
     background-color: white;
     display: flex;
     height: 10%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-between;
     padding-inline: 10px ;
     align-items: center;
@@ -145,6 +143,7 @@ nav button{
 }
 .secondcont{
     display: flex;
+    width: 100%;
     height:90% ;
 }
 .secondpage aside{
@@ -175,7 +174,7 @@ padding:20px;
     border: none;
     margin-bottom: 4%;
 }
-#employment,#project,#education{
+#employment,#project,#education,#employment33,#project3,#education3{
     padding: 12px;
     width: 75%;
     margin-left: 20px;
@@ -197,7 +196,7 @@ padding:20px;
 .colorpick-eyedropper-input-trigger{
     display: none;
 }
-#colorheader,#colortext{
+#colorheader,#colortext,#colorheader31,#colortext31,#colorheader32,#colortext32{
     margin-left: 20px;
     border: none;
     cursor: pointer;
@@ -206,8 +205,11 @@ padding:20px;
 .secondmain{
     height: 155vh;
     width: 50%;
-    border: 2px solid red;
-    margin-top: 10px;
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+    /* box-shadow: -3px -3px 6px rgb(86, 88, 89); */
+    border-radius: 7px;
+    margin-top: 25px;
 }
 .resheader{
     height: 14.8%;
@@ -311,7 +313,8 @@ hr{
     background-color: white;
     display: flex;
     height: 10%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    box-shadow: 7px 1px 6px gray;
     justify-content: space-between;
     padding-inline: 10px ;
     align-items: center;
@@ -332,68 +335,348 @@ nav button{
 }
 .thirdcont{
     display: flex;
-    
+    width: 100%;
     height:90% ;
 }
-.thirdpage aside{
-    width: 42%;
-    height: 100%;
-    /* border: 2px solid green; */
-}
-.thirdcont aside p{
-font-weight:300;
-font-size:20px;
-padding:20px;
-}
-.thirdcont aside select{
-    margin-left: 20px;
-    font-family: sans-serif;
-    outline: none;
-    border: none;
-    padding: 12px;
-    width: 75%;
-}
 
-#name,#email,#number,#jobtitle,.Professional,#skills,.Description,.Descriptionpro,.Descriptionedu,.address{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    font-family: sans-serif;
-    /* outline: none; */
-    border: none;
-    margin-bottom: 4%;
-}
-#employment,#project,#education{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    margin-bottom: 3%;
-    color: white;
-    background-color: #007500;
-    border: none;
-}
-#month,#monthend,#employer,#jobpre,#monthpro,#monthendpro,#projecttitle,#school,#monthendedu,#monthedu,#qualification{
-    padding: 12px;
-    width: 75%;
-    margin-left: 20px;
-    font-family: sans-serif;
-    /* outline: none; */
-    border: none;
-    margin-bottom: 2%;
-}
-
-.colorpick-eyedropper-input-trigger{
-    display: none;
-}
-#colorheader,#colortext{
-    margin-left: 20px;
-    border: none;
-    cursor: pointer;
-    height: 25px;    
-}
 .thirdmain{
     height: 155vh;
     width: 50%;
-    border: 2px solid red;
-    margin-top: 10px;
+    /* border: 2px solid red; */
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+
+    border-radius: 7px;
+    margin-top: 25px;
 }
+.headerthird{
+    display: flex;
+    height: 17%;
+    width: 100%;
+}
+.thirdleft{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 62%;
+      color: #e5e0e0;
+    background-color: #333333;
+}
+.thirdright{
+    width: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    text-transform: uppercase;
+    background-color:#00798A;
+    gap: 5px;
+    text-decoration:underline;
+}
+.header2{
+    display: flex;
+    height: 6.8%;
+    
+}
+.header3{
+    display: flex;
+    height: 15%;
+}
+.header4{
+    display: flex;
+    height: 6.8%;
+}
+.profile2{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    background-color: #00798A;
+    color: #e5e0e0;
+}
+.contact2{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    width: 38%;
+    color: #e5e0e0;
+    background-color:  #333333;
+
+}
+.profile2cont{
+    width: 62%;
+    background-color: #F5F5F5;
+}
+.contact2cont{
+    width: 38%;
+    background-color:  #DDDDDD;
+}
+.num{
+    display: flex;
+    padding-left: 13.5%;
+    margin-block: 6%;
+    gap: 5%;
+    align-items: center;
+}
+.skillsnamecont4,.education6cont7{
+    padding-left: 13.5%;
+    margin-block: 6%;
+    gap: 5%;
+    align-items: center;
+}
+.mailgmail{
+    display: flex;
+    padding-left: 13.5%;
+    margin-block: 6%;
+    gap: 5%;
+    align-items: center;
+}
+.locationadd{
+    display: flex;
+    padding-left: 13.5%;
+    margin-block: 6%;
+    gap: 5%;
+    align-items: center;
+}
+.prfilecont2,.exprence4cont4,.project6cont7{
+    margin-inline:7.8%;
+    padding-top: 3%;
+}
+
+.exprence4{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    background-color: #00798A;
+    color: #e5e0e0;
+}
+.skillsname{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    width: 38%;
+    color: #e5e0e0;
+    background-color:  #333333;
+}
+.header5{
+    display: flex;
+    height: 23.5%;
+}
+.exprence4cont{
+    width: 62%;
+    height: 100%;
+}
+
+.skillsnamecont{
+    width: 38%;
+    background-color:  #DDDDDD;
+    height: 100%;
+    /* border: 2px solid green; */
+
+}
+.header6{
+        display: flex;
+        height: 6.8%;
+}
+.project6{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    background-color: #00798A;
+    color: #e5e0e0;
+}
+.education6{
+    padding-left: 5.5%;
+    padding-top: 3%;
+    width: 62%;
+    font-size: 1.8em;
+    width: 38%;
+    color: #e5e0e0;
+    background-color:  #333333;
+}
+.header7{
+    height: 24%;
+    display: flex;
+}
+.project6cont{
+    width: 62%;
+    height: 100%;
+}
+.education6cont{
+    width: 38%;
+    background-color:  #DDDDDD;
+    height: 100%;
+}
+
+.hiddenayush{
+    display: none;
+}
+
+
+
+
+
+.projectcont11{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+width: 100%;
+}
+/* .start,.end{
+    align-self: flex-end;
+} */
+.projectcont{
+    width: 100%;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+}
+.flex2{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+#newappend,#newappendeducat,#newappendemploy{
+    /* display: none;
+     */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: 13rem;
+     background-color: green;
+     border: none;
+     padding: 8px;
+     margin-bottom: 15px;
+     display: none;
+     color: white;
+}
+.descriptionempl,.descriptionedu1,.descriptionpro{
+    /* color: #007500; */
+    width: 70%;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    margin-bottom: 10px;
+}
+.experiencecont,.projectcont,.educationcont{
+    width: 100%;
+}
+
+.exprence4cont,.project6cont{
+    /* width: 90%; */
+    margin-block:10px ;
+   padding-inline:2rem;
+   
+}
+.education6cont{
+padding-inline: 1rem;
+padding-top: 10px;
+}
+.skilladvance{
+    padding-left: 36px;
+    padding-top: 10px;
+}
+#sorcecode{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/* media qu for first page /................. */
+
+@media screen and (max-width: 1024px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+    .firstpage main h1{
+    font-size: 2em;
+}
+.firstpage main p{ 
+    font-size: 1em;
+}
+.choosecont{
+    text-align: center;
+    max-width: 70%;  
+    margin: auto;
+}
+.choosecont .buttons{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+.one img{
+    border-radius: 20px ;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+}
+.secondpage aside{
+    width: 36%;
+    height: 100%;
+    /* border: 2px solid green; */
+}
+.secondcont aside select{
+    padding: 9px;
+    width: 70%;
+}
+#name,#email,#number,#jobtitle,.Professional,#skills,.Description,.Descriptionpro,.Descriptionedu,.address{
+    padding: 9px;
+    width: 70%;
+}
+#employment,#project,#education,#employment33,#project3,#education3{
+    padding: 9px;
+    width: 70%;
+}
+#month,#monthend,#employer,#jobpre,#monthpro,#monthendpro,#projecttitle,#school,#monthendedu,#monthedu,#qualification{
+    padding: 9px;
+    width: 70%;
+}
+.secondmain{
+    height: 120vh;
+    width: 60%;
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+    /* box-shadow: -3px -3px 6px rgb(86, 88, 89); */
+    border-radius: 7px;
+    margin-top: 25px;
+}
+.thirdmain{
+    height: 135vh;
+    width: 61%;
+    /* border: 2px solid red; */
+    border: 1px solid rgb(55, 53, 53);
+    box-shadow: 6px 6px 6px rgb(86, 88, 89);
+
+    border-radius: 7px;
+    margin-top: 25px;
+}
+.contact2,.profile2,.exprence4,.skillsname,.project6,.education6{
+    font-size: 1.3em;
+}
+
+
+  }
+
+  @media screen and (max-width: 650px){
+    .firstpage aside{
+        display: none;
+    }
+    
+.firstpage main{
+    /* background-color: #d0c3b6; */
+    height: 100%;
+    width: 100%;
+}
+
+  }

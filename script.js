@@ -1,62 +1,23 @@
-let obj={
-    project1:{
-        name:"Team",
-        image:"./Assets-FrontPage/team.jpg"
-    },
-    project2:{
-        name:"Chrome Extension",
-        image:"../Assets-FrontPage/chromeExtension.jpg"
-    },
-    project3:{
-        name:"Resume Template",
-        image:"./Assets-FrontPage/resumeTemplate.jpg"
-    },
-    project4:{
-        name:"Invoice Generator",
-        image:"./Assets-FrontPage/invoiceGenerator.jpg"
-    },
-    project5:{
-        name:"Payment Integration",
-        image:"./Assets-FrontPage/paymentIntegration.jpg"
-    },
-    project6:{
-        name:"Trello Clone",
-        image:"./Assets-FrontPage/trelloClone.jpg"
-    },
-    project7:{
-        name:"Typing Speed Test Gamer",
-        image:"./Assets-FrontPage/typingSpeedTest.jpg"
-    },
-    project8:{
-        name:"Mine Game",
-        image:"./Assets-FrontPage/mineGame.jpg"
-    },
-    project9:{
-        name:"Code Editor",
-        image:"./Assets-FrontPage/codeEditor.jpg"
-    },
-    project10:{
-        name:"Flipkart Page sort and filter",
-        image:"./Assets-FrontPage/flipkart.jpg"
-    }
-}
-
 let signInBtn=document.querySelector(".signInBtn")
 let loginSection=document.querySelector(".loginSection")
 let container=document.querySelector(".container")
 let registration=document.querySelector(".registration")
 let login=document.querySelector(".login")
 
+// Adding Data dynamically
+window.addEventListener("scroll",()=>{
+    
+})
 
+// SignIn Feature
 signInBtn.addEventListener("click",()=>{
     container.style.display="none"
     loginSection.style.display="flex"
-
 })
 let cancel=document.querySelector(".cancel")
 cancel.addEventListener("click",()=>{
     container.style.display="flex"
-    loginSection.style.display="flex"
+    loginSection.style.display="none"
 })
 
 let registerBtn=document.querySelector(".registerBtn")
@@ -188,26 +149,83 @@ function signIn(){
     console.log(users);
     for(let i in users){
         if(UserLogin.Email==users[i].Email && UserLogin.Password==users[i].Password){
-           let signIn_indexDiv=document.querySelector(".signIn") 
-           signIn_indexDiv.innerHTML=`
-            <span class="signInBtn" onclick="logOut_dropdown()">
-                <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                ${users[i].Name}
-                <i class="fa-solid fa-caret-down icon"></i> 
-            </span>
-           `
-
+           userDisplay(users[i].Name)
+           displayDownloadFunction()
            localStorage.setItem('user',JSON.stringify({'Name':users[i].Name,'Email':users[i].Email}))
+
            container.style.display="flex"
            loginSection.style.display="none"
+        //    location.reload()
            return 'success'
         }
     }
 
 }
-
+function userDisplay(userName){
+    let signIn_indexDiv=document.querySelector(".signIn") 
+           signIn_indexDiv.innerHTML=`
+            <span class="signInBtn" onclick="logOut_dropdown()">
+                <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                ${userName}
+                <i class="fa-solid fa-caret-down icon"></i> 
+            </span>
+           `
+}
 // LogOut function
 let logOut=document.querySelector(".logOut")
 function logOut_dropdown(){
     logOut.style.display="flex"
+}
+let download=document.querySelectorAll(".download")
+let downloadMessage=document.querySelectorAll(".downloadMessage")
+logOut.addEventListener("click",()=>{
+    localStorage.removeItem('user')
+    let signIn_indexDiv=document.querySelector(".signIn") 
+    signIn_indexDiv.innerHTML=`
+        <span class="signInBtn">Sign In</span>
+    `
+    logOut.style.display="none"
+    let signInBtnHome=document.querySelector(".signInBtn")
+    
+    signInBtnHome.addEventListener("click",()=>{
+        container.style.display="none"
+        loginSection.style.display="flex"
+    })
+    hideDonwloadFunction()
+    downloadMessage.forEach((event)=>{
+        event.style.display="flex"
+    })
+})
+
+window.onload=()=>{
+    if(localStorage.hasOwnProperty('user')){
+        userDisplay(JSON.parse(localStorage.getItem('user')).Name)
+        displayDownloadFunction()
+
+    }
+    else{
+        hideDonwloadFunction()
+    }
+}
+let demoBtn=document.querySelectorAll(".demoBtn")
+
+function hideDonwloadFunction(){
+    download.forEach((event)=>{
+        event.style.display="none"
+    })
+    demoBtn.forEach((event)=>{
+        event.style.margin="0 0 0 0"
+    })
+}
+
+function displayDownloadFunction(){
+    download.forEach((event)=>{
+        event.style.display="flex"
+    })
+    downloadMessage.forEach((event)=>{
+        event.style.display="none"
+    })
+    demoBtn.forEach((event)=>{
+        event.style.margin="1rem 0 0 0"
+    })
 }

@@ -14,6 +14,7 @@ body{
     align-items: center;
     width: 100%;
     gap: 0.7rem;
+    padding-bottom: 0;
 }
 
 header{
@@ -591,3 +592,82 @@ del{
     font-size: 0.75rem;
     cursor: default;
 }
+
+
+
+
+/*............... Footer section here............*/
+footer{
+    width: 100%;
+    margin-top: 1.5rem;
+    /* padding-bottom: 2rem; */
+}
+.footer{
+    background-color: #172337;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+}
+
+.foot{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+.foot-titles{
+    color: #878787;
+    padding: 0.8rem 0;
+    font-size: 0.8rem;
+}
+.foot-list{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.foot-list:hover{
+    text-decoration: underline;
+}
+.des{
+    font-size: 0.8rem;
+}
+
+.footer-bottom{
+    margin-top: 0;
+    background-color: #172337;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5rem 2.5rem;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.end{
+    border-top: 0.03rem solid #878787;
+}
+
+.bottom i{
+    color: gold;
+}
+.bottom:hover{
+    cursor: pointer;
+}
+
+.mode{
+    width: 20rem;
+}
+.mode img{
+    width: 100%;
+}
+/* .bottom img{
+    width: 70%;
+} */

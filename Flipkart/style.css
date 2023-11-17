@@ -658,6 +658,9 @@ footer{
 .bottom i{
     color: gold;
 }
+.bottom:hover{
+    cursor: pointer;
+}
 
 .mode{
     width: 20rem;

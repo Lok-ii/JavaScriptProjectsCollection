@@ -211,3 +211,19 @@ let logOut=document.querySelector(".logOut")
 function logOut_dropdown(){
     logOut.style.display="flex"
 }
+
+logOut.addEventListener("click",()=>{
+    localStorage.removeItem('user')
+    let signIn_indexDiv=document.querySelector(".signIn") 
+    signIn_indexDiv.innerHTML=`
+        <span class="signInBtn">Sign In</span>
+    `
+    logOut.style.display="none"
+    let signInBtnHome=document.querySelector(".signInBtn")
+    
+    signInBtnHome.addEventListener("click",()=>{
+        container.style.display="none"
+        loginSection.style.display="flex"
+        
+    })
+})

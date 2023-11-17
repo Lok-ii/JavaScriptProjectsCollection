@@ -1,16 +1,22 @@
 # JavaScriptProjectsCollection
-Introduction to the Project-
-To foster team spirit and collaboration a team Project was given by Geekster, which was to be created by a team of 9 members. These projects were provided to test the skills and creativity of members against what has been covered in the past modules.
-This project was assigned by Geekster as a Major Project for a team of 9 members:
-Lokesh Kataria (Lead)
-Roopesh
-Kaveri Choughule
-Shiva Malik
-Pranshul Pradhan
-Lalit Baisla
-Ayush Bansal
-Akash Shukla
-And Shan Goswami was appointed as a mentor for the same.
+Introduction to the Project- <br>
+To foster team spirit and collaboration a team Project was given by Geekster, which was to be created by a team of 9 members. These projects were provided to test the skills and creativity of members against what has been covered in the past modules.<br>
+This project was assigned by Geekster as a Major Project for a team of 9 members: <br>
+Lokesh Kataria (Lead)<br>
+Roopesh<br>
+Kaveri Choughule <br>
+Shiva Malik <br>
+Pranshul Pradhan <br>
+Lalit Baisla <br>
+Ayush Bansal <br>
+Akash Shukla <br>
+And Shan Goswami was appointed as a mentor for the same. <br>
+
+Features:- <br>
+Contact customer support <br>
+Responsive design for mobile and desktop <br>
+Some interactive parts created using javascript libraries. <br>
+Implemented semantic HTML tags throughout the project to enhance accessibility, readibility and structure. <br>
 ### Live Demo : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/"> Click Here </a>
 
 ### Chrome-Extension: 

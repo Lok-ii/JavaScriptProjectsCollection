@@ -73,12 +73,16 @@ body, html {
 }
 
 .caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
+  /* position: absolute; */
   text-align: center;
   color: #000;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* top: 35%;
+  left: 40%;  */
 }
 
 .caption span.border {
@@ -234,4 +238,30 @@ form input{
     box-shadow: 2px 2px 5px #111;
     cursor: pointer;
 
+  }
+
+  .downloadMessage{
+    background-color: white;
+    opacity: 0.7;
+    padding: 5px 10px;
+  }
+  .download{
+    display: none;
+  }
+
+  .demoBtn{
+    display: flex;
+    gap: 1rem;
+    /* box-shadow: 2px 5px 5px white; */
+  }
+  a{
+    text-decoration: none;
+  }
+  .border{
+    transition: all 0.5s ease-in-out;
+    border: none;
+  }
+  .border:hover{
+    box-shadow: 2px 5px 5px white;
+    transform: translateY(-5px);
   }

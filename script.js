@@ -191,30 +191,35 @@ function signIn(){
     console.log(users);
     for(let i in users){
         if(UserLogin.Email==users[i].Email && UserLogin.Password==users[i].Password){
-           let signIn_indexDiv=document.querySelector(".signIn") 
-           signIn_indexDiv.innerHTML=`
-            <span class="signInBtn" onclick="logOut_dropdown()">
-                <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                ${users[i].Name}
-                <i class="fa-solid fa-caret-down icon"></i> 
-            </span>
-           `
-
+           userDisplay(users[i].Name)
+           displayDownloadFunction()
            localStorage.setItem('user',JSON.stringify({'Name':users[i].Name,'Email':users[i].Email}))
+
            container.style.display="flex"
            loginSection.style.display="none"
+        //    location.reload()
            return 'success'
         }
     }
 
 }
-
+function userDisplay(userName){
+    let signIn_indexDiv=document.querySelector(".signIn") 
+           signIn_indexDiv.innerHTML=`
+            <span class="signInBtn" onclick="logOut_dropdown()">
+                <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                ${userName}
+                <i class="fa-solid fa-caret-down icon"></i> 
+            </span>
+           `
+}
 // LogOut function
 let logOut=document.querySelector(".logOut")
 function logOut_dropdown(){
     logOut.style.display="flex"
 }
-
+let download=document.querySelectorAll(".download")
+let downloadMessage=document.querySelectorAll(".downloadMessage")
 logOut.addEventListener("click",()=>{
     localStorage.removeItem('user')
     let signIn_indexDiv=document.querySelector(".signIn") 
@@ -228,4 +233,41 @@ logOut.addEventListener("click",()=>{
         container.style.display="none"
         loginSection.style.display="flex"
     })
+    hideDonwloadFunction()
+    downloadMessage.forEach((event)=>{
+        event.style.display="flex"
+    })
 })
+
+window.onload=()=>{
+    if(localStorage.hasOwnProperty('user')){
+        userDisplay(JSON.parse(localStorage.getItem('user')).Name)
+        displayDownloadFunction()
+
+    }
+    else{
+        hideDonwloadFunction()
+    }
+}
+let demoBtn=document.querySelectorAll(".demoBtn")
+
+function hideDonwloadFunction(){
+    download.forEach((event)=>{
+        event.style.display="none"
+    })
+    demoBtn.forEach((event)=>{
+        event.style.margin="0 0 0 0"
+    })
+}
+
+function displayDownloadFunction(){
+    download.forEach((event)=>{
+        event.style.display="flex"
+    })
+    downloadMessage.forEach((event)=>{
+        event.style.display="none"
+    })
+    demoBtn.forEach((event)=>{
+        event.style.margin="1rem 0 0 0"
+    })
+}

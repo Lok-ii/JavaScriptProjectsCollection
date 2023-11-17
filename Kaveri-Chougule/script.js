@@ -331,14 +331,14 @@ function sendMail(){
         name: document.getElementById("billTo1").value,
         email: document.getElementById("billTo2").value,
         senderEmail: document.getElementById("billFrom2").value,
-        senderName : document.getElementById("billFrom1").value,
+        senderName: document.getElementById("billFrom1").value,
         dateOfIssue: document.querySelector("#issueDate").value,
         total: document.querySelector(".lightBox_total").innerText,
         notes: document.querySelector(".inputNotes").innerText
     }
 
-    let templateId = "template_hs8nsf9";
-    let serviceId = "service_6cl0nea";
+    let templateId = "template_seyegfa";
+    let serviceId = "service_thkwh4k";
     
     emailjs.send(serviceId, templateId, params);
 }

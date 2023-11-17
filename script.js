@@ -1,7 +1,7 @@
 let obj={
     project1:{
         name:"Team",
-        image:"../Assets-FrontPage/team.jpg"
+        image:"./Assets-FrontPage/team.jpg"
     },
     project2:{
         name:"Chrome Extension",
@@ -9,35 +9,35 @@ let obj={
     },
     project3:{
         name:"Resume Template",
-        image:"../Assets-FrontPage/resumeTemplate.jpg"
+        image:"./Assets-FrontPage/resumeTemplate.jpg"
     },
     project4:{
         name:"Invoice Generator",
-        image:"../Assets-FrontPage/invoiceGenerator.jpg"
+        image:"./Assets-FrontPage/invoiceGenerator.jpg"
     },
     project5:{
         name:"Payment Integration",
-        image:"../Assets-FrontPage/paymentIntegration.jpg"
+        image:"./Assets-FrontPage/paymentIntegration.jpg"
     },
     project6:{
         name:"Trello Clone",
-        image:"../Assets-FrontPage/trelloClone.jpg"
+        image:"./Assets-FrontPage/trelloClone.jpg"
     },
     project7:{
         name:"Typing Speed Test Gamer",
-        image:"../Assets-FrontPage/typingSpeedTest.jpg"
+        image:"./Assets-FrontPage/typingSpeedTest.jpg"
     },
     project8:{
         name:"Mine Game",
-        image:"../Assets-FrontPage/mineGame.jpg"
+        image:"./Assets-FrontPage/mineGame.jpg"
     },
     project9:{
         name:"Code Editor",
-        image:"../Assets-FrontPage/codeEditor.jpg"
+        image:"./Assets-FrontPage/codeEditor.jpg"
     },
     project10:{
         name:"Flipkart Page sort and filter",
-        image:"../Assets-FrontPage/flipkart.jpg"
+        image:"./Assets-FrontPage/flipkart.jpg"
     }
 }
 

@@ -128,7 +128,7 @@ If the player selects a cell which contains the bomb, he/she loses the game. We 
 ![pay1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/2f27046e-5cb7-429a-b200-19a590ea4bbb)
 
 ![pay2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/e9b0b477-ba7c-4517-ba7f-de79f5e2cad2) <br>
-The code editor web page helps us to create a WebPage using HTML, CSS and Javascript all in one platform. All one has to do is to go ahead and and write the codes in respective sections. The code-Editor will automatically align the css, html and javascript and display the resulting webpage all at one place without any additional clicks or surfing. One also has the options of copying the whole code as it is. <br>
+
 
 ![pay3](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/90c6acd7-68f4-404a-ac6f-b1a7c4418659)
 
@@ -145,3 +145,4 @@ Trello Board clone helps us create day-to-day notes or a to-do lists of our work
 ### Code Editor: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Shiva-Malik/index.html"> Click Here </a>
 
 ![code](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/d39137df-4991-4470-97ad-e5754f3d0577)
+The code editor web page helps us to create a WebPage using HTML, CSS and Javascript all in one platform. All one has to do is to go ahead and and write the codes in respective sections. The code-Editor will automatically align the css, html and javascript and display the resulting webpage all at one place without any additional clicks or surfing. One also has the options of copying the whole code as it is. <br>

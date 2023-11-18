@@ -27,7 +27,7 @@ inset
 }
 body{
 text-align:center;
-linear-gradient(0deg, rgb(19, 107, 109) 0%,  rgb(221, 176, 78) 100%);
+ background:linear-gradient(0deg, rgb(19, 107, 109) 0%,  rgb(221, 176, 78) 100%);
 }
 h2{
 padding:10px;

@@ -64,6 +64,7 @@ code.body.innerHTML=html.value+"<style>"+text.value+"</style>";
   
 html.addEventListener('input',myfunction);
  text .addEventListener('input',myfunction);
+textjs.addEventListener('input',myfunction);
  btn.addEventListener('click',myfunction); 
 clearjs.addEventListener('click',myfunction);
 clearcss.addEventListener('click',myfunction);

@@ -1,6 +1,15 @@
 .container {
     width: 500px;
     align-content: center;
+    margin-top: 100px;
+  }
+  body{
+    background-image: url(img.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .grid {

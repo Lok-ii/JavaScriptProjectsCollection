@@ -8,9 +8,9 @@ Users can type a given quote within a set time limit and receive feedback on the
 - [Demo](#demo)
 - [Features](#features)
 - [Files](#files)
-- [Usage](#usage)
 - [Styling](#styling)
 - [JavaScript Logic](#javascript-logic)
+- [Usage](#usage)
 
 
 ## Demo
@@ -43,12 +43,12 @@ include a transparent background overlay,font choice, timer placement, and butto
 This section provides an overview of the JavaScript code in the Typing Speed Test project, explaining key functionalities 
 and how they contribute to the application.
 
-## Overview
+### Overview
 
 The JavaScript code (`script.js`) is responsible for handling the logic behind the Typing Speed Test application.
 It manages the timer, user input, displays random paragraphs, calculates statistics, and more.
 
-## Key Elements
+### Key Elements
 
 ### Variables
 

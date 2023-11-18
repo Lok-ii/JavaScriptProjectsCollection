@@ -5,12 +5,11 @@
 
 body{
     width: 100%;
-    overflow: scroll;
     background: url(./bg-theme-chroma-file.png);
     background-position:  center;
-    background-repeat: no-repeat;
+    background-repeat:inherit;
     background-size: cover;
-    backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.15rem);
 }
 #main{
     height: 100vh;
@@ -27,6 +26,10 @@ h1{
 p {
     line-height: 1.875rem;
     font-size: 1rem
+}
+.board-case{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .dropdown {
@@ -501,12 +504,13 @@ p {
 .boards {
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
+    width: 100%;
     padding: 0 30px;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     grid-gap: 30px;
     gap: 30px;
-    height: 100%
+    height: 100%;
 }
 
 .new-board {

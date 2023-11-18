@@ -47,7 +47,7 @@
  
 ### Live Demo : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/"> Click Here </a>
 
-### Chrome-Extension: 
+### Youtube Time Stamp: 
 # -by Lokesh Kataria
 
 ## Overview
@@ -132,7 +132,7 @@ Looking for new job, here is our Resume template web page. You can add your pers
 ### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
 ### -by Lalit Baisla
 
-![minesweeper](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/0b9923e0-729a-4243-b934-b63fcd92a742) <br>
+![image](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/101037685/bbd19b0b-2480-4c35-9ff4-a349c3534819) <br>
 
 Minesweeper is a puzzle game which the player will select a cell in a square grid continuously. Each cell hides a bomb or a value which displays the number of bombs in it’s neighboring cells. Just to make it clear, neighboring cells is defined as adjacent horizontally, vertically or diagonally.
 If the player selects a cell which contains the bomb, he/she loses the game. We also have a defined number of red flags which can be planted if we suspect the availability of a mine/bomb, but if the number of flags run out you again lose the Game. So, Play Cunningly. <br>

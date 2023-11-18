@@ -147,7 +147,9 @@ If the player selects a cell which contains the bomb, he/she loses the game. We 
 
 ![pay3](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/90c6acd7-68f4-404a-ac6f-b1a7c4418659)
 
-![pay4](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/81cf2b57-ba92-4621-93fc-5afda9a03ed9)
+![pay4](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/81cf2b57-ba92-4621-93fc-5afda9a03ed9) <br>
+![image](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/6265db1d-71c7-405c-b821-16af0261e152) <br>
+Looking for trending fashion, a wide array of stylised product from wrist bands, watches , sports kits, t-shirts and track dresses. For men, women and children we have collections for all. You can checkout with our pay option. Multiple payment options being avilable, Card-credit and debit, net banking , UPI, QR you can checkout with any option effortlessly <br>
 
 ### Trello Clone: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Akash-Shukla/index.html"> Click Here </a>
 ### -by Akash Shukla

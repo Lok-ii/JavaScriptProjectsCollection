@@ -31,7 +31,7 @@ The code editor project is a web based project ,with the help of this project we
 ## Challenges Faced
 
 During the development of code editor, I encountered several challenges, especially when i try to use refresh button .
-This was resolved by CORS proxy use.
+
 
 Then for fetching data from textarea.
 

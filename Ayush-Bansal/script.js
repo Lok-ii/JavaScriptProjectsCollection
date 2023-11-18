@@ -413,13 +413,13 @@ thirdmain.style.width="100%"
 
 })
  
-let html=document.querySelector("html");
+// let html=document.querySelector("html");
 
-html.addEventListener("input",()=>{
-    let audio=new Audio("./keyboard5-88069.mp3")
+// html.addEventListener("input",()=>{
+//     let audio=new Audio("./keyboard5-88069.mp3")
 
-    audio.play();
-})
+//     audio.play();
+// })
 
 
 

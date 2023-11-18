@@ -5,24 +5,52 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://kit.fontawesome.com/2e889516cd.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1>CODE EDITOR</h1>
     <div class="mainarea">
+        
         <div class="editors">
-            <h2>HTML</h2>
-            <textarea id="html" placeholder="HTML"></textarea>
+           
+          <div class="header"><h2><i class="fa fa-html5" style="font-size:30px;color:red;"></i> HTML</h2>
+            <div class="header"> <button class="clearhtml"><span  class="material-symbols-outlined">
+            refresh</span>
+          </button>
+          <button style="height: 5.3vh;width: 2.7vw;">  <i class="fa-solid fa-up-right-and-down-left-from-center "></i>	</div>	
+        
+          </button>  </div>
+            <textarea id="html"></textarea>
+            <button class="htmlbtn" style="height: 5.3vh;width: 97%;"><i class="fa fa-copy"> COPY</i></button>
         </div>
         <div class="editors">
-            <h2>CSS</h2>			
-            <textarea id="css" placeholder="CSS"></textarea>
+           <div class="header"> <h2><i class="fa fa-css3" style="font-size:30px;color:red;"></i> CSS</h2>
+           <div class="header"><button class="clearcss"> <span class="material-symbols-outlined">
+                refresh</span>
+              </button>
+            <button  style="height: 5.3vh;width: 2.7vw;">   <i class="fa-solid fa-up-right-and-down-left-from-center "></i>	</div>	
+            </button> 
+            </div>	
+            <textarea id="css"></textarea>
+            <button class="btn" style="height: 5.3vh;width: 97%;"><i class="fa fa-copy"> COPY</i></button>
         </div>
         <div class="editors">
-        <h2>Javascript</h2>
-            <textarea id="js" placeholder="Javascript"></textarea>
+       <div class="header"><div  style="display: flex; align-items: center; justify-content: space-around; padding-bottom: 5px; padding-left: 10px;"><i class="fa-brands fa-square-js fa-2xl" style="color: #f91b0b;"></i><h2>JavaScript</h2></div>
+         <div class="header "> <button class="clearjs"> <span class="material-symbols-outlined">
+                refresh</span>
+              </button>
+              <button  style="height: 5.3vh;width: 2.7vw;">  <i class="fa-solid fa-up-right-and-down-left-from-center "></i>
+           
+              </button>
+               </div> </div>
+            <textarea id="js" ></textarea>
+           <button class="jsbtn"  style="height: 5.3vh;width: 97%;"><i class="fa fa-copy"> COPY</i></button>
         </div>
     </div>
     <div class="output">
-    <h2>output</h2>
+    <span>Output</span>
     <iframe id="code"></iframe>
     </div>
     <script src="./script.js"></script>

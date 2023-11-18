@@ -48,6 +48,7 @@
 ### Live Demo : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/"> Click Here </a>
 
 ### Chrome-Extension: 
+# -by Lokesh Kataria
 
 ## Overview
 
@@ -104,8 +105,12 @@ Here is the invoice for your purchase. You receive the invoice on your registerd
 In this webpage we create a typing test generator, which provides us with a paragraph and tests our typing speed in # wpm i.e number of words typed per minute and  # cpm i.e number of characters typed per minute. Along with this it also calculates the number of mistakes done and the clock ticks back calculating the remaining time. Additional feature of accuracy has been added and one can reset over again after completion of one test or to retry. If one completes all the typing within time limit the timer stops also if time finishes typing disables. <br>
 
 ### Flipkart Sort and Filter : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Flipkart/index.html"> Click Here </a>
+# -by Lokeah Kataria
 
-![f1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/22d8786e-9906-4035-813e-1727c9233946)
+![f1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/22d8786e-9906-4035-813e-1727c9233946) <br>
+Flipkart electronics web page has been designed to buy electronic gadgets as per your needs. <br>
+Sort the products based on price range of high to low and low to high, popularity, needs.<br>
+One can also filter products based on the discounted rates and the site will provide you the vast array of products based on your sorted and filtered needs. <br>
 
 ![f2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/6e2fcf96-8b8c-4cb7-9346-6da579777a80)
 
@@ -113,10 +118,12 @@ In this webpage we create a typing test generator, which provides us with a para
 
 
 ### Resume Template : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Ayush-Bansal/index.html"> Click Here </a>
+# -by Ayush Bansal
 
 ![resume](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/ff1f4a41-3e4a-490e-941d-239c5be042b0)
 
 ### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
+# -by Lalit Baisla
 
 ![minesweeper](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/0b9923e0-729a-4243-b934-b63fcd92a742) <br>
 
@@ -124,6 +131,7 @@ Minesweeper is a puzzle game which the player will select a cell in a square gri
 If the player selects a cell which contains the bomb, he/she loses the game. We also have a defined number of red flags which can be planted if we suspect the availability of a mine/bomb, but if the number of flags run out you again lose the Game. So, Play Cunningly. <br>
 
 ### Payment Integeration: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Pranshul-Pradhan/index.html"> Click Here </a>
+# -by Pranshul Pradhan
 
 ![pay1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/2f27046e-5cb7-429a-b200-19a590ea4bbb)
 
@@ -135,6 +143,7 @@ If the player selects a cell which contains the bomb, he/she loses the game. We 
 ![pay4](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/81cf2b57-ba92-4621-93fc-5afda9a03ed9)
 
 ### Trello Clone: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Akash-Shukla/index.html"> Click Here </a>
+# -by Akash Shukla
 
 ![trello](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/f8387c9f-7170-4960-ab14-34788a4453c2) <br>
 Trello Board clone helps us create day-to-day notes or a to-do lists of our works. Works to be doing, undergoing, priority, urgent etc. Here we can map all the works. In this web-page we can add new cards to existing cards to write the details. On clicking the boards a pop-up appears. Each tasks can be labelled with different colors and texts, its date can be added, how much task has been covered, You can add description to the tasks, give its title and heading and mark its priority. One can also drag and drop cards to re-arrange the priorities. <br> 
@@ -143,6 +152,7 @@ Trello Board clone helps us create day-to-day notes or a to-do lists of our work
 
 
 ### Code Editor: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Shiva-Malik/index.html"> Click Here </a>
+# -by Shiva Malik
 
 ![code](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/d39137df-4991-4470-97ad-e5754f3d0577)
 The code editor web page helps us to create a WebPage using HTML, CSS and Javascript all in one platform. All one has to do is to go ahead and and write the codes in respective sections. The code-Editor will automatically align the css, html and javascript and display the resulting webpage all at one place without any additional clicks or surfing. One also has the options of copying the whole code as it is. <br>

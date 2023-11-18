@@ -1,5 +1,5 @@
 // let currentDate=document.querySelector(".current-date-text")
-
+// Get the current date and display it in the specified format
 
 let current_date=document.querySelector(".current-date")
 let date = new Date();
@@ -11,7 +11,7 @@ current_date.innerHTML=`
 `
 
 // Add item
-
+// Function to add a new item row to the invoice table
 function BtnAdd(){
     // console.log("Hello");
     let textInside=$("#table-row").clone().appendTo("#tbody")
@@ -21,10 +21,9 @@ function BtnAdd(){
     $(textInside).addClass("item-container")
 }
 // Delete item
+// Function to delete an item row from the invoice table with a smooth animation
 function BtnDelete(current){
-    setTimeout(()=>{        
-        $(current).parent().parent().remove()
-    },1000)
+    $(current).parent().parent().remove()
     current.parentElement.parentElement.style.width="0"
 }
 

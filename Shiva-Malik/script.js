@@ -51,6 +51,7 @@ text.value='';
 var clearjs=document.querySelector('.clearjs');
 clearjs.addEventListener('click',()=>{
 textjs.value='';
+code.body.innerHTML=html.value+"<style>"+text.value+"</style>";	
 });
     
   

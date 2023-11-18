@@ -28,7 +28,7 @@
 
 ### Objectivea:- <br>
 
-  - UI Recreation : Create a responsive and visually accurate replica of the Dr. Lal PathLabs website using HTML, CSS, and Javascript. <br>
+  - UI Recreation : Create a responsive and visually accurate replica of the 9 webpages using HTML, CSS, and Javascript. <br>
   - Functionality : Implement essential functionalities such as test booking, test package displays, lab locator, and contact information retrieval. <br>
   - Learning : Gain hands-on experience in web development, including HTML structure, CSS styling, and responsive design. <br>
 
@@ -91,15 +91,48 @@ By documenting these challenges and solutions, I hope to provide insights for ot
 
 ### Invoice Generator : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Kaveri-Chougule/index.html"> Click Here </a>
 
+![Invoice](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/694c9193-326e-4c8a-9962-452c8387677d)
+
+
 ### Typing Speed Test : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Rupesh-Mandal/index.html"> Click Here </a>
+
+![type](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/cab672a2-fa7a-48c4-8234-60c09d727fec)
+
+
 ### Flipkart Sort and Filter : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Flipkart/index.html"> Click Here </a>
+
+![f1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/22d8786e-9906-4035-813e-1727c9233946)
+
+![f2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/6e2fcf96-8b8c-4cb7-9346-6da579777a80)
+
+![f3](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/afc73f8c-e7aa-4dab-88c3-87508b558e49)
+
 
 ### Resume Template : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Ayush-Bansal/index.html"> Click Here </a>
 
+![resume](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/ff1f4a41-3e4a-490e-941d-239c5be042b0)
+
 ### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
+
+![minesweeper](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/0b9923e0-729a-4243-b934-b63fcd92a742)
 
 ### Payment Integeration: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Pranshul-Pradhan/index.html"> Click Here </a>
 
+![pay1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/2f27046e-5cb7-429a-b200-19a590ea4bbb)
+
+![pay2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/e9b0b477-ba7c-4517-ba7f-de79f5e2cad2)
+
+![pay3](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/90c6acd7-68f4-404a-ac6f-b1a7c4418659)
+
+![pay4](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/81cf2b57-ba92-4621-93fc-5afda9a03ed9)
+
 ### Trello Clone: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Akash-Shukla/index.html"> Click Here </a>
 
+![trello](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/f8387c9f-7170-4960-ab14-34788a4453c2)
+
+![trello2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/18f6c0b8-9cac-41d7-a4e4-9602659d04c0)
+
+
 ### Code Editor: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Shiva-Malik/index.html"> Click Here </a>
+
+![code](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/d39137df-4991-4470-97ad-e5754f3d0577)

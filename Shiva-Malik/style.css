@@ -12,7 +12,7 @@ min-height:250px;
 overflow:hidden;
 
 font-size:x-large;
-background-color:darkcyan;
+background-color:rgb(36, 11, 46);
 color: rgb(223, 205, 99);
 
 }
@@ -27,7 +27,7 @@ inset
 }
 body{
 text-align:center;
-linear-gradient(0deg, rgba(34,193,195,1) 0%,  rgb(221, 176, 78) 100%);
+linear-gradient(0deg, rgb(19, 107, 109) 0%,  rgb(221, 176, 78) 100%);
 }
 h2{
 padding:10px;

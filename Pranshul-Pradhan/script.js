@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "theme": {
             "color": "#3399cc"
-        }
+        },
 
       handler: function (response) {
           // Handle the success or failure response from Razorpay

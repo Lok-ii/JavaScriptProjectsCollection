@@ -39,7 +39,6 @@ inputarea.addEventListener("input", () => {
   let inputval = inputarea.value.split("");
 
   Totalcharacters++;
-  // console.log(Totalcharacters);
 
   let error = 0;
 
@@ -70,16 +69,11 @@ inputarea.addEventListener("input", () => {
 
   accuracy = (correctCharacters / Totalcharacters) * 100;
   details[3].textContent = Math.round(accuracy);
-
-  // charperminute = Math.round((Totalcharacters / timepassed) * 60);
-  // details[2].textContent = charperminute;
-
-  // wordsperminute = Math.round((Totalcharacters / 5 / timepassed) * 60);
-  // details[1].textContent = wordsperminute;
 });
 
 button[0].addEventListener("click", () => {
   inputarea.disabled = false;
+  sound();
 
   countdown();
 });
@@ -96,17 +90,18 @@ function gettimer() {
     timepassed++;
     timer.innerText = timeleft;
   } else {
-    display.innerText="";
-    display.innerText="<--------------------------------------------------Your TIME's Up------------------------------------------------>";
+    display.innerText = "";
+    display.innerText =
+      "<--------------------------------------------------Your TIME's Up------------------------------------------------>";
     clearInterval(time);
     inputarea.disabled = true;
     info.forEach((element) => {
       element.style.display = "block";
     });
-    charperminute = Math.round(((Totalcharacters / timepassed) * 60));
+    charperminute = Math.round((Totalcharacters / timepassed) * 60);
     details[2].textContent = charperminute;
-  
-    wordsperminute = Math.round((((Totalcharacters / 5 )/ timepassed) * 60));
+
+    wordsperminute = Math.round((Totalcharacters / 5 / timepassed) * 60);
     details[1].textContent = wordsperminute;
   }
 }
@@ -130,15 +125,14 @@ function displayquotes() {
 }
 displayquotes();
 
-button[1].addEventListener("click", reset);
-
-function reset() {
+button[1].addEventListener("click", () => {
+  sound();
   displayquotes();
   clearInterval(time);
   inputarea.disabled = true;
-    info.forEach((element) => {
-      element.style.display = "none";
-    });
+  info.forEach((element) => {
+    element.style.display = "none";
+  });
 
   timeleft = timelimit;
   timer.innerText = timeleft;
@@ -154,4 +148,8 @@ function reset() {
   details[1].textContent = 0;
   details[2].textContent = 0;
   details[3].textContent = 0;
+});
+function sound() {
+  let audio = new Audio("./assets/mixkit-fast-double-click-on-mouse-275.wav");
+  audio.play();
 }

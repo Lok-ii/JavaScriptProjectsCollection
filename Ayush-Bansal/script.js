@@ -412,6 +412,14 @@ thirdmain.style.width="100%"
 }
 
 })
+ 
+// let html=document.querySelector("html");
+
+// html.addEventListener("input",()=>{
+//     let audio=new Audio("./keyboard5-88069.mp3")
+
+//     audio.play();
+// })
 
 
 
@@ -420,21 +428,3 @@ thirdmain.style.width="100%"
 
 
 
-
-// let downloadbtn = document.querySelector(".download");
-
-
-// function downevent(btn2, val) {
-//     btn2.addEventListener("click", () => {
-//         val.style.width = "100%";
-//         val.style.height = "100%";
-//         html2pdf(val, {
-//             filename: 'resume.pdf',
-//             image: { type: 'jpeg', quality: 0.98 },
-//             html2canvas: { scale: 2 },
-//             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-//         }).from(val);
-//     });
-// }
-
-// downevent(downloadbtn, finalesResume);

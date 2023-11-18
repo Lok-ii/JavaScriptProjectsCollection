@@ -57,7 +57,20 @@ textjs.value='';
 code.body.innerHTML=html.value+"<style>"+text.value+"</style>";	
 });
     
+ function myfunction(){
+    let audio= new Audio("./mixkit-fast-double-click-on-mouse-275.wav");
+    audio.play();
+}
   
+html.addEventListener('input',myfunction);
+ text .addEventListener('input',myfunction);
+textjs.addEventListener('input',myfunction);
+ btn.addEventListener('click',myfunction); 
+clearjs.addEventListener('click',myfunction);
+clearcss.addEventListener('click',myfunction);
+btnclear.addEventListener('click',myfunction);
+jsbtn.addEventListener('click',myfunction);
+htmlbtn.addEventListener('click',myfunction); 
    
 
 

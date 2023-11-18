@@ -5,7 +5,7 @@ const password = "1XRpJwd4lLqRoGEzBJmQiYrI";
 // console.log("amountPaid", amountpaid);
 
 document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector("form");
+  // var form = document.querySelector("form");
   var payButton = document.getElementsByClassName("pay-button");
   console.log("paybtn length", payButton.length);
   for(var i =0;i<payButton.length;i++){
@@ -82,10 +82,56 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "theme": {
             "color": "#3399cc"
-        }
-    };
+        },
+
+        
+        handler: function (response) {
+          // Handle the success or failure response from Razorpay
+          displayTransactionStatus(response, amountpaid);
+        },
+    
+        // Note: The 'modal' option is set to 'false' to prevent redirection
+        modal: {
+          ondismiss: function () {
+            // Handle the case when the payment modal is dismissed
+            console.log('Payment modal dismissed');
+          },
+        },
+      };
+    
+
+    
     var rzp1 =   new Razorpay(options);
     rzp1.open();
   }
 
 });
+
+
+function displayTransactionStatus(response, amountpaid) {
+  // Display a dialog on the screen with transaction status
+  var dialogContent = 'Transaction for amount ' + amountpaid/100 + ' is ';
+
+  if (response.razorpay_payment_id) {
+    dialogContent += 'success!';
+  } else {
+    dialogContent += 'failed. Please try again.';
+  }
+
+  // Create a dialog element
+  var dialog = document.createElement('dialog');
+  dialog.classList.add("paySuccessDialog")
+  dialog.innerHTML = '<p>' + dialogContent + '</p><button onclick="closeDialog()" id="paySuccess">Close</button></dialog>';
+
+  // Append the dialog to the body and display it
+  document.body.appendChild(dialog);
+  dialog.showModal();
+}
+
+function closeDialog() {
+  // Close the dialog
+  var dialog = document.querySelector('.paySuccessDialog');
+  dialog.close();
+  dialog.remove();
+  document.body.style.overflow = 'auto';
+}

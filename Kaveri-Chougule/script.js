@@ -34,6 +34,7 @@ let price=1.00;
 let amountDue=1;
 let taxRate=document.getElementById("taxRate")
 
+// Event listeners for updating tax and discount percentages
 taxRate.addEventListener("input",()=>{
     // console.log(taxRate.value);
     let taxInpercent=document.getElementsByClassName("taxInPercent")
@@ -46,6 +47,7 @@ discountRate.addEventListener("input",()=>{
     discountInpercent[0].innerText="("+discountRate.value+"%)"
 })
 let finalValue=0
+// Event listener for updating invoice details based on user input
 tbody.addEventListener("input",(event)=>{
     let finalAmount=0;
 
@@ -66,7 +68,7 @@ tbody.addEventListener("input",(event)=>{
 })
 
 let lightBox_TableBody=document.querySelector(".lightBox_TableBody")
-
+// Function to create and display a lightbox with invoice details
 function lightBox_item_func(quantity, name, desc, price, amount) {
     let newTr = document.createElement("div");
     newTr.className="ligthBox_Tr";
@@ -80,6 +82,7 @@ function lightBox_item_func(quantity, name, desc, price, amount) {
   }
 
 // changing currency sign
+// Event listener for changing currency sign
 let currency=document.querySelector(".currency")
 
 let currency_change=document.querySelectorAll(".currency_change")
@@ -90,6 +93,7 @@ currency.addEventListener("input",()=>{
 })
 
 // console.log(lightBox);
+// Event listener for reviewing the invoice and displaying a lightbox with details
 let reviewBtn=document.getElementById("reviewBtn")
 reviewBtn.addEventListener("click",(event)=>{
     event.preventDefault()
@@ -99,6 +103,7 @@ reviewBtn.addEventListener("click",(event)=>{
         lightBoxFunction()
     },1000)
 })
+// Function to display the lightbox with invoice details
 function lightBoxFunction(){
     let BillTo=document.querySelectorAll(".billTo")
 
@@ -228,6 +233,7 @@ issueDate.addEventListener("input",()=>{
     issueDateFunc(issueDate.value)
 })
 
+// Event listener for downloading the invoice as a PDF
 let download=document.getElementById("Download")
 let sendInvoice=document.getElementById("sendInvoice")
 download.addEventListener("click",()=>{
@@ -246,7 +252,7 @@ download.addEventListener("click",()=>{
     html2pdf().from(invoice).set(opt).save()
 
 })
-
+// Function to handle the calculation of subtotal, taxes, and discounts
 let CalculateBtn=document.querySelector("#calcBtn")
 function CalculationStuff(){
     let subtotal=0;
@@ -342,6 +348,8 @@ dark.addEventListener("click", () => {
   })
 //   #2b3136
 });
+
+// Event listener for handling lightbox navigation and closing
 let back=document.getElementById("back")
 back.addEventListener("click",()=>{
     let lightbox=document.getElementsByClassName("lightbox")
@@ -354,6 +362,7 @@ cross.addEventListener("click",()=>{
     location.reload()
 })
 
+// Function to send the invoice via email using EmailJS
 function sendMail(){
     let params = {
         name: document.getElementById("billTo1").value,
@@ -371,6 +380,7 @@ function sendMail(){
     emailjs.send(serviceId, templateId, params);
 }
 
+// Event listener for sending the invoice via email
 document.querySelector("#sendInvoice").addEventListener("click", (e)=>{
     e.preventDefault();
     sendMail();

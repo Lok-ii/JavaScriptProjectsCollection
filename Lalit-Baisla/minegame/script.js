@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    let reload=document.querySelector(".reload")
   reload.addEventListener("click",()=>{
+    audio.play()
     window.location.reload()
   })
   

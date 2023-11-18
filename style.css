@@ -254,6 +254,8 @@ form input{
     display: flex;
     gap: 1rem;
     /* box-shadow: 2px 5px 5px white; */
+    justify-content: center;
+    align-items: center;
   }
   a{
     text-decoration: none;

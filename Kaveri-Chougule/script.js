@@ -299,6 +299,8 @@ let body = document.querySelector("body");
 
 let symbol=document.querySelectorAll(".symbol")
 let section1=document.querySelector(".section1")
+let form_Label=document.querySelectorAll(".sideSection")
+
 light.addEventListener("click", () => {
   dark.style.display = "block";
   light.style.display = "none";
@@ -313,13 +315,15 @@ light.addEventListener("click", () => {
         event.style.color='#2b3136'
         event.style.borderColor='#2b3136'
       })
+      form_Label.forEach((event)=>{
+        event.style.color='black'
+      })
 //   header.style.backgroundColor = "var(--background-color)";
 });
 
 let btnColor=document.querySelector(".review-btn")
 let calculateTotal=document.querySelector(".calculateTotal")
 let addBtn=document.querySelector(".addBtn")
-
 dark.addEventListener("click", () => {
   dark.style.display = "none";
   light.style.display = "block";
@@ -333,6 +337,9 @@ dark.addEventListener("click", () => {
   symbol.forEach((event)=>{
     event.style.color='white'
     event.style.borderColor='white'
+  })
+  form_Label.forEach((event)=>{
+    event.style.color='white'
   })
 //   #2b3136
 });

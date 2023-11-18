@@ -20,7 +20,7 @@ Include screenshots or links to screenshots of different pages or sections of yo
 
 ![First Page](![![Alt text](image-1.png)](image.png))
 ![Second Page](![![Alt text](image-3.png)](image-2.png))
-![Third Page](![![Alt text](image-5.png)](image-4.png))
+![Third Page](![![Alt text](image-4.png)](image-4.png))
 
 ## Features
 

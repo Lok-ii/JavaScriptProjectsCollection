@@ -135,7 +135,8 @@ If the player selects a cell which contains the bomb, he/she loses the game. We 
 
 ### Trello Clone: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Akash-Shukla/index.html"> Click Here </a>
 
-![trello](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/f8387c9f-7170-4960-ab14-34788a4453c2)
+![trello](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/f8387c9f-7170-4960-ab14-34788a4453c2) <br>
+Trello Board clone helps us create day-to-day notes or a to-do lists of our works. Works to be doing, undergoing, priority, urgent etc. Here we can map all the works. In this web-page we can add new cards to existing cards to write the details. On clicking the boards a pop-up appears. Each tasks can be labelled with different colors and texts, its date can be added, how much task has been covered, You can add description to the tasks, give its title and heading and mark its priority. One can also drag and drop cards to re-arrange the priorities. <br> 
 
 ![trello2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/18f6c0b8-9cac-41d7-a4e4-9602659d04c0)
 

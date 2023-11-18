@@ -96,15 +96,17 @@ function gettimer() {
     timepassed++;
     timer.innerText = timeleft;
   } else {
+    display.innerText="";
+    display.innerText="<--------------------------------------------------Your TIME's Up------------------------------------------------>";
     clearInterval(time);
     inputarea.disabled = true;
     info.forEach((element) => {
       element.style.display = "block";
     });
-    charperminute = Math.round((Totalcharacters / timepassed) * 60);
+    charperminute = Math.round(((Totalcharacters / timepassed) * 60));
     details[2].textContent = charperminute;
   
-    wordsperminute = Math.round((Totalcharacters / 5 / timepassed) * 60);
+    wordsperminute = Math.round((((Totalcharacters / 5 )/ timepassed) * 60));
     details[1].textContent = wordsperminute;
   }
 }

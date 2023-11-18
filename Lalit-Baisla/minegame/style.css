@@ -1,29 +1,47 @@
+body{
+    background-image: url('page1.jpg');
+    color: white;
+    font-family: 'Croissant One',sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+}
 .container {
     width: 500px;
     align-content: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
+    display: none;
+    flex-direction: column;
   }
-  body{
+  /* body{
     background-image: url(img.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
   .grid {
     height: 400px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #dcd6bc;
+    background-color: #4cbb17;
     margin-left: 50px;
     margin-top: 20px;
-    border: 10px solid #dcd6bc;
-    margin-bottom: 10px;
+    border: 10px solid green;
+    /* margin-bottom: 10px; */
   }
-  
+  .bottom{
+    background-color: green;
+    padding: 10px;
+    margin-left: 50px;
+    width: 399px;
+  }
   div {
     font-size: 25px;
     text-align: center;
@@ -71,7 +89,70 @@
     color: #bb41d3;
   }
   
-  #result {
+  /* #result {
     margin-top: 5px;
     color: #e76346;
+  } */
+
+  .last_section{
+    display: none
   }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Luckiest+Guy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+.first_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 600px;
+    opacity: 0.9;
+    background-color: green;
+    border-radius: 20px;
+    box-shadow: -2px -1px 25px rgba(170, 126, 220, 0.7);
+}
+.heading{
+    text-align: center;
+    font-size: 40px; 
+    transition: text-shadow 0.1s;  
+}
+.play{
+    height: 50px;
+    width: 140px;
+    font-size: 30px;
+    font-family: 'Croissant One',sans-serif;
+    transition: all 0.5s;  
+    border-radius: 10px;
+    position: relative;
+    border: none;
+    outline: none;
+}
+.play:hover{
+    box-shadow: -2px -1px 25px rgba(170, 126, 220, 0.7);
+    transform: translateY(-2px);
+    background-color: blueviolet;
+    color: white;
+}
+.result{
+  background-color: rgb(154, 19, 19);
+}
+
+select{
+  background-color: #7a5ef8;
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+select:hover{
+  background-color: #5d3af7;
+}
+option{
+  gap: 1rem;
+}

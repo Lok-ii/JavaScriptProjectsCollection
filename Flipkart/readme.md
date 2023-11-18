@@ -2,7 +2,7 @@
 
 ## Live Demo : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Flipkart/index.html"> CLick Here </a>
 
-> A clone of Flipkart search page with sorting and filtering functionality.
+> A clone of Flipkart page with sorting and filtering functionality.
 
 ---
 

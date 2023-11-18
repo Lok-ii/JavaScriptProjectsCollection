@@ -8,7 +8,7 @@
 
   - Lokesh Kataria (Lead)<br>
   - Rupesh Mandal<br>
-  - Kaveri Choughule <br>
+  - Kaveri Chougule <br>
   - Shiva Malik <br>
   - Pranshul Pradhan <br>
   - Lalit Baisla <br>

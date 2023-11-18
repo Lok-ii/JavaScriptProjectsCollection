@@ -29,7 +29,7 @@ body, html {
 }
 .bgimg-1 {
   background-image: url("./Assets-FrontPage/team.jpg");
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .bgimg-2 {

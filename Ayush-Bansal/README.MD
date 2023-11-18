@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# Hosted link :- http://127.0.0.1:5501/JavaScriptProjectsCollection/Ayush-Bansal/index.html
 # Resume Builder Web App
 
 Resume Builder is a web application that allows users to create and customize their resumes with ease. The app provides a user-friendly interface to input personal details, professional experiences, skills, and education information, generating a visually appealing and professional-looking resume.

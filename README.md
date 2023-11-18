@@ -94,11 +94,13 @@ By documenting these challenges and solutions, I hope to provide insights for ot
 ![Invoice](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/694c9193-326e-4c8a-9962-452c8387677d)
 
 
+
+
 ### Typing Speed Test : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Rupesh-Mandal/index.html"> Click Here </a>
 
 ![type](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/cab672a2-fa7a-48c4-8234-60c09d727fec) <br>
 
-In this webpage we create a typing test generator, which provides us with a paragraph and tests our typing speed in # wpm i.e number of words typed per minute and  # cpm i.e number of characters typed per minute. Along with this it also calculates the number of mistakes done and the clock ticks back calculating the remaining time. Additional feature of accuracy has been added and one can reset over again after completion of one test or to retry. <br>
+In this webpage we create a typing test generator, which provides us with a paragraph and tests our typing speed in # wpm i.e number of words typed per minute and  # cpm i.e number of characters typed per minute. Along with this it also calculates the number of mistakes done and the clock ticks back calculating the remaining time. Additional feature of accuracy has been added and one can reset over again after completion of one test or to retry. If one completes all the typing within time limit the timer stops also if time finishes typing disables. <br>
 
 ### Flipkart Sort and Filter : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Flipkart/index.html"> Click Here </a>
 
@@ -115,7 +117,10 @@ In this webpage we create a typing test generator, which provides us with a para
 
 ### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
 
-![minesweeper](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/0b9923e0-729a-4243-b934-b63fcd92a742)
+![minesweeper](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/0b9923e0-729a-4243-b934-b63fcd92a742) <br>
+
+Minesweeper is a puzzle game which the player will select a cell in a square grid continuously. Each cell hides a bomb or a value which displays the number of bombs in it’s neighboring cells. Just to make it clear, neighboring cells is defined as adjacent horizontally, vertically or diagonally.
+If the player selects a cell which contains the bomb, he/she loses the game. We also have a defined number of red flags which can be planted if we suspect the availability of a mine/bomb, but if the number of flags run out you again lose the Game. So, Play Cunningly. <br>
 
 ### Payment Integeration: <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Pranshul-Pradhan/index.html"> Click Here </a>
 

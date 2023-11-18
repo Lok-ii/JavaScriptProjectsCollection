@@ -26,7 +26,6 @@ This project is a clone of Flipkart's search page, allowing users to search for 
 
 ## Features
 
-- **Search:** Users can search for products using the search bar.
 - **Sorting:** Products can be sorted based on different criteria such as relevance, price (low to high, high to low), etc.
 - **Filtering:** Users can filter products based on various attributes such as brand, price range, ratings, etc.
 

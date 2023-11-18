@@ -38,7 +38,7 @@ htmlbtn.addEventListener("click",function(){
 });
  function clear(){
     texthtml.value='';
-  
+  code.body.innerHTML='';
 };
 
 var btnclear=document.querySelector('.clearhtml');

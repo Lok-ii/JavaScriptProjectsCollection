@@ -98,8 +98,7 @@ By documenting these challenges and solutions, I hope to provide insights for ot
 
 ![type](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/cab672a2-fa7a-48c4-8234-60c09d727fec) <br>
 
-In this webpage we create a typing test generator, which provides us with a paragraph and tests our typing speed in # wpm i.e number of words typed per minute and  # cpm i.e number of characters typed per minute. Along with this it also calculates the number of mistakes done and the clock ticks back calculating the remaining time
-
+In this webpage we create a typing test generator, which provides us with a paragraph and tests our typing speed in # wpm i.e number of words typed per minute and  # cpm i.e number of characters typed per minute. Along with this it also calculates the number of mistakes done and the clock ticks back calculating the remaining time. Additional feature of accuracy has been added and one can reset over again after completion of one test or to retry. <br>
 
 ### Flipkart Sort and Filter : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Flipkart/index.html"> Click Here </a>
 

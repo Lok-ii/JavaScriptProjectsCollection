@@ -216,6 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
     body.style.backgroundSize="cover"  
   })
 
-    
-
+   let reload=document.querySelector(".reload")
+  reload.addEventListener("click",()=>{
+    window.location.reload()
+  })
   

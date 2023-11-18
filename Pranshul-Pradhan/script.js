@@ -83,6 +83,19 @@ document.addEventListener("DOMContentLoaded", function () {
         "theme": {
             "color": "#3399cc"
         }
+
+      handler: function (response) {
+          // Handle the success or failure response from Razorpay
+          displayTransactionStatus(response, amountpaid);
+        },
+    
+        // Note: The 'modal' option is set to 'false' to prevent redirection
+        modal: {
+          ondismiss: function () {
+            // Handle the case when the payment modal is dismissed
+            console.log('Payment modal dismissed');
+          },
+        },
     };
     var rzp1 =   new Razorpay(options);
     rzp1.open();

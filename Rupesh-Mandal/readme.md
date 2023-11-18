@@ -8,12 +8,10 @@ Users can type a given quote within a set time limit and receive feedback on the
 - [Demo](#demo)
 - [Features](#features)
 - [Files](#files)
-- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Styling](#styling)
 - [JavaScript Logic](#javascript-logic)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Demo
 
@@ -35,11 +33,12 @@ Insert GIF or link to a demo video here.
 - **script.js:** The JavaScript file containing the logic for the typing test.
 - **assets/:** Folder containing images used in the application.
 
-Styling
+## Styling
+
 The application utilizes a combination of HTML and CSS for its structure and styling. Key styling features
 include a transparent background overlay,font choice, timer placement, and button styling.
 
-# Typing Speed Test JavaScript Logic
+## JavaScript Logic
 
 This section provides an overview of the JavaScript code in the Typing Speed Test project, explaining key functionalities 
 and how they contribute to the application.

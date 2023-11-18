@@ -8,12 +8,11 @@ Users can type a given quote within a set time limit and receive feedback on the
 - [Demo](#demo)
 - [Features](#features)
 - [Files](#files)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
 - [Styling](#styling)
 - [JavaScript Logic](#javascript-logic)
-- [Contributing](#contributing)
-- [License](#license)
+- [Usage](#usage)
+- [UI](#ui)
+
 
 ## Demo
 
@@ -35,21 +34,22 @@ Insert GIF or link to a demo video here.
 - **script.js:** The JavaScript file containing the logic for the typing test.
 - **assets/:** Folder containing images used in the application.
 
-Styling
+## Styling
+
 The application utilizes a combination of HTML and CSS for its structure and styling. Key styling features
 include a transparent background overlay,font choice, timer placement, and button styling.
 
-# Typing Speed Test JavaScript Logic
+## JavaScript Logic
 
 This section provides an overview of the JavaScript code in the Typing Speed Test project, explaining key functionalities 
 and how they contribute to the application.
 
-## Overview
+### Overview
 
 The JavaScript code (`script.js`) is responsible for handling the logic behind the Typing Speed Test application.
 It manages the timer, user input, displays random paragraphs, calculates statistics, and more.
 
-## Key Elements
+### Key Elements
 
 ### Variables
 
@@ -86,7 +86,7 @@ It manages the timer, user input, displays random paragraphs, calculates statist
 5. Click the "RESET" button to start a new test.
 
 
-<h2>UI</h2>
+## UI
 
 ![Screenshot 2023-11-18 191335](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/69234169/81c2ca2c-c29d-4fca-8bad-9e564d941f01)
 ![Screenshot 2023-11-18 191429](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/69234169/aed35e74-e2fd-48f4-acf8-7dfc88f3380f)

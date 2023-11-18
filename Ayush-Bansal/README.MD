@@ -7,7 +7,6 @@ Resume Builder is a web application that allows users to create and customize th
 ## Table of Contents
 
 - [Overview](#overview)
-- [Screenshots](#screenshots)
 - [Features](#features)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
@@ -15,14 +14,6 @@ Resume Builder is a web application that allows users to create and customize th
 ## Overview
 
 In the modern job market, having a well-crafted resume is crucial. Resume Builder simplifies the process by offering a clean and intuitive platform for users to create personalized resumes. The application is designed to be responsive and user-friendly, making it accessible to a wide range of users.
-
-## Screenshots
-
-Include screenshots or links to screenshots of different pages or sections of your application.
-
-![First Page](![![Alt text](image-1.png)](image.png))
-![Second Page](![![Alt text](image-3.png)](image-2.png))
-![Third Page](![![Alt text](image-5.png)](image-4.png))
 
 ## Features
 

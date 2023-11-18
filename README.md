@@ -121,7 +121,13 @@ One can also filter products based on the discounted rates and the site will pro
 ### Resume Template : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Ayush-Bansal/index.html"> Click Here </a>
 ### -by Ayush Bansal
 
-![resume](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/ff1f4a41-3e4a-490e-941d-239c5be042b0)
+![resume](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/ff1f4a41-3e4a-490e-941d-239c5be042b0) <br>
+
+![res1](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/2b0d3f7e-375d-4d13-ab5c-2df4cd8369a7) <br>
+
+![res2](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/f8593a44-2bc1-4be2-a920-eed2f5b2f47e) <br>
+
+Looking for new job, here is our Resume template web page. You can add your personal and professional details, add your employent history and the jobs you want, your projects and educational qualifications. If you want to make it eye catchey, then go to our advanced resume builder, which can pick up your resume details from the basic version. After creating the resume download option is also available. <br>
 
 ### MineSweeper Game : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Lalit-Baisla/minegame/index.html"> Click Here </a>
 ### -by Lalit Baisla

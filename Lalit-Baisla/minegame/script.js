@@ -1,7 +1,9 @@
+let container=document.querySelector(".container")
+let fistSection=document.querySelector(".first_section")
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const flagsLeft = document.querySelector('#flags-left')
-    const result = document.querySelector('#result')
+    const result = document.querySelector('.result')
     let width = 10
     let bombAmount = 20
     let flags = 0
@@ -76,13 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }
-  
+    let NumbersAudio=new Audio('NumbersAudio')
     //click on square actions
     function click(square) {
+
       let currentId = square.id
       if (isGameOver) return
       if (square.classList.contains('checked') || square.classList.contains('flag')) return
       if (square.classList.contains('bomb')) {
+
         gameOver(square)
       } else {
         let total = square.getAttribute('data')
@@ -105,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkSquare(square, currentId) {
       const isLeftEdge = (currentId % width === 0)
       const isRightEdge = (currentId % width === width -1)
-  
+      
       setTimeout(() => {
         if (currentId > 0 && !isLeftEdge) {
           const newId = squares[parseInt(currentId) -1].id
@@ -158,11 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 10)
     }
   
+    let bombBlastAudio=new Audio('./bombblast.mp3')
+    let last_section=document.querySelector(".last_section")
     //game over
     function gameOver(square) {
-      result.innerHTML = 'BOOM! Game Over!'
-      isGameOver = true
-  
+      bombBlastAudio.play()
       //show ALL the bombs
       squares.forEach(square => {
         if (square.classList.contains('bomb')) {
@@ -171,10 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
           square.classList.add('checked')
         }
       })
+
+      result.innerHTML = 'You Loose!!'
+      isGameOver = true
     }
   
+    
+    let win=new Audio('win.mp3')
+
     //check for win
     function checkForWin() {
+      NumbersAudio.play()
+
       ///simplified win argument
     let matches = 0
   
@@ -189,3 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   })
+
+
+  let playAudio=document.querySelector("#play")
+  let audio=new Audio('audio.mp3')
+  let body=document.querySelector("body")
+  // console.log(playAudio);
+  playAudio.addEventListener("click",()=>{
+    audio.play()
+    fistSection.style.display="none"
+    container.style.display="flex"
+    body.style.backgroundImage="url('nature.jpg')"
+    body.style.backgroundPosition="center"
+    body.style.backgroundSize="cover"  
+  })
+
+    
+
+  

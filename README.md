@@ -93,7 +93,9 @@ By documenting these challenges and solutions, I hope to provide insights for ot
 ### -by Kaveri Chougule
 
 ![Invoice](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/117883959/694c9193-326e-4c8a-9962-452c8387677d) <br>
+
 Here is the invoice for your purchase. You receive the invoice on your registerd email with details of receiver's and sender's bill and mail Id, along with your items details, quantity and calculated tax and discount rates and receiving amount in your countries Currency <br>
+
 
 ### Typing Speed Test : <a href="https://lok-ii.github.io/JavaScriptProjectsCollection/Rupesh-Mandal/index.html"> Click Here </a>
 

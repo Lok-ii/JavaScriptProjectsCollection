@@ -5,7 +5,7 @@ const password = "1XRpJwd4lLqRoGEzBJmQiYrI";
 // console.log("amountPaid", amountpaid);
 
 document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector("form");
+  // var form = document.querySelector("form");
   var payButton = document.getElementsByClassName("pay-button");
   console.log("paybtn length", payButton.length);
   for(var i =0;i<payButton.length;i++){
@@ -84,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "color": "#3399cc"
         },
 
-      handler: function (response) {
+        
+        handler: function (response) {
           // Handle the success or failure response from Razorpay
           displayTransactionStatus(response, amountpaid);
         },
@@ -96,12 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Payment modal dismissed');
           },
         },
-    };
+      };
+    
+
+    
     var rzp1 =   new Razorpay(options);
     rzp1.open();
   }
 
 });
+
 
 function displayTransactionStatus(response, amountpaid) {
   // Display a dialog on the screen with transaction status
@@ -129,4 +134,4 @@ function closeDialog() {
   dialog.close();
   dialog.remove();
   document.body.style.overflow = 'auto';
-
+}

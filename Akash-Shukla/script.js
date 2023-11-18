@@ -1,3 +1,8 @@
+
+    // Select all elements with the class 'board-add-card'
+    let addCardButtons = document.querySelectorAll(".board-add-card");
+
+
 // Function to add Cards 
 function createCard(cardTitle) {
     const card = document.createElement("div");
@@ -43,28 +48,24 @@ function showPopup(card) {
     popup.addEventListener("click", (e)=>{
         if(e.target.classList.contains("close")){
             popup.style.display = "none";
-            updateCardDetails(card);
+            updateCardDetails(card, popup);
         }
 })
-
-    popup.addEventListener("change", ()=>{
-        updateCardDetails(card);
-    });
   }
 
 
 
 
-  // Function to update card details from popup
-function updateCardDetails(card) {
+//   Function to update card details from popup99
+function updateCardDetails(card, popup) {
     // Update title
-    card.querySelector(".card-title").innerText = document.querySelector(".new-input-title").innerText;
+    card.querySelector(".card-title").innerText = popup.querySelector(".new-input-title").innerText;
   
     // Update description
-    card.querySelector(".desc").innerText = document.querySelector(".new-input-desc p.display").innerText;
+    card.querySelector(".desc").innerText = popup.querySelector(".new-input-desc p.display").innerText;
   
     // Update date
-    card.querySelector(".dateCard").innerText = document.querySelector(".popupDate").value;
+    card.querySelector(".dateCard").innerText = popup.querySelector(".popupDate").value;
   }
 
 
@@ -180,7 +181,7 @@ function createNewCard() {
 
     newCard.innerHTML = `<div class="inner-board">
                   <div class="header">
-                      <p class="title">${boardTitle}<span>1</span></p>
+                      <p class="title" contentEditable="true">${boardTitle}<span>1</span></p>
                       <div class="options"><i class="fa-solid fa-ellipsis"></i></div>
                   </div>
                   <div class="appCards custom-scroll">
@@ -214,62 +215,56 @@ function createNewCard() {
     boardContainer.removeChild(formContainer);
     addBoardButton.classList.remove("hidden");
   }
+
+  addCardButtons = document.querySelectorAll(".board-add-card");
 }
 
 
 /*====================== Add New Cards ======================== */
 
+document.addEventListener("click", function (e) {
+    // Check if the clicked element has the class 'board-add-card'
+    if (e.target.classList.contains("board-add-card")) {
+        handleAddCardClick(e.target);
+    }
+});
 
-    // Select all elements with the class 'board-add-card'
-    const addCardButtons = document.querySelectorAll(".board-add-card");
+function handleAddCardClick(addCardButton) {
+    // Your existing logic for handling the 'Add Card' button click
+    addCardButton.style.display = "none";
 
-    // Add click event listeners to all 'add-card' buttons
-    addCardButtons.forEach((addCardButton) => {
-        addCardButton.addEventListener("click", function (e) {
-            // Hide the current 'add-card' button
-            addCardButton.style.display = "none";
+    const inputElement = document.createElement("input");
+    inputElement.setAttribute("type", "text");
+    inputElement.setAttribute("placeholder", "Enter card name");
 
-            // Create new elements for input, add button, and cross
-            const inputElement = document.createElement("input");
-            inputElement.setAttribute("type", "text");
-            inputElement.setAttribute("placeholder", "Enter card name");
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add";
+    addButton.addEventListener("click", function () {
+        const cardContainer = addCardButton
+            .closest(".inner-board")
+            .querySelector(".appCards");
+        const newCard = createCard(inputElement.value);
+        cardContainer.insertBefore(newCard, addCardButton.parentElement);
 
-            const addButton = document.createElement("button");
-            addButton.textContent = "Add";
-            addButton.addEventListener("click", function () {
-                // Functionality to add a new card
-                const cardContainer = addCardButton
-                    .closest(".inner-board")
-                    .querySelector(".appCards");
-                const newCard = createCard(inputElement.value);
-                cardContainer.insertBefore(newCard, e.target.parentElement);
-
-                // Reset and hide the new elements
-                inputElement.value = "";
-                hideNewElements();
-            });
-
-            const crossButton = document.createElement("button");
-            crossButton.textContent = "✕";
-            crossButton.addEventListener("click", function () {
-                // Reset and hide the new elements
-                inputElement.value = "";
-                hideNewElements();
-            });
-
-            // Create a container for new elements
-            const newElementsContainer = document.createElement("div");
-            newElementsContainer.classList.add("custom-input-edit");
-            newElementsContainer.appendChild(inputElement);
-            newElementsContainer.appendChild(addButton);
-            newElementsContainer.appendChild(crossButton);
-
-            // Append new elements below the card
-            addCardButton.parentElement.appendChild(newElementsContainer);
-        });
+        inputElement.value = "";
+        hideNewElements();
     });
 
+    const crossButton = document.createElement("button");
+    crossButton.textContent = "✕";
+    crossButton.addEventListener("click", function () {
+        inputElement.value = "";
+        hideNewElements();
+    });
 
+    const newElementsContainer = document.createElement("div");
+    newElementsContainer.classList.add("custom-input-edit");
+    newElementsContainer.appendChild(inputElement);
+    newElementsContainer.appendChild(addButton);
+    newElementsContainer.appendChild(crossButton);
+
+    addCardButton.parentElement.appendChild(newElementsContainer);
+}
 
     // Function to hide the new elements and show the 'add-card' button
     function hideNewElements() {
@@ -284,7 +279,7 @@ function createNewCard() {
     }
 
     // Add click event listener to all 'card-options' icons
-    const cardOptionsIcons = document.querySelectorAll(".card-options");
+    const cardOptionsIcons = document.querySelectorAll(".card-options .fa-xmark");
     cardOptionsIcons.forEach((cardOptionsIcon) => {
         cardOptionsIcon.addEventListener("click", function () {
             // Delete the specific card

@@ -256,10 +256,12 @@ form input{
     /* box-shadow: 2px 5px 5px white; */
     justify-content: center;
     align-items: center;
+    /* width: 100%; */
   }
   a{
     text-decoration: none;
   }
+ 
   .border{
     transition: all 0.5s ease-in-out;
     border: none;
@@ -331,4 +333,8 @@ form input{
 .footer_Logo{
     height: 25px;
     width: 25px;
+}
+
+.viewBtn{
+    display: flex;
 }

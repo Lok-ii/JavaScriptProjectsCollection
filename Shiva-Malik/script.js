@@ -47,10 +47,14 @@ btnclear.addEventListener('click',clear);
 var clearcss=document.querySelector('.clearcss');
 clearcss.addEventListener('click',()=>{
 text.value='';
+	if(js.value==''){
+    code.body.innerHTML=html.value;  
+}
 });
 var clearjs=document.querySelector('.clearjs');
 clearjs.addEventListener('click',()=>{
 textjs.value='';
+code.body.innerHTML=html.value+"<style>"+text.value+"</style>";	
 });
     
   

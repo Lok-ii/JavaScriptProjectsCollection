@@ -68,6 +68,9 @@ body {
   color: red;
   text-decoration: underline;
 }
+p{
+  display: none;
+}
 
 .buttons {
   width: 50%;
@@ -83,22 +86,30 @@ body {
   width: 5rem;
   height: 2rem;
   border-radius: 0.5rem;
+  font-size: 1rem;
   font-family: "Trebuchet MS", sans-serif;
   font-weight: bold;
   color: green;
   box-shadow: 0.2rem 0.2rem;
   cursor: pointer;
 }
+.start:active{
+  font-size: .7rem;
+}
 .reset {
   border: none;
   width: 5rem;
   height: 2rem;
   border-radius: 0.5rem;
+  font-size: 1rem;
   font-family: "Trebuchet MS", sans-serif;
   font-weight: bold;
   color: red;
   box-shadow: 0.2rem 0.2rem;
   cursor: pointer;
+}
+.reset:active{
+  font-size: .7rem;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){

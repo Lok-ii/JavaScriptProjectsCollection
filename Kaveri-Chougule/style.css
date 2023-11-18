@@ -22,7 +22,7 @@ body{
 }
 .section1{
     flex: 0 0 auto;
-    width: 70%;
+    width: 80%;
     border: 1px solid rgb(198, 197, 197);
     padding: 1.5rem;
     border-radius: 0.756rem;
@@ -132,7 +132,7 @@ body{
 .btn-primary{
     color: #fff;
     background-color: #0d6efd;
-    border-color: #0d6efd;
+    /* border-color: #0d6efd; */
 }
 .mb-3{
     margin-bottom: 1rem;
@@ -216,6 +216,9 @@ body{
   .popup_head{
     display: flex;
     justify-content: space-between;
+    background-color: rgb(172, 172, 244);
+    padding: 10px;
+    border-radius: 5px;
   }
 
   .buttons{
@@ -295,6 +298,7 @@ body{
 
 .otherContent{
     display: flex;
+    width: 40%;
 }
 .quant{
     width: 25%;
@@ -303,6 +307,7 @@ body{
     background-color: #f5f7f9;
     border: none;
     text-align: center;
+    /* margin-left: 38px; */
 }
 .priceInput{
     width: 40%;
@@ -411,7 +416,7 @@ body{
     width: 20%;
 }
 .popupInvoiceColor{
-    color: #6c757D;
+    color: #22313f;
     font-weight: 700;
 }
 .CalculateTotal{
@@ -511,10 +516,13 @@ input:focus {
 }
 .cross{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 15px;
     cursor: pointer;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    width: 100%;
+    gap: 15rem;
+    margin-top: 3rem;
 }
 .cross i:hover{
     border: 1px solid gray;
@@ -526,4 +534,136 @@ input:focus {
 }
 #issueDate{
     border-radius: 5px;
+}
+.warning{
+    color: red;
+    display: none;
+}
+
+@media screen and (min-width: 1441px){
+    .itemInfoDiv{
+        width: 60%;
+    }
+    .otherContent{
+        width: 35%;
+        margin-right: 6px;
+    }
+    .other{
+        gap: 4.7rem;
+    }
+}
+@media screen and (max-width: 1440px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+
+    .section1{
+        width: 75%;
+    }
+    .section2{
+        width: 20%;
+    }
+    
+}
+@media screen and (max-width: 1330px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+
+    .section1{
+        width: 64%;
+    }
+    .section2{
+        width: 20%;
+    }
+    
+}
+@media screen and (max-width: 1280px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+
+    .section1{
+        width: 61%;
+    }
+    .section2{
+        width: 20%;
+    }
+    
+}
+@media screen and (max-width: 1220px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+
+    .section1{
+        width: 60%;
+    }
+    .section2{
+        width: 20%;
+    }
+    
+}
+@media  screen and (max-width: 1025px){
+    .tableHead{
+        width: 100%;
+    }
+    .itemInfoDiv {
+        width: 50%;
+    }
+    .otherContent{
+        width: 49%;
+    }
+    .other{
+        width: 45%;
+        gap: 3.2rem;
+    }
+    .deleteIcon{
+        margin-right: 8px;
+    }
+}
+@media screen and (max-width: 800px){
+    body {
+     width: 100vw;
+     height: 100vh;
+    }
+    .Main-container{
+        display: flex;
+        /* flex-direction: column; */
+        /* align-items: center; */
+       
+        min-height: 100vh;
+        max-width: 100%;
+        margin: 1rem 0 1rem 0;
+    }
+    .deleteIcon{
+        width: 43px;;
+    }
+    .section1{
+        width: 60%;
+    }
+    .section2{
+        width: 20%;
+    }
+    .bill-to, .bill-from{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        width: 45%;
+    }
+    .dark{
+        padding: 0.25rem 0.49rem;
+    }
+}
+
+#back,#cross{
+    background: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 4px;
 }

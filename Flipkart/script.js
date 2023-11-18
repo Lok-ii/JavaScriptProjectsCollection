@@ -63,6 +63,9 @@ rangeInput.forEach((input) => {
       range.style.left = (minRange / rangeInput[0].max) * 100 + "%";
       range.style.right = 100 - (maxRange / rangeInput[1].max) * 100 + "%";
     }
+    let filteredList=[];
+        filteredList = products.filter((product) => product.specialPrice >= minRange && product.specialPrice <= maxRange);
+        addProducts(filteredList);
   });
 });
 
@@ -121,6 +124,10 @@ function filterProducts() {
       filteredProducts = filteredProducts.filter(product => product.flipkartAssured);
   }
 
+  if(document.getElementById("oneDayDelivery").checked){
+    filteredProducts = filteredProducts.filter(product => product.deliveryIn1Day);
+  }
+
   document.querySelectorAll(".offers input").forEach(element =>{
     if(element.checked && element.nextElementSibling.innerText === "No Cost EMI"){
       filteredProducts = filteredProducts.filter(product=> product.noCostEMI);
@@ -145,10 +152,6 @@ function filterProducts() {
   });
 
       filteredProducts = filteredProducts.filter(product=> product.specialPrice >= rangeInput[0].value && product.specialPrice <= rangeInput[1].value);
-
-
-
-
   //render the filteredProducts on the page
   addProducts(filteredProducts);
 }

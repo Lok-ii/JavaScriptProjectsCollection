@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo.png">
     <title>Invoice Generator</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -30,11 +31,14 @@
                             <span class="current-date-text text-bold">Current Date: </span>
                             <span class="current-date"></span>
                         </div>
+
                         <div class="DueDate">
                             <span class="Due-date-text text-bold">Due Date: </span>
-                            <input name="dateOfIssue" type="date" class="form-control" id="issueDate" style="max-width: 150px;" required>
+                            <input name="dateOfIssue" required type="date" class="form-control" id="issueDate" style="max-width: 150px;">
                         </div>
                     </div>
+                    <span class="warning">Please fill all the details!!!</span>
+
                     <div class="invoiceNumber-Section">
                         <span class="invoice-number-text text-bold">
                             Invoice Number: 
@@ -51,11 +55,11 @@
                         <label for="" class="form-label text-bold">
                             Bill To:
                         </label>
-                        <input placeholder="Who is this invoice to?" rows="3" name="billTo" autocomplete="name" type="text" class="bill-to-my form-control billTo" value="" id="billTo1" required >
+                        <input placeholder="Who is this invoice to?" required rows="3" name="billTo" autocomplete="name" type="text" class="bill-to-my form-control billTo" value="" id="billTo1"  >
 
-                        <input placeholder="Email address" name="billToEmail" autocomplete="email" type="email" class="bill-to-my form-control billTo" value="" id="billTo2" required>
+                        <input placeholder="Email address"   name="billToEmail" autocomplete="email" type="email" class="bill-to-my form-control billTo" value="" id="billTo2" >
 
-                        <input placeholder="Billing address" name="billToAddress" autocomplete="address" type="text" class="bill-to-my form-control billTo" value="" id="billTo3" required>
+                        <input placeholder="Billing address" required name="billToAddress" autocomplete="address" type="text" class="bill-to-my form-control billTo" value="" id="billTo3">
                     </div>
                     <div class="bill-from">
                         <label for="" class="form-label text-bold">
@@ -120,7 +124,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="text-bold btn btn-primary" onclick="BtnAdd()">
+                    <button type="button" class="text-bold btn btn-primary addBtn" onclick="BtnAdd()">
                         Add Item
                     </button>
                 </div>
@@ -180,7 +184,7 @@
                     <hr class="mt-4 mb-3">
                 </div>
                 <div class="mb-3">
-                    <label class="text-bold form-label">Currency:</label>
+                    <label class="text-bold form-label sideSection">Currency:</label>
                     <select aria-label="Change Currency" class="btn btn-light my-1 form-select currency">
                         <option value="$">USD (United States Dollar)</option>
                         <option value="£">GBP (British Pound Sterling)</option>
@@ -194,7 +198,7 @@
                 </div>
 
                 <div class="my-3">
-                    <label class="text-bold form-label">Tax rate:</label>
+                    <label class="text-bold form-label sideSection">Tax rate:</label>
                     <div class="my-1 flex-nowrap input-group">
                         <input name="taxRate" id="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
                         <span class="text-bold input-group-text">%</span>
@@ -202,7 +206,7 @@
                 </div>
 
                 <div class="my-3">
-                    <label class="text-bold form-label">Discount rate:</label>
+                    <label class="text-bold form-label sideSection">Discount rate:</label>
                     <div class="my-1 flex-nowrap input-group">
                         <input name="discountRate" id="discountRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="discount-rate form-control" value="">
                         <span class="text-bold input-group-text">%</span>
@@ -216,11 +220,12 @@
 
     </form>
     <div class="lightbox  animate__animated animate__fadeIn">
+        <div class="cross">
+            <i class="fa-solid fa-arrow-left" id="back"></i>
+            <i class="fa-solid fa-xmark" id="cross"></i>
+        </div>
         <div class="wrapper" id="lightBoxInvoice">
-            <div class="cross">
-                <i class="fa-solid fa-arrow-left" id="back"></i>
-                <i class="fa-solid fa-xmark" id="cross"></i>
-            </div>
+            
             <!-- <i class="fa-solid fa-xmark fa-xl popup_Close"></i> -->
 
             <div class="popup_head">
@@ -296,8 +301,6 @@
                 </div>
             </div>
 
-
-
             <div class="buttons">
                 <button id="sendInvoice" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Send Invoice</button>
                 <button id="Download" class="btn"><i class="fa-solid fa-cloud-arrow-down"></i> Download Copy</button>
@@ -309,11 +312,11 @@
     <script src="./script.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("gVqEOXEQbhwJmUGIR");
-   })();
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("gVqEOXEQbhwJmUGIR");
+    })();
 </script>
 </body>
 </html>

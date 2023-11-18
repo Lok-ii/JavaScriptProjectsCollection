@@ -1,26 +1,56 @@
 .mainarea{
     display:flex;
     justify-content:space-between;
+   
 }
-.editors,.output{
+.editors{
     width:100%;
 }
 textarea{
-width:100%;
+width:95%;
 min-height:250px;
-overflow:scroll;
+overflow:hidden;
+
 font-size:x-large;
+background-color:rgb(36, 11, 46);
+color: rgb(223, 205, 99);
+
 }
 
 #code{
 width:100%;
 height:30vh;
+font-size: xx-large;
+box-shadow:  rgba(0,0,0,0.4)
+5px 6px
+inset
 }
 body{
 text-align:center;
+ background:linear-gradient(0deg, rgb(19, 107, 109) 0%,  rgb(221, 176, 78) 100%);
 }
 h2{
-color:blue;
+padding:10px;
+margin-right: 9px;
+margin-bottom: 1px;
+margin-top: -5px;
+}
+.output{
+    font-size: xx-large;
 
-padding:2px;
+   
+}
+.header{
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+padding-right: 10px;
+gap:15px;
+   
+}
+.header button{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.788);
+    
+    border-radius: 5px;
 }

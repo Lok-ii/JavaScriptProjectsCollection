@@ -573,6 +573,16 @@
     transform: translateX(100px);
     transition: transform 1s;
   }
+
+ #rzp-button1{
+    display: inline-block;
+    background: #ff523b;
+    color: #ffffff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+  }
   
   /* media query for less than 600 screen size */
   

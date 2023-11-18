@@ -102,3 +102,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+function displayTransactionStatus(response, amountpaid) {
+  // Display a dialog on the screen with transaction status
+  var dialogContent = 'Transaction for amount ' + amountpaid/100 + ' is ';
+
+  if (response.razorpay_payment_id) {
+    dialogContent += 'success!';
+  } else {
+    dialogContent += 'failed. Please try again.';
+  }
+
+  // Create a dialog element
+  var dialog = document.createElement('dialog');
+  dialog.classList.add("paySuccessDialog")
+  dialog.innerHTML = '<p>' + dialogContent + '</p><button onclick="closeDialog()" id="paySuccess">Close</button></dialog>';
+
+  // Append the dialog to the body and display it
+  document.body.appendChild(dialog);
+  dialog.showModal();
+}
+
+function closeDialog() {
+  // Close the dialog
+  var dialog = document.querySelector('.paySuccessDialog');
+  dialog.close();
+  dialog.remove();
+  document.body.style.overflow = 'auto';
+

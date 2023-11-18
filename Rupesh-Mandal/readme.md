@@ -11,6 +11,7 @@ Users can type a given quote within a set time limit and receive feedback on the
 - [Styling](#styling)
 - [JavaScript Logic](#javascript-logic)
 - [Usage](#usage)
+- [UI](#ui)
 
 
 ## Demo
@@ -85,7 +86,7 @@ It manages the timer, user input, displays random paragraphs, calculates statist
 5. Click the "RESET" button to start a new test.
 
 
-<h2>UI</h2>
+## UI
 
 ![Screenshot 2023-11-18 191335](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/69234169/81c2ca2c-c29d-4fca-8bad-9e564d941f01)
 ![Screenshot 2023-11-18 191429](https://github.com/Lok-ii/JavaScriptProjectsCollection/assets/69234169/aed35e74-e2fd-48f4-acf8-7dfc88f3380f)

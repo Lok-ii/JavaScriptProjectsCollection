@@ -16,7 +16,7 @@ Users can type a given quote within a set time limit and receive feedback on the
 
 ## Demo
 
-Insert GIF or link to a demo video here.
+https://lok-ii.github.io/JavaScriptProjectsCollection/Rupesh-Mandal/index.html
 
 ## Features
 

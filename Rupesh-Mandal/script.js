@@ -43,8 +43,8 @@ inputarea.addEventListener("input", () => {
   let error = 0;
 
   if (arrdisplay.length === inputval.length) {
-    clearInterval(time);
-    inputarea.disabled = true;
+    
+    showdetails();
   }
 
   arrdisplay.forEach((characterspan, index) => {
@@ -93,16 +93,7 @@ function gettimer() {
     display.innerText = "";
     display.innerText =
       "<--------------------------------------------------Your TIME's Up------------------------------------------------>";
-    clearInterval(time);
-    inputarea.disabled = true;
-    info.forEach((element) => {
-      element.style.display = "block";
-    });
-    charperminute = Math.round((Totalcharacters / timepassed) * 60);
-    details[2].textContent = charperminute;
-
-    wordsperminute = Math.round((Totalcharacters / 5 / timepassed) * 60);
-    details[1].textContent = wordsperminute;
+    showdetails();
   }
 }
 
@@ -152,4 +143,17 @@ button[1].addEventListener("click", () => {
 function sound() {
   let audio = new Audio("./assets/mixkit-fast-double-click-on-mouse-275.wav");
   audio.play();
+}
+
+function showdetails(){
+  clearInterval(time);
+  inputarea.disabled = true;
+  info.forEach((element) => {
+    element.style.display = "block";
+  });
+  charperminute = Math.round((Totalcharacters / timepassed) * 60);
+  details[2].textContent = charperminute;
+
+  wordsperminute = Math.round((Totalcharacters / 5 / timepassed) * 60);
+  details[1].textContent = wordsperminute;
 }
